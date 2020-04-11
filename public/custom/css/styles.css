@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/libs/font/Montserrat-Regular.ttf') format('truetype'),
+    url('/libs/font/Montserrat-Bold.ttf') format('truetype');
+}
+* {
+  font-family: 'Montserrat';
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  height: inherit;
+}

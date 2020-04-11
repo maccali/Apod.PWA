@@ -1,0 +1,42 @@
+
+.container {
+    background-color: #6b98ff;
+}
+.nav{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.menu{ 
+    height: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.menu{
+}
+
+.menu a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #fff;
+    font-size: 17px;
+    transition: all .3s;
+}
+.menu a:hover{
+    background-color: #6191ff;
+    text-decoration: none;
+    color: #fff;
+}
+
+.img {
+    display: inline;
+}
+.img img{
+    height: 40px;
+}
