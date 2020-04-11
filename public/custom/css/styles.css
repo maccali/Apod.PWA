@@ -12,6 +12,13 @@ body {
   margin: 0;
 }
 
-a{
-  height: inherit;
+:root{
+  --primary-color: #6b98ff;
+  --primary-color-var: #6191ff;
+  --primary-color-trans: #86abff5e;
+  --bg-primary: #f9f9f9;
+}
+
+.bg-primary{
+  background-color: var(--bg-primary);
 }

@@ -1,7 +1,8 @@
 
 .container {
-    background-color: #6b98ff;
+    background-color: var(--primary-color);
 }
+
 .nav{ 
     display: flex;
     justify-content: space-between;
@@ -15,9 +16,6 @@
     margin: 0;
 }
 
-.menu{
-}
-
 .menu a{
     display: inline-flex;
     justify-content: center;
@@ -27,9 +25,11 @@
     color: #fff;
     font-size: 17px;
     transition: all .3s;
+    height: inherit;
 }
+
 .menu a:hover{
-    background-color: #6191ff;
+    background-color: var(--primary-color-var);
     text-decoration: none;
     color: #fff;
 }
@@ -37,6 +37,7 @@
 .img {
     display: inline;
 }
+
 .img img{
     height: 40px;
 }
