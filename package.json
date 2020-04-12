@@ -10,7 +10,9 @@
   "dependencies": {
     "next": "9.3.4",
     "next-pwa": "^2.3.3",
+    "qrcode": "^1.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-textarea-autosize": "^7.1.2"
   }
 }
