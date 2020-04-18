@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import Nav from '../components/nav'
-import Search from '../components/search'
+import Nav from '../../components/nav'
+import Footer from '../../components/footer'
+import Search from '../../components/search'
 
-const Home = () => (
+const qrcode = () => (
   <>
     <Nav />
     <Head>
-      <title>Azeit Tools</title>
+      <title>Azeit QRCode</title>
     </Head>
-
     <main>
       <div className="container-fluid bg-primary">
         <div className="container">
@@ -20,7 +20,8 @@ const Home = () => (
         </div>
       </div>
     </main>
+    <Footer />
   </>
 )
 
-export default Home
+export default qrcode
