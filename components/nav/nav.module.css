@@ -26,12 +26,22 @@
     font-size: 17px;
     transition: all .3s;
     height: inherit;
+    border-radius: 45px;
 }
 
 .menu a:hover{
     background-color: var(--primary-color-var);
     text-decoration: none;
     color: #fff;
+}
+
+.seta{
+    border-radius: 50%;
+    width: 60px;
+}
+
+.seta i{
+    font-size: 23px;
 }
 
 .img {

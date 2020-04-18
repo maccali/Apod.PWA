@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Router from 'next/router'
 import styles from './nav.module.css'
 
 const Nav = () => (
@@ -16,8 +17,13 @@ const Nav = () => (
           <link rel="icon" href="/favicon.ico" />
 
         </Head>
+        <ul className={styles.menu}>
+          <a onClick={() => Router.back()} className={styles.seta}><i className="fas fa-arrow-left"></i></a>
+        </ul>
         <div className={styles.img}>
-          <img src="/icons/icon48.png" />
+          <Link href="/">
+            <img src="/icons/icon48.png" />
+          </Link>
         </div>
         <ul className={styles.menu}>
           <Link href="/about">
