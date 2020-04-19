@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "html-react-parser": "^0.10.3",
     "next": "9.3.4",
     "next-pwa": "^2.3.3",
     "qrcode": "^1.4.4",

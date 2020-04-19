@@ -27,12 +27,14 @@
     transition: all .3s;
     height: inherit;
     border-radius: 45px;
+    cursor: pointer;
 }
 
 .menu a:hover{
     background-color: var(--primary-color-var);
     text-decoration: none;
     color: #fff;
+    transform: scale(1.20);
 }
 
 .seta{
@@ -42,6 +44,7 @@
 
 .seta i{
     font-size: 23px;
+    color: #fff;
 }
 
 .img {

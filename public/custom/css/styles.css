@@ -6,10 +6,20 @@
 }
 * {
   font-family: 'Montserrat';
+  color: black;
 }
 body {
   padding: 0;
   margin: 0;
+}
+a, a:hover, a:focus{
+  text-decoration: none;
+  color: none;
+}
+
+h1{
+  text-align: center;
+  margin-top: 45px;
 }
 
 :root{
@@ -21,4 +31,8 @@ body {
 
 .bg-primary{
   background-color: var(--bg-primary);
+}
+
+.container-full-height{
+  min-height: calc(100vh - 60px);
 }
