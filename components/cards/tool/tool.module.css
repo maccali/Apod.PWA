@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: black;
     border: dashed 1px white;
     background-color: white;
     margin-top: 15px;
@@ -33,6 +32,7 @@
     font-size: 18px;
     font-weight: bold;
     height: 30px;
+    color: rgb(60, 60, 60) !important;
 }
 .description{
     display: block;
@@ -45,4 +45,5 @@
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
     line-height: 23px;
+    color: rgb(60, 60, 60) !important;
 }

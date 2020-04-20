@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
 import Search from '../../components/search'
+import QRCodeHistory from '../../components/content/qrcode/history'
 
 const qrcode = () => (
   <>
@@ -17,6 +18,7 @@ const qrcode = () => (
               <Search />
             </div>
           </div>
+          <QRCodeHistory />
         </div>
       </div>
     </main>

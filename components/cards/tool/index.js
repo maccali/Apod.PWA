@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from './tool.module.css'
-import Parser from 'html-react-parser';
+import renderHTML from 'react-render-html';
 
 
 const Tool = (props) => (
@@ -9,7 +9,7 @@ const Tool = (props) => (
         <Link href={props.tool.link}>
             <a className={styles.card}>
                 <div className={styles.icon}>
-                    {Parser(props.tool.icon)}
+                    {renderHTML(props.tool.icon)}
                 </div>
                 <div className={styles.name}>
                     {props.tool.name}

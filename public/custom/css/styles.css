@@ -4,22 +4,10 @@
     url('/libs/font/Montserrat-Regular.ttf') format('truetype'),
     url('/libs/font/Montserrat-Bold.ttf') format('truetype');
 }
+
 * {
   font-family: 'Montserrat';
   color: black;
-}
-body {
-  padding: 0;
-  margin: 0;
-}
-a, a:hover, a:focus{
-  text-decoration: none;
-  color: none;
-}
-
-h1{
-  text-align: center;
-  margin-top: 45px;
 }
 
 :root{
@@ -36,3 +24,33 @@ h1{
 .container-full-height{
   min-height: calc(100vh - 60px);
 }
+
+body {
+  padding: 0;
+  margin: 0;
+}
+a, a:hover, a:focus{
+  text-decoration: none;
+  color: none;
+}
+
+h1{
+  text-align: center;
+  margin-top: 45px;
+}
+
+.per{
+  text-indent: 1.5em;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.per::first-letter{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.per.center{
+  text-align: center;
+}
+

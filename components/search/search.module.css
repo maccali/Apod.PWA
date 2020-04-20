@@ -6,9 +6,7 @@
     min-height: calc(100vh - 60px);
     padding-top: 40px;
     padding-bottom: 40px;
-    /* margin-top: -120px; */
 }
-
 
 .card > div{
     margin-top: 25px;
@@ -66,6 +64,7 @@
 .btns div i{
     font-size: 18px;
     margin-right: 10px;
+    color: #fff;
 }
 
 .inactive{
