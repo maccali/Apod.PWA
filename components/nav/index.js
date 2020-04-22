@@ -7,7 +7,6 @@ import styles from './nav.module.css'
 const Nav = () => (
   <div className="container-fluid" className={styles.container}>
     <div className="container">
-
       <nav className={styles.nav}>
         <Head>
           <meta charset='utf-8' />
@@ -15,7 +14,6 @@ const Nav = () => (
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <link rel='manifest' href='/manifest.json' />
           <link rel="icon" href="/favicon.ico" />
-
         </Head>
         <ul className={styles.menu}>
           <a onClick={() => Router.back()} className={styles.seta}><i className="fas fa-arrow-left"></i></a>
@@ -30,10 +28,6 @@ const Nav = () => (
             <a>About</a>
           </Link>
         </ul>
-
-        <style>
-
-        </style>
       </nav>
     </div>
   </div>

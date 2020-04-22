@@ -5,21 +5,21 @@ import renderHTML from 'react-render-html';
 
 
 const Tool = (props) => (
-    <>
-        <Link href={props.tool.link}>
-            <a className={styles.card}>
-                <div className={styles.icon}>
-                    {renderHTML(props.tool.icon)}
-                </div>
-                <div className={styles.name}>
-                    {props.tool.name}
-                </div>
-                <div className={styles.description}>
-                    {props.tool.description}
-                </div>
-            </a>
-        </ Link>
-    </>
+  <>
+    <Link href={props.tool.link}>
+      <a className={styles.card}>
+        <div className={styles.icon}>
+          {renderHTML(props.tool.icon)}
+        </div>
+        <div className={styles.name}>
+          {props.tool.name}
+        </div>
+        <div className={styles.description}>
+          {props.tool.description}
+        </div>
+      </a>
+    </ Link>
+  </>
 )
 
 export default Tool
