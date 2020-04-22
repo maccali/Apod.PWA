@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "postinstall": "next build",
-    "start": "next start"
+    "start": "next build && next start"
   },
   "dependencies": {
     "next": "9.3.4",
