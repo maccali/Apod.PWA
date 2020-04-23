@@ -10,11 +10,13 @@
   color: black;
 }
 
+
 :root{
-  --primary-color: #6b98ff;
+  /* --primary-color: #8080ff; */
+  --primary-color: #2c2c7b;
   --primary-color-var: #6191ff;
   --primary-color-trans: #86abff5e;
-  --bg-primary: #f9f9f9;
+  --bg-primary: #11112f;
 }
 
 .bg-primary{
@@ -28,6 +30,7 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: var(--bg-primary);
 }
 a, a:hover, a:focus{
   text-decoration: none;
@@ -54,3 +57,7 @@ h1{
   text-align: center;
 }
 
+#macy-container{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,32 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #11112f;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
+    box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
+    transition: all .3s;
+}
+
+.card:hover{
+    transform: scale(1.05) rotate(.8deg);
+    
+}
+
+.divimg img{
+  border-radius: 18px;
+  width: 100%;
+}
+.name{
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    color: #ffffffb5 !important;
+}

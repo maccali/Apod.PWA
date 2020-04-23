@@ -1,59 +1,75 @@
+import React from 'react'
+import axios from 'axios'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
-import CardTool from '../components/cards/tool'
+import CardPod from '../components/cards/pod'
 
-const toolList = [
-  {
-    name: "QRCode Gen",
-    icon: "<i className='fas fa-qrcode' style='color: yellowgreen'></i>",
-    description: "Generate QRCode from any Link or Text",
-    link: "/qrcode",
-    offline: true
-  },
-  {
-    name: "Short Link",
-    icon: "<i className='fas fa-link' style='color: violet'></i>",
-    description: "Shorten the link and choose which link you want to use",
-    link: "/short-link",
-    offline: false
+class Home extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      podList: []
+    };
   }
-]
 
+  async getData() {
+    let response = await axios.get('https://api.nasa.gov/planetary/apod?api_key=8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM&start_date=2020-04-10')
+    return { data: response.data }
+  }
 
-const Home = () => (
-  <>
-    <Nav />
-    <Head>
-      <title>Azeit Tools</title>
-    </Head>
-    <main>
-      <div className="container-fluid bg-primary container-full-height">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <h1>Our tools</h1>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <p className="per center">
-                Our tools aim to facilitate simple day-to-day work by being simple yet functional
-              </p>
-            </div>
-          </div>
-          <div className="row">
-            {toolList.map(tool => (
-              <div className="col-12 col-sm-3 col-md-4">
-                <CardTool tool={tool} />
+  macy() {
+    var macy = Macy({
+      container: '#macy-container',
+      trueOrder: false,
+      waitForImages: false,
+      margin: 24,
+      columns: 4,
+      breakAt: {
+        1200: 4,
+        940: 2,
+        520: 1
+        // 400: 1
+      }
+    });
+    macy.recalculate();
+  }
+
+  async componentDidMount() {
+    var res = await this.getData()
+    console.log(res.data)
+    this.setState(prevState => ({
+      // podList: [...prevState.podList, res.data]
+      podList: res.data
+    }))
+    this.macy()
+  }
+
+  componentDidUpdate() {
+    this.macy();
+  }
+
+  render() {
+    return <>
+      <Nav />
+      <Head>
+        <title>Apod - Space</title>
+      </Head>
+      <main>
+        <div className="container-fluid bg-primary">
+          <div id="macy-container" className="container">
+            {this.state.podList.map(pod =>
+              <div key={pod.name}>
+                <CardPod pod={pod} />
               </div>
-            ))}
+            )}
           </div>
         </div>
-      </div>
-    </main>
-    <Footer />
-  </>
-)
+      </main>
+      <Footer />
+    </>;
+  }
+}
 
 export default Home

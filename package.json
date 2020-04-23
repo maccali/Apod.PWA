@@ -1,14 +1,14 @@
 {
-  "name": "next-test",
+  "name": "apod-space",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postinstall": "next build",
-    "start": "next build && next start"
+    "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "next": "9.3.4",
     "next-pwa": "^2.3.3",
     "qrcode": "^1.4.4",

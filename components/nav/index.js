@@ -14,19 +14,15 @@ const Nav = () => (
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <link rel='manifest' href='/manifest.json' />
           <link rel="icon" href="/favicon.ico" />
+          <script src="/libs/macy/macy.js"></script>
         </Head>
         <ul className={styles.menu}>
           <a onClick={() => Router.back()} className={styles.seta}><i className="fas fa-arrow-left"></i></a>
-        </ul>
-        <div className={styles.img}>
-          <Link href="/">
-            <img src="/icons/icon48.png" />
-          </Link>
-        </div>
-        <ul className={styles.menu}>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
+          <div className={styles.img}>
+            <Link href="/">
+              <img src="/icons/icon48.png" />
+            </Link>
+          </div>
         </ul>
       </nav>
     </div>

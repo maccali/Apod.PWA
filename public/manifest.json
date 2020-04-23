@@ -1,10 +1,10 @@
 {
-    "name": "Azeit",
-    "short_name": "azeit",
+    "name": "Apod",
+    "short_name": "Apod",
     "display": "standalone",
     "orientation": "portrait",
-    "theme_color": "#6b98ff",
-    "background_color": "#FFFFFF",
+    "theme_color": "#2c2c7b",
+    "background_color": "#2c2c7b",
     "start_url": "/",
     "icons": [
       {

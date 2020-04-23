@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container">
       <footer>
         <p>
-          Yes Sr <i className="fas fa-tools"></i>
+         Explore <i className="fab fa-wpexplorer"></i>
         </p>
       </footer>
     </div>
