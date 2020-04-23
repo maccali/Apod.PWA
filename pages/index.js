@@ -24,7 +24,7 @@ class Home extends React.Component {
   }
 
   queryMount() {
-    const count = 25
+    const count = 3
     const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
 
     for (var i = 0; i < count; i++) {
@@ -70,7 +70,7 @@ class Home extends React.Component {
     var macy = Macy({
       container: '#macy-container',
       trueOrder: false,
-      waitForImages: false,
+      waitForImages: true,
       margin: 24,
       columns: 4,
       breakAt: {
