@@ -1,10 +1,10 @@
 {
-    "name": "Apod",
-    "short_name": "Apod",
+    "name": "apod",
+    "short_name": "apod",
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#2c2c7b",
-    "background_color": "#2c2c7b",
+    "background_color": "#ffffff",
     "start_url": "/",
     "icons": [
       {
