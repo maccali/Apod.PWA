@@ -10,13 +10,60 @@ class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      podList: []
+      podList: [],
+      querys: [],
+      last: new Date()
     };
   }
 
+  zeroLeftIfOneDigit(str) {
+    if (str.length === 1) {
+      str = `0${str}`
+    }
+    return str;
+  }
+
+  queryMount() {
+    const count = 25
+    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+
+    for (var i = 0; i < count; i++) {
+      let day = this.getDataFormatada(this.state.last)
+      var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${day}&end_date=${day}`
+
+      var dataChange = this.state.last.setDate(this.state.last.getDate() - 1)
+
+      this.setState(({
+        querys: this.state.querys.push(url),
+        last: dataChange
+      }))
+    }
+  }
+
+  getDataFormatada(last) {
+    let day = this.zeroLeftIfOneDigit(`${last.getDate()}`);
+    let month = this.zeroLeftIfOneDigit(`${last.getMonth() + 1}`);
+    let year = last.getFullYear();
+    let today = `${year}-${month}-${day}`
+
+    return today
+  }
+
   async getData() {
-    let response = await axios.get('https://api.nasa.gov/planetary/apod?api_key=8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM&start_date=2020-04-10')
-    return { data: response.data }
+
+    this.queryMount()
+
+    this.state.querys.map(async (item) => {
+      let res = await axios.get(item)
+
+      console.log(res.data);
+      this.setState(prevState => ({
+        podList: [...prevState.podList, res.data[0]]
+      }))
+      this.macy()
+    })
+
+
   }
 
   macy() {
@@ -37,12 +84,7 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    var res = await this.getData()
-    console.log(res.data)
-    this.setState(prevState => ({
-      // podList: [...prevState.podList, res.data]
-      podList: res.data
-    }))
+    await this.getData()
     this.macy()
   }
 
