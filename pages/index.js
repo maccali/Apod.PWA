@@ -62,7 +62,7 @@ class Home extends React.Component {
       }))
       this.macy()
     })
-
+    console.log(event.target)
 
   }
 
