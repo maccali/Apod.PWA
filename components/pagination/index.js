@@ -1,22 +1,22 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from './pod.module.css'
-import renderHTML from 'react-render-html';
+import styles from './pagination.module.css'
 
-const Pod = (props) => (
+const Pagination = (props) => (
   <>
+    
     {/* <Link href={props.pod.link}> */}
-    <a className={styles.card}>
+    {/* <a className={styles.card}>
       <div className={styles.divimg}>
         <img src={props.pod.url} alt={props.pod.title} />
       </div>
       <div className={styles.name}>
         {props.pod.title}
       </div>
-    </a>
+    </a> */}
 
     {/* </ Link> */}
   </>
 )
 
-export default Pod
+export default Pagination

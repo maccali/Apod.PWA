@@ -18,11 +18,9 @@ class Home extends React.Component {
   }
 
   static async getInitialProps(ctx) {
-    let data = [];
-    const count = 60
+    const count = 10
     let today = new Date()
-
-    console.log(ctx.query.p)
+    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
 
     let daysLeftEnd = 0
     if (ctx.query.p) {
@@ -33,14 +31,15 @@ class Home extends React.Component {
     let daysLeftStart = daysLeftEnd + count
     daysLeftEnd = daysLeftEnd + 1
 
-    let endDate = today.setDate(today.getDate() - daysLeftEnd)
-    let startDate = today.setDate(today.getDate() - daysLeftStart)
-    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+    let endDate = today.setDate(today.getDate() - daysLeftStart)
+    let startDate = today.setDate(today.getDate() - count + 1 )
 
     let endDateFormeted = new Date(endDate).toISOString().split('T')[0]
     let startDateFormeted = new Date(startDate).toISOString().split('T')[0]
 
     var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${startDateFormeted}&end_date=${endDateFormeted}`
+
+    console.log(url);
 
     let req = await axios.get(`${url}`)
 
@@ -49,31 +48,15 @@ class Home extends React.Component {
     }
   }
 
-  zeroLeftIfOneDigit(str) {
-    if (str.length === 1) {
-      str = `0${str}`
-    }
-    return str;
-  }
-
-  getDataFormatada(data) {
-    let les = new Date(data.toString())
-    let day = this.zeroLeftIfOneDigit(`${les.getDate()}`);
-    let month = this.zeroLeftIfOneDigit(`${les.getMonth() + 1}`);
-    let year = les.getFullYear();
-    let dateFormated = `${year}-${month}-${day}`
-    return dateFormated
-  }
-
   macy() {
     var macy = Macy({
       container: '#macy-container',
       trueOrder: false,
       waitForImages: true,
       margin: 24,
-      columns: 4,
+      columns: 3,
       breakAt: {
-        1200: 4,
+        1200: 3,
         940: 2,
         520: 1
         // 400: 1
@@ -82,7 +65,7 @@ class Home extends React.Component {
     macy.recalculate();
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.macy()
   }
 
