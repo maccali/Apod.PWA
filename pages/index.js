@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
@@ -7,13 +8,45 @@ import CardPod from '../components/cards/pod'
 
 class Home extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       podList: [],
       querys: [],
       last: new Date()
     };
+  }
+
+  static async getInitialProps(ctx) {
+    let data = [];
+    const count = 60
+    let today = new Date()
+
+    console.log(ctx.query.p)
+
+    let daysLeftEnd = 0
+    if (ctx.query.p) {
+      daysLeftEnd = count * ctx.query.p
+      daysLeftEnd = daysLeftEnd - (count + 1)
+    }
+
+    let daysLeftStart = daysLeftEnd + count
+    daysLeftEnd = daysLeftEnd + 1
+
+    let endDate = today.setDate(today.getDate() - daysLeftEnd)
+    let startDate = today.setDate(today.getDate() - daysLeftStart)
+    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+
+    let endDateFormeted = new Date(endDate).toISOString().split('T')[0]
+    let startDateFormeted = new Date(startDate).toISOString().split('T')[0]
+
+    var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${startDateFormeted}&end_date=${endDateFormeted}`
+
+    let req = await axios.get(`${url}`)
+
+    return {
+      data: req.data
+    }
   }
 
   zeroLeftIfOneDigit(str) {
@@ -23,46 +56,13 @@ class Home extends React.Component {
     return str;
   }
 
-  queryMount() {
-    const count = 3
-    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
-
-    for (var i = 0; i < count; i++) {
-      let day = this.getDataFormatada(this.state.last)
-      var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${day}&end_date=${day}`
-
-      var dataChange = this.state.last.setDate(this.state.last.getDate() - 1)
-
-      this.setState(({
-        querys: this.state.querys.push(url),
-        last: dataChange
-      }))
-    }
-  }
-
-  getDataFormatada(last) {
-    let day = this.zeroLeftIfOneDigit(`${last.getDate()}`);
-    let month = this.zeroLeftIfOneDigit(`${last.getMonth() + 1}`);
-    let year = last.getFullYear();
-    let today = `${year}-${month}-${day}`
-
-    return today
-  }
-
-  async getData() {
-
-    this.queryMount()
-
-    this.state.querys.map(async (item) => {
-      let res = await axios.get(item)
-      if (res.data[0] !== undefined) {
-        this.setState(prevState => ({
-          podList: [...prevState.podList, res.data[0]]
-        }))
-        this.macy()
-      }
-    })
-
+  getDataFormatada(data) {
+    let les = new Date(data.toString())
+    let day = this.zeroLeftIfOneDigit(`${les.getDate()}`);
+    let month = this.zeroLeftIfOneDigit(`${les.getMonth() + 1}`);
+    let year = les.getFullYear();
+    let dateFormated = `${year}-${month}-${day}`
+    return dateFormated
   }
 
   macy() {
@@ -82,19 +82,14 @@ class Home extends React.Component {
     macy.recalculate();
   }
 
-  async componentDidMount() {
-    await this.getData()
-    console.log('------*')
-    console.log(this.state.podList)
-    console.log('------*')
+  componentDidMount(){
     this.macy()
   }
 
-  componentDidUpdate() {
-    this.macy();
-  }
 
   render() {
+    let { data } = this.props
+
     return <>
       <Nav />
       <Head>
@@ -103,7 +98,7 @@ class Home extends React.Component {
       <main>
         <div className="container-fluid bg-primary">
           <div id="macy-container" className="container">
-            {this.state.podList.map(pod =>
+            {data.map(pod =>
               <div key={pod.date}>
                 <CardPod pod={pod} />
               </div>
