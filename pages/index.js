@@ -55,14 +55,13 @@ class Home extends React.Component {
 
     this.state.querys.map(async (item) => {
       let res = await axios.get(item)
-
-      console.log(res.data);
-      this.setState(prevState => ({
-        podList: [...prevState.podList, res.data[0]]
-      }))
-      this.macy()
+      if (res.data[0] !== undefined) {
+        this.setState(prevState => ({
+          podList: [...prevState.podList, res.data[0]]
+        }))
+        this.macy()
+      }
     })
-    console.log(event.target)
 
   }
 
@@ -85,6 +84,9 @@ class Home extends React.Component {
 
   async componentDidMount() {
     await this.getData()
+    console.log('------*')
+    console.log(this.state.podList)
+    console.log('------*')
     this.macy()
   }
 
@@ -102,7 +104,7 @@ class Home extends React.Component {
         <div className="container-fluid bg-primary">
           <div id="macy-container" className="container">
             {this.state.podList.map(pod =>
-              <div key={pod.name}>
+              <div key={pod.date}>
                 <CardPod pod={pod} />
               </div>
             )}
