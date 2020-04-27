@@ -28,7 +28,7 @@ class Pagination extends React.Component {
       <div className={styles.cont}>
         <div className={styles.card}>
           <div className={styles.line}>
-            <Link href={`/?p=${parseInt(this.props.page) - 1}`}>
+            <Link href={`/?p=${(this.props.page <= 1) ? 1 : parseInt(this.props.page) - 1}`}>
               <a><div className={styles.btn}><i className="fas fa-chevron-left"></i></div></a>
             </Link>
             <div className={styles.numbercenter}>

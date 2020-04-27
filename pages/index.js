@@ -20,9 +20,9 @@ class Home extends React.Component {
 
   static async getInitialProps(ctx) {
     console.log(isNaN(ctx.query.p))
-    console.log((ctx.query.p < 0))
+    console.log((ctx.query.p <= 0))
     console.log((ctx.query.p === ''))
-    if (isNaN(ctx.query.p) || (ctx.query.p < 0)) {
+    if (isNaN(ctx.query.p) || (ctx.query.p <= 0)) {
       ctx.query.p = 1
     }
     if (ctx.query.p === '') {
