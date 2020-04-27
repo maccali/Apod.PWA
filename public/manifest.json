@@ -1,10 +1,11 @@
 {
-    "name": "apod",
-    "short_name": "apod",
+    "name": "Apod",
+    "short_name": "Apod",
+    "description": "Amazing Images from Nasa day by day",
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#2c2c7b",
-    "background_color": "#ffffff",
+    "background_color": "#2c2c7b",
     "start_url": "/",
     "icons": [
       {

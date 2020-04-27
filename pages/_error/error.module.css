@@ -1,0 +1,21 @@
+.card{
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 200px);
+}
+
+.text{
+  align-self: center;
+}
+
+.text p, .text h2{
+  color: white;
+}
+
+.text p{
+  font-size: 16px;
+}
+
+.text h2{
+  font-size: 35px;
+}
