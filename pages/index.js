@@ -19,9 +19,6 @@ class Home extends React.Component {
   }
 
   static async getInitialProps(ctx) {
-    console.log(isNaN(ctx.query.p))
-    console.log((ctx.query.p <= 0))
-    console.log((ctx.query.p === ''))
     if (isNaN(ctx.query.p) || (ctx.query.p <= 0)) {
       ctx.query.p = 1
     }
@@ -49,7 +46,15 @@ class Home extends React.Component {
 
     var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${startDateFormeted}&end_date=${endDateFormeted}`
 
-    let req = await axios.get(`${url}`)
+    if (navigator.onLine) {
+
+      let req = await axios.get(`${url}`)
+    } else {
+      return {
+        data: [],
+        page: ctx.query.p
+      }
+    }
 
     return {
       data: req.data,
