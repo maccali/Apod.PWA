@@ -46,15 +46,7 @@ class Home extends React.Component {
 
     var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${startDateFormeted}&end_date=${endDateFormeted}`
 
-    if (navigator.onLine) {
-
-      let req = await axios.get(`${url}`)
-    } else {
-      return {
-        data: [],
-        page: ctx.query.p
-      }
-    }
+    let req = await axios.get(`${url}`)
 
     return {
       data: req.data,
