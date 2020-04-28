@@ -27,6 +27,11 @@
   min-height: calc(100vh - 60px);
 }
 
+.container.padding{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 body {
   padding: 0;
   margin: 0;

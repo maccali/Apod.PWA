@@ -13,6 +13,7 @@
     "next-pwa": "^2.3.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-lazy-load-image-component": "^1.4.3",
     "react-render-html": "^0.6.0",
     "react-scroll": "^1.7.16",
     "react-textarea-autosize": "^7.1.2"

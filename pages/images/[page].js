@@ -14,14 +14,15 @@ class Home extends React.Component {
     this.state = {
       podList: [],
       querys: [],
-      last: new Date()
+      last: new Date(),
+      load: true
     };
   }
 
   static async getInitialProps(ctx) {
 
     console.log(ctx.query)
-    ctx.query.p = ctx.query.page 
+    ctx.query.p = ctx.query.page
     if (isNaN(ctx.query.p) || (ctx.query.p <= 0)) {
       ctx.query.p = 1
     }
@@ -59,28 +60,10 @@ class Home extends React.Component {
     }
   }
 
-  macy() {
-    var macy = Macy({
-      container: '#macy-container',
-      trueOrder: false,
-      waitForImages: true,
-      margin: 24,
-      columns: 3,
-      breakAt: {
-        1200: 3,
-        940: 2,
-        520: 1
-        // 400: 1
-      }
-    });
-    macy.recalculate();
-  }
-
-  componentDidUpdate() {
-    this.macy()
-  }
   componentDidMount() {
-    this.macy()
+    this.setState({
+      load: false
+    })
   }
 
 
@@ -94,12 +77,14 @@ class Home extends React.Component {
       </Head>
       <main>
         <div className="container-fluid bg-primary">
-          <div id="macy-container" className="container">
-            {data.map(pod =>
-              <div key={pod.date}>
-                <CardPod pod={pod} />
-              </div>
-            )}
+          <div className="container padding">
+            <div className="row">
+              {data.map(pod =>
+                <div className="col-12 col-md-4" key={pod.date}>
+                  <CardPod pod={pod} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </main>
