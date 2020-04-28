@@ -51,13 +51,19 @@ class Home extends React.Component {
     var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${startDateFormeted}&end_date=${endDateFormeted}`
 
     let req = await axios.get(`${url}`)
-
-    console.log(req.data)
-
+    if (req.status === 200) {
+      return {
+        error: false,
+        data: req.data,
+        page: ctx.query.p
+      }
+    }
     return {
-      data: req.data,
+      error: true,
+      data: [],
       page: ctx.query.p
     }
+
   }
 
   componentDidMount() {
@@ -68,7 +74,7 @@ class Home extends React.Component {
 
 
   render() {
-    let { data, page } = this.props
+    let { data, page, error } = this.props
 
     return <>
       <Nav />
@@ -79,11 +85,15 @@ class Home extends React.Component {
         <div className="container-fluid bg-primary">
           <div className="container padding">
             <div className="row">
-              {data.map(pod =>
-                <div className="col-12 col-md-4" key={pod.date}>
-                  <CardPod pod={pod} />
-                </div>
-              )}
+              {(error) ?
+                <div>Erro na Api, Heuston temos um problemas</div>
+                : data.map(pod =>
+                  <div className="col-12 col-md-4" key={pod.date}>
+                    <CardPod pod={pod} />
+                  </div>
+                )
+              }
+
             </div>
           </div>
         </div>
