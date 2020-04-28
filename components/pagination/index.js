@@ -28,13 +28,13 @@ class Pagination extends React.Component {
       <div className={styles.cont}>
         <div className={styles.card}>
           <div className={styles.line}>
-            <Link href={{ pathname: '/', query: { p: `${(this.props.page <= 1) ? 1 : parseInt(this.props.page) - 1}` } }}>
+            <Link href={`/images/${(this.props.page <= 1) ? 1 : parseInt(this.props.page) - 1}`}>
               <a><div className={styles.btn}><i className="fas fa-chevron-left"></i></div></a>
             </Link>
             <div className={styles.numbercenter}>
               {this.props.page}
             </div>
-            <Link href={{ pathname: '/', query: { p: `${parseInt(this.props.page) + 1}` } }}>
+            <Link href={`/images/${parseInt(this.props.page) + 1}`}>
               <a><div className={styles.btn}><i className="fas fa-chevron-right"></i></div></a>
             </Link>
           </div>
@@ -47,10 +47,10 @@ class Pagination extends React.Component {
               />
             </div>
             {this.state.value == this.props.page
-              ? <Link href={{ pathname: '/', query: { p: `${this.props.page}` } }}>
+              ? <Link href={`/images/${this.props.page}`}>
                 <a><div className={styles.btn}><i className="fas fa-chevron-up"></i></div></a>
               </Link>
-              : <Link href={{ pathname: '/', query: { p: `${this.state.value}` } }}>
+              : <Link href={`/images/${this.state.value}`}>
                 <a><div className={styles.btn}><i className="fas fa-search"></i></div></a>
               </Link>
             }

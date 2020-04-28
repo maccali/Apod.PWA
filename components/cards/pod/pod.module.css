@@ -19,8 +19,21 @@
 
 .divimg img{
   border-radius: 18px;
+  width: inherit;
+}
+
+.divimg iframe{
+  border-radius: 18px;
+  width: inherit;
+  height: 250px;
+  border: none;
+}
+
+.divimg{
+  
   width: 100%;
 }
+
 .name{
     font-size: 15px;
     padding-top: 5px;

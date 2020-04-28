@@ -8,7 +8,10 @@ const Pod = (props) => (
     {/* <Link href={props.pod.link}> */}
     <a className={styles.card}>
       <div className={styles.divimg}>
-        <img src={props.pod.url} alt={props.pod.title} />
+        {(props.pod.media_type === 'image') ?
+          <img src={props.pod.url} alt={props.pod.title} />
+          : <iframe src={props.pod.url} alt={props.pod.title}></iframe>
+        }
       </div>
       <div className={styles.name}>
         {props.pod.title}
