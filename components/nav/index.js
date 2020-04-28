@@ -12,7 +12,7 @@ const Nav = () => (
           <meta charset='utf-8' />
           <meta http-equiv='X-UA-Compatible' content='IE=edge' />
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
-          <link rel='manifest' href='/manifest.json' />
+          <link rel='manifest' href='/manifest.json?v=2' />
           <link rel="icon" href="/favicon.ico" />
           <script src="/libs/macy/macy.js"></script>
         </Head>
