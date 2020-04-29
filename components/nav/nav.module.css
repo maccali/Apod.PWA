@@ -16,9 +16,13 @@
     height: inherit;
     padding: 0;
     margin: 0;
+    list-style: none;
+}
+.menu li{
+  height: inherit;
 }
 
-.menu a{
+.menu li a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +36,7 @@
     cursor: pointer;
 }
 
-.menu a:hover{
+.menu li a:hover{
     background-color: var(--primary-color-var);
     text-decoration: none;
     color: #fff;
@@ -50,9 +54,11 @@
 }
 
 .img {
-    display: inline;
+    display: inline-flex;
+    height: inherit;
+    align-items: center;
 }
 
 .img img{
-    height: 40px;
+    height: 42px;
 }

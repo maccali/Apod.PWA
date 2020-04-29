@@ -29,34 +29,36 @@ class Pagination extends React.Component {
         <div className={styles.card}>
           <div className={styles.line}>
             <Link href={`/images/${(this.props.page <= 1) ? 1 : parseInt(this.props.page) - 1}`}>
-              <a><div className={styles.btn}><i className="fas fa-chevron-left"></i></div></a>
+              <a aria-label="Back Page"><div className={styles.btn}><i className="fas fa-chevron-left"></i></div></a>
             </Link>
             <div className={styles.numbercenter}>
               {this.props.page}
             </div>
             <Link href={`/images/${parseInt(this.props.page) + 1}`}>
-              <a><div className={styles.btn}><i className="fas fa-chevron-right"></i></div></a>
+              <a aria-label="Next Page"><div className={styles.btn}><i className="fas fa-chevron-right"></i></div></a>
             </Link>
           </div>
           <div className={styles.line}>
             <div className={styles.divinput}>
-              <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-              />
+              <label aria-label="Type a page">
+                <input
+                  type="text"
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                />
+                </label>
             </div>
-            {this.state.value == this.props.page
-              ? <Link href={`/images/${this.props.page}`}>
-                <a><div className={styles.btn}><i className="fas fa-chevron-up"></i></div></a>
-              </Link>
-              : <Link href={`/images/${this.state.value}`}>
-                <a><div className={styles.btn}><i className="fas fa-search"></i></div></a>
-              </Link>
-            }
+              {this.state.value == this.props.page
+                ? <Link href={`/images/${this.props.page}`}>
+                  <a aria-label="Back To Top"><div className={styles.btn}><i className="fas fa-chevron-up"></i></div></a>
+                </Link>
+                : <Link href={`/images/${this.state.value}`}>
+                  <a aria-label="Search Page"><div className={styles.btn}><i className="fas fa-search"></i></div></a>
+                </Link>
+              }
+            </div>
           </div>
         </div>
-      </div>
     )
   }
 }
