@@ -1,0 +1,29 @@
+.date{
+  margin-top: 50px;
+  text-align: center;
+}
+.title{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.imgcont{
+  width: 100%;
+}
+.imgcont img{
+  border-radius: 5px;
+  width: inherit;
+}
+.copyright{
+  font-size: 16px;
+}
+.explanation{
+  text-indent: 1.5em;
+  text-align: justify;
+  margin-bottom: 80px;
+}
+
+.explanation::first-letter{
+  font-size: 20px;
+  font-weight: bold;
+}
