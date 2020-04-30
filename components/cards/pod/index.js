@@ -12,27 +12,26 @@ class Pod extends React.Component {
   render() {
     return (
       <>
-        {/* <Link href={props.pod.link}> */}
-        <a className={styles.card}>
-          <div className={styles.divimg}>
-            {(this.props.pod.media_type === 'image') ?
-              <div>
-                <LazyLoadImage
-                  alt={this.props.pod.title}
-                  height={270}
-                  src={this.props.pod.url} // use normal <img> attributes as props
-                  effect="opacity"
+        <Link href={`/day/${this.props.pod.date}`}>
+          <a className={styles.card}>
+            <div className={styles.divimg}>
+              {(this.props.pod.media_type === 'image') ?
+                <div>
+                  <LazyLoadImage
+                    alt={this.props.pod.title}
+                    height={270}
+                    src={this.props.pod.url} // use normal <img> attributes as props
+                    effect="opacity"
                   />
-              </div>
-              : <iframe src={this.props.pod.url} height="100%" alt={this.props.pod.title}></iframe>
-            }
-          </div>
-          <div className={styles.name}>
-            {this.props.pod.title}
-          </div>
-        </a>
-
-        {/* </ Link> */}
+                </div>
+                : <iframe src={this.props.pod.url} height="100%" alt={this.props.pod.title}></iframe>
+              }
+            </div>
+            <div className={styles.name}>
+              {this.props.pod.title}
+            </div>
+          </a>
+        </ Link>
       </>
     )
   }

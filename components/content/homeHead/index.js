@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+
 import styles from './homehead.module.css'
 
 const HomeHead = () => (
@@ -19,13 +21,15 @@ const HomeHead = () => (
         </div>
         <div className="col-12">
           <div className={styles.btn}>
-            <a>
-              Discover the cosmos!
-            </a>
+            <Link href="/images/1">
+              <a>
+                Discover the cosmos!
+              </a>
+            </Link>
           </div>
         </div>
         <div className="col-12">
-          <hr className={styles.hrc}/>
+          <hr className={styles.hrc} />
         </div>
       </div>
     </div>

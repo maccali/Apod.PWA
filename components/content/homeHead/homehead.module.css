@@ -22,6 +22,7 @@
 
 .btn a:hover{
   transform: scale(1.1);
+  color: black;
 }
 
 .text{
