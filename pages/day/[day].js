@@ -4,7 +4,7 @@ import axios from 'axios'
 import Head from 'next/head'
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
-import styles from './day.module.css'
+import DayContent from '../../components/content/day'
 
 import DateHelper from '../../helpers/date'
 
@@ -47,42 +47,7 @@ class Day extends React.Component {
         <title>Apod Day {dayData.date}</title>
       </Head>
       <main>
-        <div className="container-fluid bg-primary">
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <h3 className={styles.date}>{dayData.date}</h3>
-              </div>
-              <div className="col-12">
-                <h1 className={styles.title}>{dayData.title}</h1>
-              </div>
-              <div className="col-12">
-
-                <div className={styles.imgcont}>
-                  {(dayData.media_type === 'image') ?
-                    <img src={dayData.url} alt={dayData.title} />
-                    : <iframe src={dayData.url} height="100%" alt={dayData.title} frameborder="0" allowfullscreen></iframe>
-                  }
-                </div>
-              </div>
-              <div className="col-12">
-                {(dayData.copyright) ?
-                  <p className={styles.copyright}><b>Image Credit & Copyright:</b> {dayData.copyright}</p>
-                  : ''}
-              </div>
-              <div className="col-12">
-                <p className={styles.explanationtitle}>
-                  Explanation:
-                </p>
-              </div>
-              <div className="col-12">
-                <p className={styles.explanation}>
-                  {dayData.explanation}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <DayContent day={dayData}/>
       </main>
       <Footer />
     </>;

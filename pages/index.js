@@ -7,6 +7,10 @@ import Nav from '../components/nav'
 import Footer from '../components/footer'
 import CardPod from '../components/cards/pod'
 import Pagination from '../components/pagination'
+import HomeHead from '../components/content/homeHead'
+import DayContent from '../components/content/day'
+
+import DateHelper from '../helpers/date'
 
 
 class Home extends React.Component {
@@ -20,45 +24,37 @@ class Home extends React.Component {
     };
   }
 
-  // static async getInitialProps(ctx) {
-  //   if (isNaN(ctx.query.p) || (ctx.query.p <= 0)) {
-  //     ctx.query.p = 1
-  //   }
-  //   if (ctx.query.p === '') {
-  //     ctx.query.p = 1
-  //   }
-  //   const count = 6
-  //   let today = new Date()
-  //   const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+  static async getInitialProps(ctx) {
 
-  //   let daysLeftEnd = 0
-  //   if (ctx.query.p) {
-  //     daysLeftEnd = count * ctx.query.p
-  //     daysLeftEnd = daysLeftEnd - (count + 1)
-  //   }
+    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
 
-  //   let daysLeftStart = daysLeftEnd + count
-  //   daysLeftEnd = daysLeftEnd + 1
+    let today = DateHelper.todayNasaFormat()
+    let yesterday = DateHelper.nasaFormatMinusOne(today)
 
-  //   let endDate = today.setDate(today.getDate() - daysLeftStart)
-  //   let startDate = today.setDate(today.getDate() - count + 1)
-
-  //   let endDateFormeted = new Date(endDate).toISOString().split('T')[0]
-  //   let startDateFormeted = new Date(startDate).toISOString().split('T')[0]
-
-  //   var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${startDateFormeted}&end_date=${endDateFormeted}`
-
-  //   let req = await axios.get(`${url}`)
-
-  //   return {
-  //     data: req.data,
-  //     page: ctx.query.p
-  //   }
-  // }
+    let url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${today}`
+    let urlYesterday = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${yesterday}`
+    try {
+      let req = await axios.get(`${url}`)
+      return {
+        data: req.data,
+      }
+    } catch (error) {
+      let req = await axios.get(`${urlYesterday}`)
+      if (req.status === 200) {
+        return {
+          data: req.data,
+        }
+      } else {
+        return {
+          data: null,
+        }
+      }
+    }
+  }
 
 
   render() {
-    let { data, page } = this.props
+    let { data } = this.props
 
     return <>
       <Nav />
@@ -66,24 +62,9 @@ class Home extends React.Component {
         <title>Apod - Space</title>
       </Head>
       <main>
-        <div className="container-fluid bg-primary">
-          <div id="macy-container" className="container">\
-          Começo
-          <Link href={`/images/1`}>
-              <a>
-                Outras Imagens
-              </a>
-            </Link>
-
-            {/* {data.map(pod =>
-              <div key={pod.date}>
-                <CardPod pod={pod} />
-              </div>
-            )} */}
-          </div>
-        </div>
+        <HomeHead />
+        <DayContent day={data} />
       </main>
-      {/* <Pagination page={page} /> */}
       <Footer />
     </>;
   }
