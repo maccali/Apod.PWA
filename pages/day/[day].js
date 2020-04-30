@@ -38,8 +38,6 @@ class Day extends React.Component {
 
   }
 
-
-
   render() {
     let { dayData } = this.props
 
@@ -62,11 +60,8 @@ class Day extends React.Component {
 
                 <div className={styles.imgcont}>
                   {(dayData.media_type === 'image') ?
-                    (dayData.hdurl) ?
-                      <img src={dayData.hdurl} alt={dayData.title} />
-                      : <img src={dayData.url} alt={dayData.title} />
+                    <img src={dayData.url} alt={dayData.title} />
                     : <iframe src={dayData.url} height="100%" alt={dayData.title} frameborder="0" allowfullscreen></iframe>
-                    // : <video src={dayData.url} />
                   }
                 </div>
               </div>
