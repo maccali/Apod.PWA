@@ -61,10 +61,14 @@ class Day extends React.Component {
               <div className="col-12">
 
                 <div className={styles.imgcont}>
-                  {/* {(dayData.hdurl)} */}
-                  <img src={dayData.hdurl} alt={dayData.title} />
+                  {(dayData.media_type === 'image') ?
+                    (dayData.hdurl) ?
+                      <img src={dayData.hdurl} alt={dayData.title} />
+                      : <img src={dayData.url} alt={dayData.title} />
+                    : <iframe src={dayData.url} height="100%" alt={dayData.title} frameborder="0" allowfullscreen></iframe>
+                    // : <video src={dayData.url} />
+                  }
                 </div>
-                {/* <img src={dayData.url} alt={dayData.title} /> */}
               </div>
               <div className="col-12">
                 {(dayData.copyright) ?
@@ -72,15 +76,10 @@ class Day extends React.Component {
                   : ''}
               </div>
               <div className="col-12">
-                {(dayData.explanation) ?
-                  <p className={styles.explanation}>
-                    {dayData.explanation}
-                  </p>
-                  : ''}
+                <p className={styles.explanation}>
+                  {dayData.explanation}
+                </p>
               </div>
-
-
-              {dayData.media_type}
             </div>
           </div>
         </div>
