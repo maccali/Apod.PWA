@@ -27,10 +27,14 @@
   margin-right: 10px;
 }
 
+.explanationtitle{
+  margin-top: 25px;
+}
+
 .explanation{
   text-indent: 1.5em;
   text-align: justify;
-  margin-top: 25px;
+  margin-top: 5px;
   margin-bottom: 80px;
 }
 

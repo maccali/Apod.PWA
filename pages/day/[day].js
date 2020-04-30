@@ -71,6 +71,11 @@ class Day extends React.Component {
                   : ''}
               </div>
               <div className="col-12">
+                <p className={styles.explanationtitle}>
+                  Explanation:
+                </p>
+              </div>
+              <div className="col-12">
                 <p className={styles.explanation}>
                   {dayData.explanation}
                 </p>
