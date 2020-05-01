@@ -55,7 +55,7 @@
 .name{
   display: flex;
   align-self: baseline;
-  z-index: 1000;
+  z-index: 10;
   font-size: 14px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -67,8 +67,6 @@
   padding-left: 15px;
   padding-right: 15px;
   text-align: center;
-  /* background-color: #973BB3; */
-  /* background-color: #6192FF; */
   background-color: #204DB3;
   border: 1px solid black; 
 }
