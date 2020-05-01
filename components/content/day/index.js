@@ -3,7 +3,7 @@ import styles from './day.module.css'
 
 const DayContent = ({ day }) => (
   <div className="container-fluid bg-primary">
-    <div className="container">
+    <div className="container ped-lr">
       <div className="row">
         <div className="col-12">
           <h3 className={styles.date}>{day.date}</h3>

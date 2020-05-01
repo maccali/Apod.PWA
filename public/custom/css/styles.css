@@ -62,14 +62,14 @@ h1{
   text-align: center;
 }
 
-#macy-container{
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
 @media (max-width: 767.98px) { 
   .container{
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+}
+
+.ped-lr {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
 }
