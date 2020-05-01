@@ -25,7 +25,7 @@ const DateHelper = {
 
   nasaFormatMinusOne: (nasaDate) => {
     let arrDate = nasaDate.split('-')
-    let date = new Date(arrDate[0], arrDate[1], arrDate[2])
+    let date = new Date(arrDate[0], arrDate[1] - 1 , arrDate[2])
     date.setDate(date.getDate() - 1)
     let dateIso = date.toISOString().split('T')[0]
     return dateIso;
@@ -33,7 +33,7 @@ const DateHelper = {
 
   nasaFormatPlusOne: (nasaDate) => {
     let arrDate = nasaDate.split('-')
-    let date = new Date(arrDate[0], arrDate[1], arrDate[2])
+    let date = new Date(arrDate[0], arrDate[1] - 1, arrDate[2])
     date.setDate(date.getDate() + 1)
     let dateIso = date.toISOString().split('T')[0]
     return dateIso;

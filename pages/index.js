@@ -30,7 +30,7 @@ class Home extends React.Component {
 
     let today = DateHelper.todayNasaFormat()
     let yesterday = DateHelper.nasaFormatMinusOne(today)
-
+    
     let url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${today}`
     let urlYesterday = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${yesterday}`
     try {
