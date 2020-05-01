@@ -1,7 +1,6 @@
-
-
 .container {
     position: fixed;
+    z-index: 10 !important;
     bottom: 0;
     right: 0;
     left: 0;

@@ -7,6 +7,8 @@ import Footer from '../../components/footer'
 import CardPod from '../../components/cards/pod'
 import Pagination from '../../components/pagination'
 
+import DataHelper from '../../helpers/date'
+
 class Home extends React.Component {
 
   constructor(props) {
@@ -36,7 +38,8 @@ class Home extends React.Component {
     let daysLeftEnd = 0
     if (ctx.query.p) {
       daysLeftEnd = count * ctx.query.p
-      daysLeftEnd = daysLeftEnd - (count + 1)
+      // daysLeftEnd = daysLeftEnd - (count + 1)
+      daysLeftEnd = daysLeftEnd - (count * 2)
     }
 
     let daysLeftStart = daysLeftEnd + count
@@ -45,8 +48,8 @@ class Home extends React.Component {
     let endDate = today.setDate(today.getDate() - daysLeftStart)
     let startDate = today.setDate(today.getDate() - count + 1)
 
-    let endDateFormeted = new Date(endDate).toISOString().split('T')[0]
-    let startDateFormeted = new Date(startDate).toISOString().split('T')[0]
+    let endDateFormeted = DataHelper.dateToNasaFormat(endDate)
+    let startDateFormeted = DataHelper.dateToNasaFormat(startDate)
 
     var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${startDateFormeted}&end_date=${endDateFormeted}`
 
@@ -54,7 +57,7 @@ class Home extends React.Component {
     if (req.status === 200) {
       return {
         error: false,
-        data: req.data,
+        data: req.data.reverse(),
         page: ctx.query.p
       }
     }

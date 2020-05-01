@@ -14,6 +14,9 @@ class Pod extends React.Component {
       <>
         <Link href={`/day/${this.props.pod.date}`}>
           <a className={styles.card}>
+            <div className={styles.date}>
+              {this.props.pod.date}
+            </div>
             <div className={styles.divimg}>
               {(this.props.pod.media_type === 'image') ?
                 <div>
@@ -28,7 +31,7 @@ class Pod extends React.Component {
               }
             </div>
             <div className={styles.name}>
-              {this.props.pod.title}
+              <p>{this.props.pod.title}</p>
             </div>
           </a>
         </ Link>

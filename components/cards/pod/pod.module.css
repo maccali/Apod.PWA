@@ -6,6 +6,8 @@
   margin-top: 18px;
   margin-bottom: 18px;
   border-radius: 10px;
+  margin-bottom: 120px;
+  border-radius: 10px 0 10px 0;
   -webkit-box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
   -moz-box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
   box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
@@ -23,9 +25,10 @@
 
 .divimg div span img{
   height: 270px;
-  border-radius: 10px;
+  border-radius: 10px 0 10px 0;
   object-fit: cover;
   width: inherit;
+  border: 1px solid rgba(148, 148, 148, 0.24);
 }
 
 .divimg iframe{
@@ -33,12 +36,16 @@
   width: inherit;
   height: 270px !important;
   border: none;
+  border-radius: 10px 0 10px 0;
   background-color: black;
+  border: 1px solid rgba(148, 148, 148, 0.24);
 }
 
 .divimg{
+  position: relative;
   width: 100%;
   height: 270px;
+  margin-top: -12px;
 }
 
 .divimg div{
@@ -46,12 +53,42 @@
 }
 
 .name{
-  font-size: 15px;
+  display: flex;
+  align-self: baseline;
+  z-index: 1000;
+  font-size: 14px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-bottom: -55px;
+  margin-top: -1px;
   height: 55px;
+  color: black;
+  border-radius: 0 25px 25px 25px;
+  padding-left: 15px;
+  padding-right: 15px;
   text-align: center;
-  color: #ffffffb5 !important;
+  /* background-color: #973BB3; */
+  /* background-color: #6192FF; */
+  background-color: #204DB3;
+  border: 1px solid black; 
+}
+
+.name p{
+  margin: 0;
+  align-self: center;
+}
+
+.date{
+  align-self: flex-end;
+  z-index: 10;
+  background-color: #FFD061;
+  margin-top: -20px;
+  padding: 5px 15px;
+  color: black;
+  font-weight: bold;
+  border-radius: 25px 25px 0 25px;
+  border: 1px solid black; 
+  -webkit-box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
+  -moz-box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
+  box-shadow: 0px 0px 33px -9px rgba(255,255,255,.5);
 }
