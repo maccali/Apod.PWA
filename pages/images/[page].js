@@ -91,12 +91,11 @@ class Home extends React.Component {
               {(error) ?
                 <div>Erro na Api, Heuston temos um problemas</div>
                 : data.map(pod =>
-                  <div className="col-12 col-md-4" key={pod.date}>
+                  <div className="col-12 col-sm-6 col-md-4" key={pod.date}>
                     <CardPod pod={pod} />
                   </div>
                 )
               }
-
             </div>
           </div>
         </div>
