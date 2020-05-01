@@ -1,6 +1,6 @@
 const DateHelper = {
 
-  dataValida: (date) => {
+  validDate: (date) => {
     var matches = /(\d{4})[-](\d{2})[-](\d{2})/.exec(date);
     if (matches == null) {
       return false;
@@ -10,6 +10,18 @@ const DateHelper = {
     var ano = matches[1];
     var data = new Date(ano, mes, dia);
     return data.getDate() == dia && data.getMonth() == mes && data.getFullYear() == ano;
+  },
+
+  validDateAndPast: (date) => {
+    let tDate = date;
+    if (DateHelper.validDate(date)) {
+      let arrDate = tDate.split('-')
+      let date = new Date(arrDate[0], arrDate[1] - 1, arrDate[2])
+      let today = new Date()
+      return (date < today)
+    } else {
+      return false;
+    }
   },
 
   dateToNasaFormat: (date) => {
@@ -25,7 +37,7 @@ const DateHelper = {
 
   nasaFormatMinusOne: (nasaDate) => {
     let arrDate = nasaDate.split('-')
-    let date = new Date(arrDate[0], arrDate[1] - 1 , arrDate[2])
+    let date = new Date(arrDate[0], arrDate[1] - 1, arrDate[2])
     date.setDate(date.getDate() - 1)
     let dateIso = date.toISOString().split('T')[0]
     return dateIso;

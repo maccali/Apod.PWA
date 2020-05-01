@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
 import DayContent from '../../components/content/day'
+import DateNotExist from '../../components/content/dateNotExist'
 
 import DateHelper from '../../helpers/date'
 
@@ -18,7 +19,7 @@ class Day extends React.Component {
 
   static async getInitialProps(ctx) {
 
-    if (DateHelper.dataValida(ctx.query.day)) {
+    if (DateHelper.validDateAndPast(ctx.query.day)) {
       const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
 
       var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${ctx.query.day}`
@@ -31,7 +32,6 @@ class Day extends React.Component {
         }
       }
     }
-
     return {
       dayData: null
     }
@@ -43,11 +43,15 @@ class Day extends React.Component {
 
     return <>
       <Nav />
-      <Head>
-        <title>Apod Day {dayData.date}</title>
-      </Head>
+      {(dayData) ?
+        <Head>
+          <title>Apod Day {dayData.date}</title>
+        </Head> : ''}
       <main>
-        <DayContent day={dayData}/>
+        {(dayData) ?
+          <DayContent day={dayData} />
+          : <DateNotExist />
+        }
       </main>
       <Footer />
     </>;

@@ -42,26 +42,3 @@ Error.getInitialProps = ({ res, err }) => {
 }
 
 export default Error
-
-// const Custom404 = () => (
-//   <>
-//     <Nav />
-//     <Head>
-//       <title>Azeit QRCode</title>
-//     </Head>
-//     <main>
-//       <div className="container-fluid bg-primary">
-//         <div className="container">
-//           <div className="row">
-//             <div className="col-12">
-//               <Card404 />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </main>
-//     <Footer />
-//   </>
-// )
-
-// export default Custom404
