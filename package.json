@@ -11,6 +11,7 @@
     "axios": "^0.19.2",
     "next": "9.3.4",
     "next-pwa": "^2.3.3",
+    "nextjs-progressbar": "^0.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-lazy-load-image-component": "^1.4.3",
