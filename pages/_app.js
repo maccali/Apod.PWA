@@ -8,3 +8,5 @@ import 'react-lazy-load-image-component/src/effects/opacity.css';
 export default function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
+
+
