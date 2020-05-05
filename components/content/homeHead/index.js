@@ -28,9 +28,6 @@ const HomeHead = () => (
             </Link>
           </div>
         </div>
-        <div className="col-12">
-          <hr className={styles.hrc} />
-        </div>
       </div>
     </div>
   </div>
