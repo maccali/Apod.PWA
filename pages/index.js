@@ -9,53 +9,46 @@ import DayContent from '../components/content/day'
 
 import DateHelper from '../helpers/date'
 
-export async function getServerSideProps(context) {
-
-  const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
-
-  let today = DateHelper.todayNasaFormat()
-  let yesterday = DateHelper.nasaFormatMinusOne(today)
-
-  let url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${today}`
-  let urlYesterday = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${yesterday}`
-  try {
-    let req = await axios.get(`${url}`)
-    return {
-      props: {
-        data: req.data,
-      }
-    }
-  } catch (error) {
-    let req = await axios.get(`${urlYesterday}`)
-    if (req.status === 200) {
-      return {
-        props: {
-          data: req.data,
-        }
-      }
-    } else {
-      return {
-        props: {
-          data: null,
-        }
-      }
-    }
-  }
-}
-
 class Home extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       podList: [],
-      querys: [],
       last: new Date()
     };
   }
 
+  async componentDidMount() {
+
+    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+  
+    let today = DateHelper.todayNasaFormat()
+    let yesterday = DateHelper.nasaFormatMinusOne(today)
+  
+    let url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${today}`
+    let urlYesterday = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${yesterday}`
+    try {
+      let req = await axios.get(`${url}`)
+      
+      this.setState({
+        podList: req.data
+      })
+    } catch (error) {
+      let req = await axios.get(`${urlYesterday}`)
+      if (req.status === 200) {
+        this.setState({
+          podList: req.data
+        })
+      } else {
+        this.setState({
+          podList: null
+        })
+      }
+    }
+  }
+  
   render() {
-    let { data } = this.props
     return <>
       <Nav />
       <Head>
@@ -63,7 +56,7 @@ class Home extends React.Component {
       </Head>
       <main>
         <HomeHead />
-        <DayContent day={data} />
+        <DayContent day={this.state.podList} />
       </main>
       <Footer />
     </>;
