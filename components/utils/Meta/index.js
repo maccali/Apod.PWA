@@ -20,6 +20,7 @@ function Meta() {
     <Head>
       <meta charSet='utf-8' />
       <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+      <meta name="google-site-verification" content="tgP0ATDYDrW4xJU6xZnp1T3Jp_PCfEmOmORqxvxQG8A" />
       <meta
         name="description"
         content={description}>
