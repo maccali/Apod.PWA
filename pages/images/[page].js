@@ -2,8 +2,8 @@ import React from 'react'
 import axios from 'axios'
 
 import Head from 'next/head'
-import Nav from '../../components/nav'
-import Footer from '../../components/footer'
+import Nav from '../../components/utils/nav'
+import Footer from '../../components/utils/footer'
 import CardPod from '../../components/cards/pod'
 import Pagination from '../../components/pagination'
 

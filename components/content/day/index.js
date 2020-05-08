@@ -15,7 +15,7 @@ const DayContent = ({ day }) => (
           <div className={styles.imgcont}>
             {(day.media_type === 'image') ?
               <img src={day.url} alt={day.title} />
-              : <iframe src={day.url} height="100%" alt={day.title} frameborder="0" allowfullscreen></iframe>
+              : <iframe src={day.url} height="100%" alt={day.title} frameBorder="0" allowFullScreen></iframe>
             }
           </div>
         </div>
