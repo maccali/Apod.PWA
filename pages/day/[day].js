@@ -69,18 +69,18 @@ class Day extends React.Component {
           </meta>
 
           {/* Open Grafh Tags */}
-          <meta property="og:title" content={titleCards} />
-          <meta property="og:description" content={descriptionCards} />
-          <meta property="og:url" content={link} />
+          <meta name="og:title" property="og:title" content={titleCards} />
+          <meta name="og:description" property="og:description" content={descriptionCards} />
+          <meta name="og:url" property="og:url" content={link} />
 
           {(media_type === 'image') ?
-            <meta property="og:image" content={url} />
-            : <meta property="og:video" content={url} />
+            <meta name="og:url" property="og:image" content={url} />
+            : <meta name="og:url" property="og:video" content={url} />
           }
 
           {(media_type === 'image') ?
-            <meta property="og:type" content="image" />
-            : <meta property="og:type" content="video" />
+            <meta name="og:url" property="og:type" content="image" />
+            : <meta name="og:url" property="og:type" content="video" />
           }
 
           {/* Twitter Tags */}

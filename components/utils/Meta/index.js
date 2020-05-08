@@ -24,12 +24,12 @@ const Meta = () => (
     <link rel="apple-touch-icon" href="/icons/icon192.png" />
 
     {/* Open Grafh Tags */}
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:site_name" content={siteName} />
-    <meta property="og:url" content="https://apod.maccali.now.sh" />
-    <meta property="og:image" content={imagemUrl} /> 
+    <meta name="og:type" property="og:type" content="website" />
+    <meta name="og:title" property="og:title" content={title} />
+    <meta name="og:description" property="og:description" content={description} />
+    <meta name="og:site_name" property="og:site_name" content={siteName} />
+    <meta name="og:url" property="og:url" content="https://apod.maccali.now.sh" />
+    <meta name="og:image" property="og:image" content={imagemUrl} /> 
 
     {/* Twitter Tags */}
     <meta name="twitter:card" content="summary" />
