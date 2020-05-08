@@ -73,15 +73,8 @@ class Day extends React.Component {
           <meta name="og:description" property="og:description" content={descriptionCards} />
           <meta name="og:url" property="og:url" content={link} />
 
-          {(media_type === 'image') ?
-            <meta name="og:image" property="og:image" content={url} />
-            : <meta name="og:video.episode" property="og:video.episode" content={url} />
-          }
-
-          {(media_type === 'image') ?
-            <meta name="og:type" property="og:type" content="image" />
-            : <meta name="og:type" property="og:type" content="video" />
-          }
+          <meta name={`og:${media_type}`} property={`og:${media_type}`} content={url} />
+          <meta name="og:type" property="og:type" content={media_type} />
 
           {/* Twitter Tags */}
           <meta name="twitter:title" content={titleCards} />
