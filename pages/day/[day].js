@@ -74,13 +74,13 @@ class Day extends React.Component {
           <meta name="og:url" property="og:url" content={link} />
 
           {(media_type === 'image') ?
-            <meta name="og:url" property="og:image" content={url} />
-            : <meta name="og:url" property="og:video" content={url} />
+            <meta name="og:image" property="og:image" content={url} />
+            : <meta name="og:video" property="og:video" content={url} />
           }
 
           {(media_type === 'image') ?
-            <meta name="og:url" property="og:type" content="image" />
-            : <meta name="og:url" property="og:type" content="video" />
+            <meta name="og:type" property="og:type" content="image" />
+            : <meta name="og:type" property="og:type" content="video" />
           }
 
           {/* Twitter Tags */}
