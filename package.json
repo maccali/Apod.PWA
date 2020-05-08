@@ -14,6 +14,7 @@
     "nextjs-progressbar": "^0.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-ga": "^2.7.0",
     "react-lazy-load-image-component": "^1.4.3",
     "react-render-html": "^0.6.0",
     "react-scroll": "^1.7.16",
