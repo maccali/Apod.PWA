@@ -75,7 +75,7 @@ class Day extends React.Component {
 
           {(media_type === 'image') ?
             <meta name="og:image" property="og:image" content={url} />
-            : <meta name="og:video" property="og:video" content={url} />
+            : <meta name="og:video.episode" property="og:video.episode" content={url} />
           }
 
           {(media_type === 'image') ?
