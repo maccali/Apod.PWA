@@ -28,6 +28,7 @@ const Meta = () => (
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={siteName} />
+    <meta property="og:url" content="https://apod.maccali.now.sh" />
     <meta property="og:image" content={imagemUrl} /> 
 
     {/* Twitter Tags */}
