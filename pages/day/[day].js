@@ -50,10 +50,9 @@ class Day extends React.Component {
       ${(copyright) ? `${copyright}, ` : ''}
       ${(explanation.length > 70) ? explanation.substring(0, 70) : explanation}
       `
-
     const descriptionCards = `
       ${(copyright) ? `${copyright}, ` : ''}
-      ${(explanation.length > 120) ? explanation.substring(0, 12) : explanation}
+      ${(explanation.length > 120) ? explanation.substring(0, 120) : explanation}
       `
     const creator = `NASA${(copyright) ? `, ${copyright}` : ''}`
     const link = can
