@@ -71,7 +71,10 @@ class Day extends React.Component {
           {/* Open Grafh Tags */}
           <meta property="og:title" content={titleCards} />
           <meta property="og:description" content={descriptionCards} />
-          <meta property="og:url" content={link} />
+
+          {(link) ?
+            <meta property="og:url" content={link} />
+            : ''}
 
           {(media_type === 'image') ?
             <meta property="og:image" content={url} />
