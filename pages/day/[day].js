@@ -28,7 +28,7 @@ class Day extends React.Component {
       if (req.status === 200) {
         console.log(req.data)
         var dayData = req.data
-        dayData.can = `https://${ctx.req.headers.host}${ctx.req.url}`
+        dayData.can = `https://${ctx.req.headers.host}`
         return {
           dayData
         }
@@ -69,8 +69,8 @@ class Day extends React.Component {
           </meta>
 
           {/* Open Grafh Tags */}
-          <meta name="og:title" property="og:title" content={titleCards} />
-          <meta name="og:description" property="og:description" content={descriptionCards} />
+          <meta property="og:title" content={titleCards} />
+          <meta property="og:description" content={descriptionCards} />
           <meta property="og:url" content={link} />
 
           {(media_type === 'image') ?
