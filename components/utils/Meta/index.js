@@ -29,7 +29,7 @@ const Meta = () => (
     <meta name="og:description" property="og:description" content={description} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:url" content="" />
-    {/* <meta property="og:image" content={imagemUrl} />  */}
+    <meta property="og:image" content={imagemUrl} /> 
 
     {/* Twitter Tags */}
     <meta name="twitter:card" content="summary" />
@@ -37,7 +37,7 @@ const Meta = () => (
     <meta name="twitter:description" content={description} />
     <meta name="twitter:site" content={siteName} />
     <meta name="twitter:creator" content="Guilherme Maccali" />
-    {/* <meta name="twitter:image" content={imagemUrl} />  */}
+    <meta name="twitter:image" content={imagemUrl} /> 
 
 
   </Head>
