@@ -4,7 +4,7 @@ import Head from 'next/head'
 const siteName = 'Apod Space'
 const title = 'Apod - Astronomy Picture of Day by Nasa'
 const description = 'Apod - Astronomy Picture of Day by Nasa, Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.'
-const imagemUrl = '/icons/icon512.png'
+const imagemUrl = '/imgs/social.png'
 
 const Meta = () => (
   <Head>
