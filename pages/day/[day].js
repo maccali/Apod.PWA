@@ -73,7 +73,7 @@ class Day extends React.Component {
           <meta name="og:description" property="og:description" content={descriptionCards} />
           <meta property="og:url" content={link} />
 
-          {(media_type === 'image') ?
+          {/* {(media_type === 'image') ?
             <meta property="og:image" content={url} />
             : <meta property="og:video" content={url} />
           }
@@ -81,7 +81,7 @@ class Day extends React.Component {
           {(media_type === 'image') ?
             <meta property="og:type" content="image" />
             : <meta property="og:type" content="video" />
-          }
+          } */}
 
           {/* Twitter Tags */}
           <meta name="twitter:title" content={titleCards} />
@@ -89,7 +89,7 @@ class Day extends React.Component {
           <meta name="twitter:creator" content={creator} />
 
 
-          {(media_type === 'image') ?
+          {/* {(media_type === 'image') ?
             <meta name="twitter:card" content="summary_large_image" />
             : <meta name="twitter:card" content="player" />
           }
@@ -97,7 +97,7 @@ class Day extends React.Component {
           {(media_type === 'image') ?
             <meta name="twitter:image" content={url} />
             : <meta name="twitter:player" content={url} />
-          }
+          } */}
         </Head> : ''}
       <main>
         {(dayData) ?
