@@ -10,10 +10,11 @@ const imagemUrl = '/imgs/social.png'
 function Meta() {
 
   useEffect(() => {
-    ReactGA.initialize('G-WWQJR7NCSR');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-    // console.log('Iniciei?')
-    // console.log(ReactGA)
+    if (window.location.hostname !== 'localhost') {
+      ReactGA.initialize('UA-158633079-2');
+      ReactGA.pageview(window.location.pathname + window.location.search);
+      console.log('sem')
+    }
   });
 
   return (
