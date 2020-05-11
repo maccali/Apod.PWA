@@ -24,20 +24,20 @@ const Nav = () => (
           </li>
         </ul>
         <ul className={styles.menu}>
-          <li>
+          {/* <li>
             <Link href="/favorites">
               <a className={styles.seta}>
                 <i className="far fa-heart"></i>
               </a>
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li> */}
             {/* <Link href="/images/1"> */}
-            <a className={styles.seta}>
-              <i className="far fa-calendar-alt"></i>
-            </a>
+            {/* <a className={styles.seta}> */}
+              {/* <i className="far fa-calendar-alt"></i> */}
+            {/* </a> */}
             {/* </Link> */}
-          </li>
+          {/* </li> */}
           <li>
             <Link href="/images/1">
               <a className={styles.seta}>
@@ -45,13 +45,13 @@ const Nav = () => (
               </a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/about">
               <a className={styles.seta}>
                 <i className="fas fa-info-circle"></i>
               </a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

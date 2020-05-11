@@ -11,10 +11,11 @@ export default function MyApp({ Component, pageProps }) {
   return <>
     {/* Other Custom Logic */}
     <NextNprogress
-      color="#FFD061"
-      startPosition="0.3"
-      stopDelayMs="200"
-      height="4"
+      color="#fff"
+      colorSecondary="#2c2c7b"
+      startPosition={0.3}
+      stopDelayMs={200}
+      height={5}
       options={{ easing: 'ease', speed: 500 }}
     />
     <Meta />
