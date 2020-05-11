@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
-import Meta from '../Meta'
+// import Offline from '../offline'
 import styles from './nav.module.css'
 
 const Nav = () => (
@@ -54,7 +54,10 @@ const Nav = () => (
           </li> */}
         </ul>
       </nav>
+      {/* <Offline /> */}
     </div>
+
+
   </div>
 )
 

@@ -29,19 +29,19 @@ class Day extends React.Component {
         console.log(req.data)
         var dayData = req.data
         dayData.can = `https://${ctx.req.headers.host}${ctx.req.url}`
+
         return {
-          dayData
+          dayData,
         }
       }
     }
     return {
-      dayData: null
+      dayData: null,
     }
-
   }
 
   render() {
-    let { dayData } = this.props
+    let { dayData, fallback } = this.props
     const { date, title, copyright, explanation, media_type, url, can } = dayData
     const titlePage = `Apod Day ${date}`
     const titleCards = `${date} - ${title}`
@@ -57,7 +57,7 @@ class Day extends React.Component {
     const creator = `NASA${(copyright) ? `, ${copyright}` : ''}`
     const link = can
 
-    console.log(dayData)
+
     return <>
       <Nav />
       {(dayData) ?

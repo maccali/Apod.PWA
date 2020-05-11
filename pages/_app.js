@@ -5,6 +5,7 @@ import 'react-lazy-load-image-component/src/effects/opacity.css';
 // import NextNprogress from 'nextjs-progressbar';
 import NextNprogress from '../components/utils/loader';
 import Meta from '../components/utils/Meta';
+import Offline from '../components/utils/offline'
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -18,6 +19,7 @@ export default function MyApp({ Component, pageProps }) {
       height={5}
       options={{ easing: 'ease', speed: 500 }}
     />
+    <Offline />
     <Meta />
     <Component {...pageProps} />
   </>
