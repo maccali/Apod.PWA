@@ -33,7 +33,7 @@ class Home extends React.Component {
     }
     const count = 6
     let today = new Date()
-    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+    const key = process.env.NASA_API_KEY
 
     let daysLeftEnd = 0
     if (ctx.query.p) {

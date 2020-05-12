@@ -20,7 +20,7 @@ class Day extends React.Component {
 
   static async getInitialProps(ctx) {
     if (DateHelper.validDateAndPast(ctx.query.day)) {
-      const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+      const key = process.env.NASA_API_KEY
 
       var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${ctx.query.day}`
 
