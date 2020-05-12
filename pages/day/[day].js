@@ -24,6 +24,7 @@ class Day extends React.Component {
 
       var url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${ctx.query.day}`
 
+      let req = await axios.get(`${url}`)
       if (req.status === 200) {
         console.log(req.data)
         var dayData = req.data
@@ -33,14 +34,14 @@ class Day extends React.Component {
           dayData,
         }
       }
-      return {
-        statusCode: 404
-      }
+    }
+    return {
+      dayData: null,
     }
   }
 
   render() {
-    let { dayData } = this.props
+    let { dayData, fallback } = this.props
     const { date, title, copyright, explanation, media_type, url, can } = dayData
     const titlePage = `Apod Day ${date}`
     const titleCards = `${date} - ${title}`
