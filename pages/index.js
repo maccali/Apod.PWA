@@ -23,7 +23,7 @@ class Home extends React.Component {
 
   async componentDidMount() {
 
-    const key = '8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM'
+    const key = process.env.NASA_API_KEY
 
     let today = DateHelper.todayNasaFormat()
     let yesterday = DateHelper.nasaFormatMinusOne(today)
