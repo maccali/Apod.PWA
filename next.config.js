@@ -13,5 +13,8 @@ module.exports = withPWA({
     config.plugins.push(new Dotenv({ silent: true }));
 
     return config;
-  }
+  },
+  env: {
+    NASA_API_KEY: process.env.NASA_API_KEY,
+  },
 })
