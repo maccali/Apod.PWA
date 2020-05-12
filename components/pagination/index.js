@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import NumberFormat from 'react-number-format';
 import styles from './pagination.module.css'
 
 class Pagination extends React.Component {
@@ -41,10 +42,11 @@ class Pagination extends React.Component {
           <div className={styles.line}>
             <div className={styles.divinput}>
               <label aria-label="Type a page">
-                <input
+                <NumberFormat
                   type="text"
                   value={this.state.value}
                   onChange={this.handleChange}
+                  decimalSeparator={false}
                 />
                 </label>
             </div>
