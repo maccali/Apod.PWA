@@ -1,12 +1,21 @@
 .container {
-  z-index: 10 !important;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: 100 !important;
   background-color: var(--primary-color);
+  margin: 0 !important;
+}
+
+.space{
+ height: 60px;
 }
 
 .nav{ 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: inherit;
   height: 60px;
 }
 
@@ -61,4 +70,118 @@
 
 .img img{
   height: 42px;
+}
+
+.contaside{
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  background-color: var(--primary-color);
+  color: #fff;
+  width: 0;
+  overflow: auto;
+  transition: all .20s;
+  border-left: none;
+}
+
+.contasideativado{
+  width: 320px !important;
+  border-left: dashed 1px #fff;
+}
+
+.contasidefix{
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+.headercont{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.headercont p{
+  display: flex;
+  color: white;
+  font-size: 20px;
+  margin: 0;
+}
+
+.headercont a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.headercont a:hover{
+  transform: scale(1.1);
+}
+
+.headercont a i{
+  font-size: 23px;
+  color: var(--primary-color);
+}
+
+.menulist{
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.menuitem{
+  display: flex;
+  align-items: center;
+  height: 42px;
+  transition: all .2s;
+}
+
+.menuitem:hover, .menuitem:focus{
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.menuitem span{
+  width: 50px;
+}
+
+.menuitem span i{
+  font-size: 20px;
+  color: white;
+}
+
+.menuitem p{
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+
+.cardmenu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cardmenu div img{
+  object-fit: cover; 
+  width: 100px;
+  height: 100px;
+}
+
+.cardmenu span{
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
 }
