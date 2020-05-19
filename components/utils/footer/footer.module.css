@@ -1,9 +1,9 @@
 .container {
-    position: absolute;
+    /* position: fixed; */
     z-index: 10 !important;
-    bottom: 0;
+    /* bottom: 0;
     right: 0;
-    left: 0;
+    left: 0; */
     border-top: 1px dashed whitesmoke;
     background-color: var(--primary-color);
 }
