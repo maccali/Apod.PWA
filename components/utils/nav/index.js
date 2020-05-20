@@ -10,6 +10,7 @@ function Nav() {
 
   useEffect(() => {
     (function () {
+      console.log(history.length);
       (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
     })()
   });
