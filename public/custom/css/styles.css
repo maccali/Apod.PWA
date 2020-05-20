@@ -72,3 +72,73 @@ h1{
   padding-left: 15px !important;
   padding-right: 15px !important;
 }
+
+.react-datepicker{
+  font-size: 15px !important;
+}
+
+.react-datepicker__header div:nth-child(0){
+  margin: 10px 0 !important;
+}
+
+.date-picker__custom-head{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.date-picker__custom-head button{
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  box-shadow: none;
+  border: solid 1px black;
+  color: black;
+  margin-left: 2px;
+  margin-right: 4px;
+}
+
+.date-picker__custom-head select{
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: solid 1px black;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 20px;
+}
+
+.react-datepicker__day-name{
+  display: inline-flex;
+  justify-content: center;
+  padding-top: 10px;
+  height: 40px !important;
+  width: 40px !important;
+  margin: 0 !important;
+}
+
+.react-datepicker__header div select option{
+  color: black
+}
+
+.react-datepicker__header div select{
+  color: black
+}
+
+.react-datepicker__day-name{
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.react-datepicker__day{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45px !important;
+  height: 40px !important;
+  width: 40px !important;
+  padding-top: 12px !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  padding-bottom: 3px !important;
+}
