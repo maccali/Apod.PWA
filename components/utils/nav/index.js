@@ -9,7 +9,11 @@ function Nav() {
   const [menuBack, setMenuBack] = useState(false);
 
   useEffect(() => {
-    (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
+    (function () {
+      console.log(history.length);
+      (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
+    })()
+
   });
 
   return (<>
