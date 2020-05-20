@@ -9,10 +9,13 @@ function Nav() {
   const [menuBack, setMenuBack] = useState(false);
 
   useEffect(() => {
-    (function () {
-      (history.length > 2) ? setMenuBack(true) : setMenuBack(false)
-    })()
-
+    if (!mounted.current) {
+      mounted.current = true;
+    } else {
+      (function () {
+        (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
+      })()
+    }
   });
 
   return (<>
