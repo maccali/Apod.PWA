@@ -1,6 +1,9 @@
 .cont{
   display: flex;
-  height: calc(100vh - 95px);
+  flex-direction: column;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  /* height: calc(100vh - 95px); */
   justify-content: center;
   align-items: center;
 }

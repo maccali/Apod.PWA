@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
+import Link from 'next/link'
 import DatePicker from 'react-datepicker'
 import UtilHelper from '../../../helpers/util'
+import DateHelper from '../../../helpers/date'
 import styles from './calendar.module.css'
 
 
@@ -26,20 +28,24 @@ function CalendarContent() {
     "December"
   ];
 
-  function redirect(){
-    console.log('CLICKEI PORRA')
-    console.log(startDate)
+  function redirect() {
+    let nasaDate = DateHelper.dateToNasaFormat(startDate)
+    let link = `/day/${nasaDate}`
+    Router.push(link)
   }
 
+  useEffect(() => {
+  })
+
   return (
-    <div className="container-fluid bg-primary">
+    <div className="container-fluid">
       <div className="container ped-lr">
         <div className="row">
           <div className="col-12">
             <div className={styles.cont}>
               <DatePicker
                 selected={startDate}
-                onChange={date => setStartDate(date)}
+                onChange={startDate => setStartDate(startDate)}
                 minDate={new Date(1996, 6, 16)}
                 maxDate={new Date()}
                 showDisabledMonthNavigation={true}
@@ -58,8 +64,10 @@ function CalendarContent() {
                         {"<"}
                       </button>
                       <select
-                        value={date.getYear()}
+                        value={date.getFullYear()}
+                        className="decorated"
                         onChange={({ target: { value } }) => changeYear(value)}
+                        data-size="2"
                       >
                         {years.map(option => (
                           <option key={option} value={option}>
@@ -70,9 +78,11 @@ function CalendarContent() {
 
                       <select
                         value={months[date.getMonth()]}
+                        className="decorated"
                         onChange={({ target: { value } }) =>
                           changeMonth(months.indexOf(value))
                         }
+                        data-size="2"
                       >
                         {months.map(option => (
                           <option key={option} value={option}>
@@ -87,8 +97,11 @@ function CalendarContent() {
                     </div>
                   )}
               />
-              <a onClick={() => redirect()}>dsfsdfs
-              </a>
+              <div className="btn-custom">
+                <a onClick={() => redirect()}>
+                  Go to date
+                </a>
+              </div>
             </div>
           </div>
         </div>

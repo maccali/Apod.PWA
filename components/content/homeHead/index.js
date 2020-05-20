@@ -20,7 +20,7 @@ const HomeHead = () => (
           </div>
         </div>
         <div className="col-12">
-          <div className={styles.btn}>
+          <div className="btn-custom">
             <Link href="/images/1">
               <a>
                 Discover the cosmos!

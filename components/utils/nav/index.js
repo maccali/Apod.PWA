@@ -10,7 +10,6 @@ function Nav() {
 
   useEffect(() => {
     (function () {
-      console.log(history.length);
       (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
     })()
   });
@@ -30,7 +29,6 @@ function Nav() {
               <div className={styles.img}>
                 <Link href="/">
                   <a className={styles.seta}>
-                    {/* TUDO: gerar imagem com transparência */}
                     <img src="/icons/icon48t.png" alt="Site Logo" />
                   </a>
                 </Link>
@@ -45,11 +43,11 @@ function Nav() {
                 </a>
               </Link>
             </li>
-            {/* <ul className={styles.menu}>
+            <ul className={styles.menu}>
               <li>
                 <a onClick={() => setMenuActive(!menuActive)} className={styles.seta}><i className="fas fa-ellipsis-v"></i></a>
               </li>
-            </ul> */}
+            </ul>
           </ul>
         </nav>
         <div className={(menuActive) ? `${styles.contaside} ${styles.contasideativado}` : styles.contaside}>
@@ -70,12 +68,12 @@ function Nav() {
               <Link href="/calendar">
                 <a className={styles.menuitem}><span><i className="far fa-calendar-alt"></i></span><p>Calendar</p></a>
               </Link>
-              <Link href="/favorites">
+              {/* <Link href="/favorites">
                 <a className={styles.menuitem}><span><i className="far fa-heart"></i></span><p>Favorites</p></a>
-              </Link>
-              <Link href="/about">
+              </Link> */}
+              {/* <Link href="/about">
                 <a className={styles.menuitem}><span><i className="fas fa-info-circle"></i></span><p>About</p></a>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

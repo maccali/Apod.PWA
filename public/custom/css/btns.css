@@ -1,0 +1,22 @@
+.btn-custom{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-custom a{
+  margin-top: 15px;
+  margin-bottom: 40px;
+  padding: 15px 25px;
+  background-color: #FFD061;
+  border-radius: 45px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .24s;
+}
+
+.btn-custom a:hover{
+  transform: scale(1.1);
+  color: black;
+}
+

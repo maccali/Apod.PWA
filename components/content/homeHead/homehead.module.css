@@ -3,28 +3,6 @@
   text-align: center;
 }
 
-.btn{
-  display: flex;
-  justify-content: center;
-}
-
-.btn a{
-  margin-top: 15px;
-  margin-bottom: 40px;
-  padding: 15px 25px;
-  background-color: #FFD061;
-  border-radius: 45px;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all .24s;
-}
-
-.btn a:hover{
-  transform: scale(1.1);
-  color: black;
-}
-
 .text{
   display: flex;
   justify-content: center;

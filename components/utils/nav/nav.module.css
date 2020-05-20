@@ -82,6 +82,7 @@
   overflow: auto;
   transition: all .20s;
   border-left: none;
+  overflow: hidden;
 }
 
 .contasideativado{

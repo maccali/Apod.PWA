@@ -1,9 +1,16 @@
+// External Libs
 import '../public/libs/bootstrap/bootstrap.min.css'
 import '../public/libs/fontawesome/css/all.min.css'
-import '../public/custom/css/styles.css'
+
+// Custom styles
+import '../public/custom/css/template.css'
+import '../public/custom/css/datepicker.css'
+import '../public/custom/css/btns.css'
+
+// External Components
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
-// import NextNprogress from 'nextjs-progressbar';
+
 import NextNprogress from '../components/utils/loader';
 import Meta from '../components/utils/Meta';
 import Offline from '../components/utils/offline'

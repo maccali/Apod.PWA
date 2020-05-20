@@ -1,0 +1,109 @@
+.react-datepicker{
+  font-size: 15px !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.react-datepicker__header div:nth-child(0){
+  margin: 10px 0 !important;
+}
+
+.date-picker__custom-head{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.date-picker__custom-head button{
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  box-shadow: none;
+  border: solid 2px var(--primary-color) !important;
+  background-color: transparent !important;
+  color: white;
+  margin-left: 2px;
+  margin-right: 4px;
+}
+.date-picker__custom-head select::after{
+  content: '-' !important;
+}
+
+.date-picker__custom-head select{
+  height: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: solid 2px var(--primary-color) !important;
+}
+
+.react-datepicker__day{
+  color: white !important;
+}
+
+.react-datepicker__day--disabled{
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.react-datepicker__day--selected{
+  background-color: var(--primary-color-var) !important;
+}
+
+.react-datepicker__day-name{
+  display: inline-flex;
+  justify-content: center;
+  padding-top: 10px;
+  height: 40px !important;
+  width: 40px !important;
+  margin: 0 !important;
+  color: white !important
+}
+
+.react-datepicker__header{
+  background-color: transparent !important;
+  border-bottom: 2px solid var(--primary-color) !important;
+
+}
+
+select.decorated option{
+  display: flex;
+  height: 40px;
+  text-align: center;
+  color: white;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  background-color: var(--primary-color) !important;
+}
+
+select.decorated{
+  color: white;
+  overflow: hidden;
+  background-color: transparent !important;
+}
+
+.react-datepicker__day:hover{
+  background-color: var(--primary-color) !important;
+}
+
+.react-datepicker__day-name{
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.react-datepicker__day{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45px !important;
+  height: 40px !important;
+  width: 40px !important;
+  padding-top: 12px !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  padding-bottom: 3px !important;
+}
