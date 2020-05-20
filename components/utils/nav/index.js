@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
 import styles from './nav.module.css'
@@ -6,6 +6,11 @@ import styles from './nav.module.css'
 function Nav() {
 
   const [menuActive, setMenuActive] = useState(0);
+  const [menuBack, setMenuBack] = useState(false);
+
+  useEffect(() => {
+    (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
+  });
 
   return (<>
     <div className="container-fluid" className={styles.cont}>
@@ -13,16 +18,18 @@ function Nav() {
 
         <nav className={styles.nav}>
           <ul className={styles.menu}>
-            <li>
-              <a onClick={() => Router.back()} className={styles.seta}><i className="fas fa-arrow-left"></i></a>
-            </li>
+            {menuBack ?
+              <li>
+                <a onClick={() => Router.back()} className={styles.seta}><i className="fas fa-arrow-left"></i></a>
+              </li>
+              : ''}
             <li>
               <div className={styles.img}>
                 <Link href="/">
-                  {/* <a className={styles.seta}> */}
-                  {/* TUDO: gerar imagem com transparência */}
-                  <img src="/icons/icon48.png" alt="Site Logo" />
-                  {/* </a> */}
+                  <a className={styles.seta}>
+                    {/* TUDO: gerar imagem com transparência */}
+                    <img src="/icons/icon48t.png" alt="Site Logo" />
+                  </a>
                 </Link>
               </div>
             </li>
