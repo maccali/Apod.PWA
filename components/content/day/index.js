@@ -34,6 +34,15 @@ const DayContent = ({ day }) => (
             {day.explanation}
           </p>
         </div>
+        <div className="col-12">
+          {(day.hdurl) ?
+            <div className="btn-custom">
+              <a target="_blank" href={`${day.hdurl}`}>
+                See image in high quality
+                </a>
+            </div>
+            : ''}
+        </div>
       </div>
     </div>
   </div>
