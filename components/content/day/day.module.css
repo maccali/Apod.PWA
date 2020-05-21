@@ -18,7 +18,7 @@
 }
 
 .copyright{
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 5px;
   font-size: 16px;
 }
@@ -45,6 +45,12 @@
 
 .imgcont iframe{
   height: 300px
+}
+
+.socialcont{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 @media only screen and (min-width: 500px) {
