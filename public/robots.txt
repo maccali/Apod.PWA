@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Allow: /sitemap.htm
-Sitemap: https://apod.maccali.now.sh/sitemap.xml
+Sitemap: https://apod.pictu.one/sitemap.xml
