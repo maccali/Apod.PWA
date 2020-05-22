@@ -3,31 +3,33 @@ import styles from './social.module.css'
 
 import ShareLinks from '../../../models/shareLinks'
 
-const Social = ({ link }) => (
-  <>
-    <div className={styles.card}>
-      <a target="_blank" href={`${ShareLinks.facebook}${link}`}>
-        <i className="fab fa-facebook"></i>
-      </a>
-      <a target="_blank" href={`${ShareLinks.twitter}${link}`}>
-        <i class="fab fa-twitter"></i>
-      </a>
-    </div>
-    <button
-      className='myWonderfulButton'
-      onClick={
-        () => {
-          navigator.share({
-            title: 'Share',
-            text: 'whatevs',
-            url: 'https://apod.pictu.one'
-          }
-          )
-        }
-      }>
-      Compartilhar
-</button>
-  </>
-)
+function Social({ title, text, url }) {
+
+  share: () => {
+    navigator.share({
+      title, text, url
+    })
+  }
+
+  return (
+    <>
+      {(navigator.share === undefined) ?
+        <div className={styles.card}>
+          <a target="_blank" href={`${ShareLinks.facebook}${url}`}>
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a target="_blank" href={`${ShareLinks.twitter}${url}`}>
+            <i className="fab fa-twitter"></i>
+          </a>
+        </div>
+        : <div className={styles.card}>
+          <a onClick={() => share()}>
+            <i className="fas fa-share-alt"></i>
+          </a>
+        </div>
+      }
+    </>
+  )
+}
 
 export default Social

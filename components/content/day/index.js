@@ -7,10 +7,10 @@ import Social from '../../cards/social'
 
 function DayContent({ day }) {
 
-  const [link, setLink] = useState('');
+  const [url, setUrl] = useState('');
 
   useEffect(() => {
-    setLink(window.location.href)
+    setUrl(window.location.href)
   });
 
   return (
@@ -33,8 +33,8 @@ function DayContent({ day }) {
           </div>
           <div className="col-12">
             <div className={styles.socialcont}>
-              {(link !== '') ?
-                <Social link={`${link}`} />
+              {(url !== '') ?
+                <Social title={`ApodSpace`} text={`${day.title}`} url={`${url}`} />
                 : ''}
             </div>
           </div>
