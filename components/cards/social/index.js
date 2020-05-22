@@ -5,7 +5,8 @@ import ShareLinks from '../../../models/shareLinks'
 
 function Social({ title, text, url }) {
 
-  share: () => {
+  function share() {
+    console.log(title, text, url)
     navigator.share({
       title, text, url
     })
