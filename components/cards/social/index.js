@@ -13,6 +13,20 @@ const Social = ({ link }) => (
         <i class="fab fa-twitter"></i>
       </a>
     </div>
+    <button
+      className='myWonderfulButton'
+      onClick={
+        () => {
+          navigator.share({
+            title: 'Share',
+            text: 'whatevs',
+            url: 'https://apod.pictu.one'
+          }
+          )
+        }
+      }>
+      Compartilhar
+</button>
   </>
 )
 
