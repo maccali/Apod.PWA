@@ -91,12 +91,12 @@
 > * <b>Today`s Picture</b> Home page
 > * <b>Pagination</b> 6 and 6 days, and select specific page
 > * <b>Visualize day</b> Visualize image and Videos
+> * <b>Calendar</b> Select especific day on calendar
 > ---
 
 ### In Develop
 > ---
 > * <b>About</b> Page about project
-> * <b>Calendar</b> Select especific day on calendar
 > * <b>Favorite Days</b> Select Favorite
 > ---
 
