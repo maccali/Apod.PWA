@@ -13,19 +13,15 @@ function Meta() {
     if (window.location.hostname !== 'localhost') {
       ReactGA.initialize('UA-158633079-2');
       ReactGA.pageview(window.location.pathname + window.location.search);
-      console.log('sem')
     }
   });
 
   return (
     <Head>
       <meta charSet='utf-8' />
-      <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+      <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name="google-site-verification" content="imEmJjnY8LRB_gCyQpOHG1E6dLgt7_SySHboWMsERho" />
-      <meta
-        name="description"
-        content={description}>
-      </meta>
+      <meta name="description" content={description}></meta>
       <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5" />
       <meta name="theme-color" content="#2c2c7b"></meta>
 
@@ -34,6 +30,8 @@ function Meta() {
 
       {/* Apple Tags*/}
       <link rel="apple-touch-icon" href="/icons/icon192.png" />
+      <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+      <meta name="apple-mobile-web-app-status-bar-style" content="black"></meta>
 
       {/* Open Grafh Tags */}
       <meta name="og:type" property="og:type" content="website" />
@@ -50,7 +48,6 @@ function Meta() {
       <meta name="twitter:site" content={siteName} />
       <meta name="twitter:creator" content="Guilherme Maccali" />
       <meta name="twitter:image" content={imagemUrl} />
-
 
     </Head>
   );
