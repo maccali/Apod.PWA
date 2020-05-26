@@ -1,0 +1,17 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img{
+  width: 150px;
+  height: 143px;
+  margin-bottom: 20px;
+}
+
+.title{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}

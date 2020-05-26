@@ -1,14 +1,14 @@
 import React from 'react'
 // import { css } from "@emotion/core";
-import CircleLoader from "react-spinners/CircleLoader";
+import MoonLoader from "react-spinners/MoonLoader";
 import styles from './spinner.module.css'
 
 
 const Spinner = () => (
   <div className={styles.cont}>
-    <CircleLoader
+    <MoonLoader
       // css={override}
-      size={222}
+      size={150}
       color={"#fff"}
       loading={true}
     />

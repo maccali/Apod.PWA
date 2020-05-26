@@ -7,6 +7,7 @@ import Footer from '../components/utils/footer'
 import HomeHead from '../components/content/homeHead'
 import DayContent from '../components/content/day'
 import SpinnerCard from '../components/cards/spinner'
+import Error from '../components/utils/error'
 
 import DateHelper from '../helpers/date'
 
@@ -17,11 +18,18 @@ class Home extends React.Component {
     this.state = {
       podList: [],
       loading: true,
-      last: new Date()
+      last: new Date(),
+      error: false,
+      errorMessage: "An error occurred while fetching an image"
     };
   }
 
-  async componentDidMount() {
+  async getData() {
+
+    this.setState({
+      loading: true,
+      error: false
+    })
 
     const key = process.env.NASA_API_KEY
 
@@ -32,7 +40,6 @@ class Home extends React.Component {
     let urlYesterday = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${yesterday}`
     try {
       let req = await axios.get(`${url}`)
-
       this.setState({
         podList: req.data,
         loading: false
@@ -45,12 +52,16 @@ class Home extends React.Component {
           loading: false
         })
       } else {
-        console.log("ERRO")
         this.setState({
-          podList: null
+          podList: null,
+          error: true
         })
       }
     }
+  }
+
+  async componentDidMount() {
+    this.getData()
   }
 
   render() {
@@ -58,13 +69,12 @@ class Home extends React.Component {
       <Nav />
       <Head>
         <title>Apod - Space</title>
-
       </Head>
       <main>
         <HomeHead />
         {this.state.loading ?
-          <SpinnerCard/>
-          : <DayContent day={this.state.podList} />
+          <SpinnerCard />
+          : this.state.error ? <Error message={this.state.errorMessage} reload={() => this.getData()}reload={() => this.getData()} /> : < DayContent day={this.state.podList} />
         }
       </main>
       <Footer />
