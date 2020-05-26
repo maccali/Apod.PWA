@@ -19,12 +19,25 @@
   width: 35px;
   border-radius: 20px;
   box-shadow: none;
-  border: solid 2px var(--primary-color) !important;
+  border: 0 !important;
+  -webkit-box-shadow: 0px 0px 0px 2px var(--primary-color);
+  -moz-box-shadow: 0px 0px 0px 2px var(--primary-color);
+  box-shadow: 0px 0px 0px 2px var(--primary-color);
   background-color: transparent !important;
   color: white;
   margin-left: 2px;
   margin-right: 4px;
+  transition: all .2s;
 }
+
+.date-picker__custom-head button:focus{
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  -moz-box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  transform: scale(1.1);
+  outline: 0;
+}
+
 .date-picker__custom-head select::after{
   content: '-' !important;
 }
@@ -33,13 +46,25 @@
   height: 35px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 20px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: solid 2px var(--primary-color) !important;
+  border: 0 !important;
+  -webkit-box-shadow: 0px 0px 0px 2px var(--primary-color);
+  -moz-box-shadow: 0px 0px 0px 2px var(--primary-color);
+  box-shadow: 0px 0px 0px 2px var(--primary-color);
+  transition: all .2s;
+}
+
+.date-picker__custom-head select:focus{
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  -moz-box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  transform: scale(1.05);
+  outline: 0;
 }
 
 .react-datepicker__day{
@@ -52,6 +77,15 @@
 
 .react-datepicker__day--selected{
   background-color: var(--primary-color-var) !important;
+  transition: all .2s;
+}
+
+.react-datepicker__day--selected{
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  -moz-box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  box-shadow: 0px 0px 0px 2px rgba(255,208,97,1);
+  transform: scale(1.05);
+  outline: 0;
 }
 
 .react-datepicker__day-name{
@@ -102,7 +136,7 @@ select.decorated{
   border-radius: 45px !important;
   height: 40px !important;
   width: 40px !important;
-  padding-top: 12px !important;
+  padding-top: 11px !important;
   padding-left: 3px !important;
   padding-right: 3px !important;
   padding-bottom: 3px !important;

@@ -61,7 +61,7 @@ function CalendarContent() {
                 }) => (
                     <div className="date-picker__custom-head">
                       <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                        {"<"}
+                        <i className="fas fa-chevron-left"></i>
                       </button>
                       <select
                         value={date.getFullYear()}
@@ -92,7 +92,7 @@ function CalendarContent() {
                       </select>
 
                       <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-                        {">"}
+                        <i className="fas fa-chevron-right"></i>
                       </button>
                     </div>
                   )}
