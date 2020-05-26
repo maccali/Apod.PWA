@@ -40,7 +40,7 @@ function Meta() {
       <meta name="og:title" property="og:title" content={title} />
       <meta name="og:description" property="og:description" content={description} />
       <meta name="og:site_name" property="og:site_name" content={siteName} />
-      <meta name="og:url" property="og:url" content="https://apod.maccali.now.sh" />
+      <meta name="og:url" property="og:url" content="https://apod.pictu.one" />
       <meta name="og:image" property="og:image" content={imagemUrl} />
 
       {/* Twitter Tags */}
