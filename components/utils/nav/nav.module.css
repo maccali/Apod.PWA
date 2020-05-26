@@ -86,14 +86,14 @@
 }
 
 .contasideativado{
-  width: 320px !important;
+  width: 300px !important;
   border-left: dashed 1px #fff;
 }
 
 .contasidefix{
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 300px;
 }
 
 .headercont{
