@@ -60,7 +60,7 @@ function Nav() {
             </div>
             <div className={styles.cardmenu}>
               <div>
-                <img src="/icons/icon96.png" alt="Foto do Perfil" />
+                <img src="/icons/icon126t.png" alt="Foto do Perfil" />
               </div>
               <span>Apod Space</span>
             </div>

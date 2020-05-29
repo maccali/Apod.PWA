@@ -25,11 +25,11 @@ function Meta() {
       <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5" />
       <meta name="theme-color" content="#2c2c7b"></meta>
 
-      <link rel='manifest' href='/manifest.json?v=4' />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel='manifest' href='/manifest.json?v=5' />
+      <link rel="icon" href="/favicon.ico?v=2" />
 
       {/* Apple Tags*/}
-      <link rel="apple-touch-icon" href="/icons/icon192.png" />
+      <link rel="apple-touch-icon" href="/icons/icon192.png?v2" />
       <meta name="apple-mobile-web-app-capable" content="yes"></meta>
       <meta name="apple-mobile-web-app-status-bar-style" content="black"></meta>
 
