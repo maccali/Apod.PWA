@@ -22,13 +22,13 @@ function Nav() {
           <ul className={styles.menu}>
             {menuBack ?
               <li>
-                <a onClick={() => Router.back()} className={styles.seta}><i className="fas fa-arrow-left"></i></a>
+                <a onClick={() => Router.back()} className={styles.seta} aria-label="Back Page"><i className="fas fa-arrow-left"></i></a>
               </li>
               : ''}
             <li>
               <div className={styles.img}>
                 <Link href="/">
-                  <a className={styles.seta}>
+                  <a className={styles.seta} aria-label="App Home">
                     <img src="/icons/icon48t.png" alt="Site Logo" />
                   </a>
                 </Link>
@@ -38,14 +38,14 @@ function Nav() {
           <ul className={styles.menu}>
             <li>
               <Link href="/images/1">
-                <a className={styles.seta}>
+                <a className={styles.seta} aria-label="List of Days">
                   <i className="fas fa-list-ul"></i>
                 </a>
               </Link>
             </li>
             <ul className={styles.menu}>
               <li>
-                <a onClick={() => setMenuActive(!menuActive)} className={styles.seta}><i className="fas fa-ellipsis-v"></i></a>
+                <a onClick={() => setMenuActive(!menuActive)} className={styles.seta} aria-label="Open Menu"><i className="fas fa-ellipsis-v"></i></a>
               </li>
             </ul>
           </ul>
@@ -54,7 +54,7 @@ function Nav() {
           <div className={styles.contasidefix}>
             <div className={styles.headercont}>
               <p>Menu</p>
-              <a onClick={() => setMenuActive(!menuActive)}>
+              <a onClick={() => setMenuActive(!menuActive)} aria-label="Close Menu">
                 <i className="fas fa-times"></i>
               </a>
             </div>
@@ -66,7 +66,7 @@ function Nav() {
             </div>
             <div className={styles.menulist}>
               <Link href="/calendar">
-                <a className={styles.menuitem}><span><i className="far fa-calendar-alt"></i></span><p>Calendar</p></a>
+                <a className={styles.menuitem} aria-label="Calendar Button"><span><i className="far fa-calendar-alt"></i></span><p>Calendar</p></a>
               </Link>
               {/* <Link href="/favorites">
                 <a className={styles.menuitem}><span><i className="far fa-heart"></i></span><p>Favorites</p></a>

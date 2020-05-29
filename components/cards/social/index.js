@@ -16,10 +16,10 @@ function Social({ title, text, url }) {
     <>
       {(navigator.share === undefined) ?
         <div className={styles.card}>
-          <a target="_blank" href={`${ShareLinks.facebook}${url}`}>
+          <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.facebook}${url}`}>
             <i className="fab fa-facebook"></i>
           </a>
-          <a target="_blank" href={`${ShareLinks.twitter}${url}`}>
+          <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.twitter}${url}`}>
             <i className="fab fa-twitter"></i>
           </a>
         </div>
