@@ -56,7 +56,7 @@ function DayContent({ day }) {
           <div className="col-12">
             {(day.hdurl) ?
               <div className="btn-custom">
-                <a target="_blank" href={`${day.hdurl}`}>
+                <a target="_blank" rel="noopener noreferrer" href={`${day.hdurl}`}>
                   See image in high quality
                 </a>
               </div>

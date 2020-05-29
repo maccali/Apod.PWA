@@ -29,7 +29,7 @@ function Nav() {
               <div className={styles.img}>
                 <Link href="/">
                   <a className={styles.seta} aria-label="App Home">
-                    <img src="/icons/icon48t.png" alt="Site Logo" />
+                    <img src="/icons/icon126t.png" alt="Site Logo" />
                   </a>
                 </Link>
               </div>
