@@ -25,7 +25,7 @@ function Meta() {
       <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5" />
       <meta name="theme-color" content="#2c2c7b"></meta>
 
-      <link rel='manifest' href='/manifest.json?v=3' />
+      <link rel='manifest' href='/manifest.json?v=4' />
       <link rel="icon" href="/favicon.ico" />
 
       {/* Apple Tags*/}
