@@ -26,7 +26,7 @@ function Meta() {
       <meta name="theme-color" content="#2c2c7b"></meta>
 
       <link rel='manifest' href='/manifest.json?v=5' />
-      <link rel="icon" href="/favicon.ico?v=2" />
+      <link rel="icon" href="/favicon.ico?v=5" />
 
       {/* Apple Tags*/}
       <link rel="apple-touch-icon" href="/icons/icon192.png?v2" />
