@@ -8,7 +8,7 @@ const Spinner = () => (
   <div className={styles.cont}>
     <MoonLoader
       // css={override}
-      size={150}
+      size={120}
       color={"#fff"}
       loading={true}
     />
