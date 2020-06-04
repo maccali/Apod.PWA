@@ -87,7 +87,7 @@ function Nav() {
               <div>
                 <img src="/icons/icon126t.png" alt="Foto do Perfil" />
               </div>
-              <span>Apod Space</span>
+              <span>Apod Pictu</span>
             </div>
             <div className={styles.menulist}>
               <Link href="/calendar">

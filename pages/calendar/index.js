@@ -18,7 +18,7 @@ class Calendar extends React.Component {
     return <>
       <Nav />
       <Head>
-        <title>ApodSpace | Calendar</title>
+        <title>Apod Pictu Calendar</title>
       </Head>
       <main>
         <CalendarContent />

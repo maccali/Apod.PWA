@@ -68,7 +68,7 @@ class Home extends React.Component {
     return <>
       <Nav />
       <Head>
-        <title>Apod - Space</title>
+        <title>Apod Pictu</title>
       </Head>
       <main>
         <HomeHead />

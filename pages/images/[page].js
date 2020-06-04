@@ -82,7 +82,7 @@ class Home extends React.Component {
     return <>
       <Nav />
       <Head>
-        <title>Apod - Space</title>
+        <title>Apod Pictu Images</title>
       </Head>
       <main>
         <div className="container-fluid bg-primary">
