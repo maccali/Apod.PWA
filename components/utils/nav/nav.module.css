@@ -149,6 +149,7 @@
 .menuitem:hover, .menuitem:focus{
   transform: scale(1.05);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .menuitem span{
