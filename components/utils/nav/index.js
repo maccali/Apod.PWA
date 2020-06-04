@@ -7,17 +7,42 @@ function Nav() {
 
   const [menuActive, setMenuActive] = useState(0);
   const [menuBack, setMenuBack] = useState(false);
+  const [installBtn, setInstallBtn] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState();
 
   useEffect(() => {
     (function () {
       (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('lis')
+        // Prevent the mini-infobar from appearing on mobile
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        setDeferredPrompt(e);
+        // Update UI notify the user they can install the PWA
+        // showInstallPromotion();
+        setInstallBtn(true)
+      });
     })()
   });
+
+  function install() {
+    setInstallBtn(false)
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        setInstallBtn(false)
+      } else {
+        setInstallBtn(true)
+      }
+    });
+  }
 
   return (<>
     <div className="container-fluid" className={styles.cont}>
       <div className="container" >
-
         <nav className={styles.nav}>
           <ul className={styles.menu}>
             {menuBack ?
@@ -74,6 +99,10 @@ function Nav() {
               {/* <Link href="/about">
                 <a className={styles.menuitem}><span><i className="fas fa-info-circle"></i></span><p>About</p></a>
               </Link> */}
+              {installBtn ?
+                <a onClick={() => install()} className={styles.menuitem}><span><i class="far fa-arrow-alt-circle-down"></i></span><p>Install App</p></a>
+                : ''}
+
             </div>
           </div>
         </div>
