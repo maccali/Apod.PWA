@@ -54,7 +54,8 @@ class Home extends React.Component {
       } else {
         this.setState({
           podList: null,
-          error: true
+          error: true,
+          loading: false
         })
       }
     }
