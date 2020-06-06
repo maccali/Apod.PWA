@@ -15,7 +15,6 @@ function Nav() {
       (history.length > 1) ? setMenuBack(true) : setMenuBack(false)
 
       window.addEventListener('beforeinstallprompt', (e) => {
-        console.log('lis')
         // Prevent the mini-infobar from appearing on mobile
         e.preventDefault();
         // Stash the event so it can be triggered later.

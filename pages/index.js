@@ -16,11 +16,11 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      podList: [],
+      day: null,
       loading: true,
       last: new Date(),
       error: false,
-      errorMessage: "An error occurred while fetching an image"
+      errorMessage: "An error occurred while fetching an image",
     };
   }
 
@@ -31,34 +31,32 @@ class Home extends React.Component {
       error: false
     })
 
-    const key = process.env.NASA_API_KEY
-
     let today = DateHelper.todayNasaFormat()
-    let yesterday = DateHelper.nasaFormatMinusOne(today)
 
-    let url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${today}`
-    let urlYesterday = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${yesterday}`
-    try {
-      let req = await axios.get(`${url}`)
-      this.setState({
-        podList: req.data,
-        loading: false
-      })
-    } catch (error) {
-      let req = await axios.get(`${urlYesterday}`)
-      if (req.status === 200) {
-        this.setState({
-          podList: req.data,
-          loading: false
-        })
-      } else {
-        this.setState({
-          podList: null,
-          error: true,
-          loading: false
-        })
+    var arrUrls = DateHelper.dayUrlsCombine(today, 3)
+    var arrDayDate = await DateHelper.getDaysData(arrUrls)
+
+    this.setState({
+      datas: arrDayDate
+    })
+
+    console.log(this.state.datas[1])
+    console.log(this.state.datas[1].order)
+    console.log(this.state.datas[1].url)
+    console.log(this.state.datas[1].day)
+
+    this.state.datas.map(dayData => {
+      if (this.state.day === null) {
+        // console.log(dayData.data)
+        if (dayData.data !== undefined) {
+          this.setState({
+            day: dayData,
+            loading: false
+          })
+        }
       }
-    }
+    })
+
   }
 
   async componentDidMount() {
@@ -75,7 +73,7 @@ class Home extends React.Component {
         <HomeHead />
         {this.state.loading ?
           <SpinnerCard />
-          : this.state.error ? <Error message={this.state.errorMessage} reload={() => this.getData()}reload={() => this.getData()} /> : < DayContent day={this.state.podList} />
+          : this.state.error ? <Error message={this.state.errorMessage} reload={() => this.getData()} reload={() => this.getData()} /> : < DayContent day={this.state.day} />
         }
       </main>
       <Footer />
