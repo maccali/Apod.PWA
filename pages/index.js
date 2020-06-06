@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
 
@@ -11,74 +11,63 @@ import Error from '../components/utils/error'
 
 import DateHelper from '../helpers/date'
 
-class Home extends React.Component {
+function Home() {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      day: null,
-      loading: true,
-      last: new Date(),
-      error: false,
-      errorMessage: "An error occurred while fetching an image",
-    };
-  }
+  const [day, setDay] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("An error occurred while fetching an image");
 
-  async getData() {
 
-    this.setState({
-      loading: true,
-      error: false
-    })
+  async function getData() {
+    setLoading(true)
+    setError(false)
 
     let today = DateHelper.todayNasaFormat()
 
-    var arrUrls = DateHelper.dayUrlsCombine(today, 3)
-    var arrDayDate = await DateHelper.getDaysData(arrUrls)
+    var arrUrls = await DateHelper.daysCombine(today, 4)
 
-    this.setState({
-      datas: arrDayDate
-    })
-
-    console.log(this.state.datas[1])
-    console.log(this.state.datas[1].order)
-    console.log(this.state.datas[1].url)
-    console.log(this.state.datas[1].day)
-
-    this.state.datas.map(dayData => {
-      if (this.state.day === null) {
-        // console.log(dayData.data)
-        if (dayData.data !== undefined) {
-          this.setState({
-            day: dayData,
-            loading: false
-          })
+    let eureca = false
+    arrUrls.forEach(dayData => {
+      if (dayData.data !== undefined) {
+        if (!eureca) {
+          setDay(dayData)
+          eureca = true
         }
       }
     })
 
+    setLoading(false)
+    return;
   }
 
-  async componentDidMount() {
-    this.getData()
-  }
+  useEffect(() => {
+    (async function () {
+      await getData()
+    })()
+  }, []);
 
-  render() {
-    return <>
+  return (
+    <>
       <Nav />
       <Head>
         <title>Apod Pictu</title>
       </Head>
       <main>
         <HomeHead />
-        {this.state.loading ?
+        {loading ?
           <SpinnerCard />
-          : this.state.error ? <Error message={this.state.errorMessage} reload={() => this.getData()} reload={() => this.getData()} /> : < DayContent day={this.state.day} />
+          : day ?
+            < DayContent day={day.data} />
+            : <Error
+              message={errorMessage}
+              reload={() => getData()}
+            />
         }
       </main>
       <Footer />
-    </>;
-  }
+    </>
+  )
 }
 
 export default Home

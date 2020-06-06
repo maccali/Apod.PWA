@@ -53,32 +53,42 @@ const DateHelper = {
     return dateIso;
   },
 
-  dayUrlsCombine: (startDate, numberOfDays) => {
+  daysCombine: async (startDate, numberOfDays) => {
 
     const key = process.env.NASA_API_KEY
     let nowDate = startDate
+    let url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${nowDate}`
     let arrDayUrls = []
 
     for (var i = 0; i < numberOfDays; i++) {
-      arrDayUrls.push({
-        order: i,
-        url: `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${nowDate}`
-      })
+      await axios.get(`${url}`)
+        .then((response) => {
+          if (response.status === 200) {
+            arrDayUrls.push({
+              order: i,
+              url,
+              data: response.data
+            })
+          }
+          return;
+        }).catch(err => {
+          arrDayUrls.push({
+            order: i,
+            url,
+            error: true
+          })
+          return;
+        })
+
       nowDate = DateHelper.nasaFormatMinusOne(nowDate)
+      url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${nowDate}`
+
     }
 
     return arrDayUrls
   },
 
-  getDaysData: async (arrUrls) => {
-    await arrUrls.forEach(async function (urlOrder) {
-      const response = await axios.get(`${urlOrder.url}`)
-      if (response.status === 200) {
-        urlOrder.day = response.data
-      }
-    });
-    return arrUrls;
-  }
+
 }
 
 export default DateHelper
