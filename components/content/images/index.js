@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { Animated } from "react-animated-css";
 
 import CardPod from '../../cards/pod'
 import NumberFormat from 'react-number-format';
 import SpinnerCard from '../../cards/spinnerImages';
+import ModalDay from '../../modals/day'
+
 import styles from './imagescontent.module.css';
 
 import DateHelper from '../../../helpers/date'
@@ -13,7 +16,8 @@ function ImagesContent() {
 
   const [page, setPage] = useState();
   const [load, setLoad] = useState(false);
-
+  const [modal, setModal] = useState(false);
+  const [currentApod, setCurrentApod] = useState(null);
 
 
   async function getData(page) {
@@ -40,6 +44,15 @@ function ImagesContent() {
     setLoad(false)
   }
 
+  function openModal(apodDay) {
+    setModal(true)
+    setCurrentApod(apodDay)
+  }
+
+  function closeModal() {
+    setModal(false)
+  }
+
   useEffect(() => {
     (async function () {
       await getData(1)
@@ -54,7 +67,7 @@ function ImagesContent() {
             <div className="row">
               {Object.keys(listOfDays).map((key) => (
                 <div className="col-12 col-sm-6 col-md-4" key={key}>
-                  <CardPod pod={listOfDays[key].data} />
+                  <CardPod pod={listOfDays[key].data} openModal={() => openModal(listOfDays[key].data)} />
                 </div>
               ))}
             </div>
@@ -85,6 +98,8 @@ function ImagesContent() {
           </div>}
 
       </main>
+      <ModalDay day={currentApod} open={modal} closeModal={() => closeModal()}/>
+
     </>
   )
 }

@@ -12,8 +12,8 @@ class Pod extends React.Component {
   render() {
     return (
       <>
-        <Link href={`/day/${this.props.pod.date}`}>
-          <a className={styles.card}>
+        {/* <Link href={`/day/${this.props.pod.date}`}> */}
+          <a onClick={() => this.props.openModal()} className={styles.card}>
             <div className={styles.date}>
               {this.props.pod.date}
             </div>
@@ -34,7 +34,7 @@ class Pod extends React.Component {
               <p>{this.props.pod.title}</p>
             </div>
           </a>
-        </ Link>
+        {/* </ Link> */}
       </>
     )
   }
