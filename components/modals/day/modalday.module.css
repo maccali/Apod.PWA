@@ -2,9 +2,7 @@
   display: flex;
   position: fixed;
   height: 0vh;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  top: 0;
   z-index: 100;
   transition: all .24s;
 }
@@ -12,6 +10,9 @@
 .open{
   height: 100%;
   transition: all .24s;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .scroll{
@@ -20,6 +21,7 @@
   width: 100%;
   transition: all .24s;
   overflow-y: auto;
+
   /* padding-top: 60px; */
 }
 
@@ -28,7 +30,7 @@
   height: 60px;
   width: 100%;
   background-color: var(--primary-color);
-  z-index: 200;
+  z-index: 2000;
 }
 
 .item{
