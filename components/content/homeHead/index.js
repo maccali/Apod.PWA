@@ -21,7 +21,7 @@ const HomeHead = () => (
         </div>
         <div className="col-12">
           <div className="btn-custom">
-            <Link href="/images/1">
+            <Link href="/images">
               <a>
                 Discover the cosmos!
               </a>

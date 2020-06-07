@@ -11,6 +11,7 @@
 
 .open{
   height: 100vh;
+  top: 0;
   transition: all .24s;
 }
 
