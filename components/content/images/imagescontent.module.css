@@ -1,0 +1,74 @@
+.cont{
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 230px;
+  width: 220px;
+}
+
+.card > div {
+  margin: 5px;
+}
+
+.line{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: inherit;
+}
+
+.line > div {
+  margin: 5px;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  color: white;
+  background-color: var(--primary-color-var) !important;
+  transition: all .2s
+}
+
+.btn i{
+  transition: all .2s
+}
+
+.btn:hover, .btn:focus{
+  transform: scale(1.1);
+  background-color: #FFD061 !important;
+}
+
+.btn:hover > i, .btn:focus > i{
+  color: black !important;
+}
+
+.divinput input{
+  border-radius: 25px;
+  text-align: center;
+  height: 43px;
+  color: white;
+  font-size: 21px;
+  width: 110px;
+  background-color: #11112f;
+  border: solid 2px var(--primary-color-var);
+  transition: all .2s
+}
+
+.divinput input:hover, .divinput input:focus{
+  transform: scale(1.1);
+  border-color: #FFD061 !important;
+}
+
+.numbercenter{
+  color: white;
+  font-size: 21px;
+}

@@ -1,0 +1,5 @@
+.cont{
+  display: flex;
+  justify-content: center;
+  height: 360px;
+}

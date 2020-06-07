@@ -61,7 +61,7 @@ function Nav() {
           </ul>
           <ul className={styles.menu}>
             <li>
-              <Link href="/images/1">
+              <Link href="/images">
                 <a className={styles.seta} aria-label="List of Days">
                   <i className="fas fa-list-ul"></i>
                 </a>
