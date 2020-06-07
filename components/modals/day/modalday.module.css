@@ -21,6 +21,7 @@
   width: 100%;
   transition: all .24s;
   overflow-y: auto;
+  overscroll-behavior-y: contain;
 
   /* padding-top: 60px; */
 }
