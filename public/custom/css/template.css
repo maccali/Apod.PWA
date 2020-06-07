@@ -89,3 +89,8 @@ h1{
   padding-left: 15px !important;
   padding-right: 15px !important;
 }
+
+.ped-lr-0{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}

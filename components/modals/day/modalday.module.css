@@ -5,13 +5,12 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 100;
   transition: all .24s;
 }
 
 .open{
   height: 100%;
-  top: 0;
   transition: all .24s;
 }
 
@@ -21,8 +20,7 @@
   width: 100%;
   transition: all .24s;
   overflow-y: auto;
-  padding-top: 80px;
-  padding-bottom: 50px;
+  /* padding-top: 60px; */
 }
 
 .nav{
@@ -64,5 +62,9 @@
   text-decoration: none;
   color: #fff;
   transform: scale(1.20);
+}
+
+.preday{
+  height: 30px;
 }
 
