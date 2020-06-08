@@ -25,8 +25,8 @@
   position: fixed;
   flex-direction: column;
   background-color: var(--primary-color);
-  
-  width: 100vw;
+
+  width: 100vmax;
 }
 
 .headercont{
