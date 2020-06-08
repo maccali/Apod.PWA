@@ -1,3 +1,9 @@
+.fixedcont{
+  position: fixed;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
 .contaside{
   display: block;
   position: fixed;
@@ -7,12 +13,12 @@
   background-color: var(--primary-color);
   color: #fff;
   width: 0;
-  overflow: auto;
+  /* overflow: auto; */
   transition: all .5s;
   border-left: none;
   overflow-y: auto;
   overflow-x: hidden;
-  overscroll-behavior-y: contain;;
+  overscroll-behavior-y: contain;
   z-index: 250;
 }
 
@@ -22,7 +28,6 @@
 
 .contasidefix{
   display: flex;
-  position: fixed;
   flex-direction: column;
   background-color: var(--primary-color);
   width: 100vw;
@@ -30,6 +35,7 @@
 
 .headercont{
   display: inline-flex;
+  /* position: fixed; */
   justify-content: space-between;
   align-items: center;
   width: 100%;
