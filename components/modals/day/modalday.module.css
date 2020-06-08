@@ -26,7 +26,7 @@
   flex-direction: column;
   background-color: var(--primary-color);
 
-  width: 100vmax;
+  width: 300px;
 }
 
 .headercont{
