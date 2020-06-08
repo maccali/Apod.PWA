@@ -74,6 +74,7 @@
 
 .spacer{
   height: 60px;
+  background-color: var(--bg-primary);
 }
 
 .img {
