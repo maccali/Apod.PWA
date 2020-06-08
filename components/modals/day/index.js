@@ -21,14 +21,18 @@ function ModalDay({ day, open, closeModal }) {
                       <i className="fas fa-times"></i>
                     </a>
                   </div>
+                  <div className="col-12">
+                    <div className={styles.spacer}>
+                    </div>
+                    <DayContent day={day} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
-        <div className={styles.spacer}>
-        </div>
-        <DayContent day={day} />
+
       </div>
       {/* <div className={`${styles.cont} ${(open) ? styles.open : ''}`}>
 
