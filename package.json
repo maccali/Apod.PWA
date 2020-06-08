@@ -16,7 +16,7 @@
     "react": "16.13.1",
     "react-animated-css": "^1.2.1",
     "react-datepicker": "^2.15.0",
-    "react-dom": "16.13.1",
+    "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
     "react-lazy-load-image-component": "^1.4.3",
     "react-number-format": "^4.4.1",

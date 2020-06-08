@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import DayContent from '../../content/day'
 import styles from './modalday.module.css'
 
@@ -7,7 +7,7 @@ function ModalDay({ day, open, closeModal }) {
 
   return (
     <>
-      <div className={(open) ? `${styles.contaside} ${styles.contasideativado}` : styles.contaside}>
+      <div id="scroll" className={(open) ? `${styles.contaside} ${styles.contasideativado}` : styles.contaside}>
         <div className={styles.contasidefix}>
           <div className={`container-fluid ${styles.fixedcont}`}>
             <div className="container">

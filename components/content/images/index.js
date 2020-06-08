@@ -58,10 +58,11 @@ function ImagesContent() {
     setModal(true)
     setCurrentApod(apodDay)
   }
-
+  
   function closeModal() {
     bodyControl(true)
     setModal(false)
+    document.getElementById('scroll').scrollTop = 0
   }
 
   useEffect(() => {
