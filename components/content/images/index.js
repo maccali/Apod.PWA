@@ -44,12 +44,23 @@ function ImagesContent() {
     setLoad(false)
   }
 
+  function bodyControl(flag) {
+    let { body } = document;
+    if (flag) {
+      body.classList.remove('scroll-off')
+    } else {
+      body.classList.add('scroll-off')
+    }
+  }
+
   function openModal(apodDay) {
+    bodyControl(false)
     setModal(true)
     setCurrentApod(apodDay)
   }
 
   function closeModal() {
+    bodyControl(true)
     setModal(false)
   }
 
@@ -98,7 +109,7 @@ function ImagesContent() {
           </div>}
 
       </main>
-      <ModalDay day={currentApod} open={modal} closeModal={() => closeModal()}/>
+      <ModalDay day={currentApod} open={modal} closeModal={() => closeModal()} />
 
     </>
   )
