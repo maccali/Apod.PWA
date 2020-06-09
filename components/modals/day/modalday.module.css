@@ -13,7 +13,6 @@
   background-color: var(--primary-color);
   color: #fff;
   width: 0;
-  /* overflow: auto; */
   transition: all .5s;
   border-left: none;
   overflow-y: auto;
@@ -39,7 +38,6 @@
 
 .headercont{
   display: inline-flex;
-  /* position: fixed; */
   justify-content: space-between;
   align-items: center;
   width: 100%;

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Nav from '../../components/utils/nav'
-import Footer from '../../components/utils/footer'
 import styles from './error.module.css'
 
 function Error({ statusCode }) {
@@ -31,7 +30,6 @@ function Error({ statusCode }) {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

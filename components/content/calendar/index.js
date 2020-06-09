@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
-import Link from 'next/link'
 import DatePicker from 'react-datepicker'
 import UtilHelper from '../../../helpers/util'
 import DateHelper from '../../../helpers/date'
+import Credits from '../../cards/credits'
 import styles from './calendar.module.css'
 
 
@@ -103,6 +103,9 @@ function CalendarContent() {
                 </a>
               </div>
             </div>
+          </div>
+          <div className="col-12">
+            <Credits />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './day.module.css'
 
 import Social from '../../cards/social'
-
+import Credits from '../../cards/credits'
 
 
 function DayContent({ day }) {
@@ -12,7 +12,7 @@ function DayContent({ day }) {
   useEffect(() => {
     const { hostname, protocol } = window.location
 
-    if(day) {
+    if (day) {
       setUrl(`${protocol}//${hostname}/day/${day.date}`)
     }
   });
@@ -66,6 +66,9 @@ function DayContent({ day }) {
                   </a>
                 </div>
                 : ''}
+            </div>
+            <div className="col-12">
+              <Credits />
             </div>
           </div>
         </div>

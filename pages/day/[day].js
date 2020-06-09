@@ -2,9 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import Head from 'next/head'
-import Router from 'next/router'
 import Nav from '../../components/utils/nav'
-import Footer from '../../components/utils/footer'
 import DayContent from '../../components/content/day'
 import DateNotExist from '../../components/content/dateNotExist'
 
@@ -41,7 +39,7 @@ class Day extends React.Component {
   }
 
   render() {
-    let { dayData, fallback } = this.props
+    let { dayData } = this.props
     const { date, title, copyright, explanation, media_type, url, can } = dayData
     const titlePage = `Apod Day ${date}`
     const titleCards = `${date} - ${title}`
@@ -100,7 +98,6 @@ class Day extends React.Component {
           : <DateNotExist />
         }
       </main>
-      <Footer />
     </>;
   }
 }

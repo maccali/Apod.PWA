@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import Head from 'next/head'
 
 import Nav from '../components/utils/nav'
-import Footer from '../components/utils/footer'
 import HomeHead from '../components/content/homeHead'
 import DayContent from '../components/content/day'
 import SpinnerCard from '../components/cards/spinner'
@@ -65,7 +63,6 @@ function Home() {
             />
         }
       </main>
-      <Footer />
     </>
   )
 }

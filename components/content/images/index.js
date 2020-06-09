@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Animated } from "react-animated-css";
 
 import CardPod from '../../cards/pod'
 import NumberFormat from 'react-number-format';
@@ -57,12 +56,12 @@ function ImagesContent() {
     bodyControl(false)
     setModal(true)
     setCurrentApod(apodDay)
+    document.getElementById('scroll').scrollTop = 0
   }
-  
+
   function closeModal() {
     bodyControl(true)
     setModal(false)
-    document.getElementById('scroll').scrollTop = 0
   }
 
   useEffect(() => {

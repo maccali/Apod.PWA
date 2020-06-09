@@ -4,7 +4,6 @@ import Nav from '../../components/utils/nav'
 import ApodExplanation from '../../components/content/apodExplanation'
 import DeveloperSite from '../../components/content/developerSite'
 import NasaSite from '../../components/content/nasaSite'
-import Footer from '../../components/utils/footer'
 
 function About() {
 
@@ -35,7 +34,6 @@ function About() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

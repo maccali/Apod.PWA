@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import Head from 'next/head'
 import Nav from '../../components/utils/nav'
-import Footer from '../../components/utils/footer'
 import ImagesContent from '../../components/content/images'
-
 
 
 function Images() {
@@ -18,7 +16,6 @@ function Images() {
       <main>
         <ImagesContent />
       </main>
-      <Footer />
     </>
   )
 }
