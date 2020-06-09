@@ -1,0 +1,16 @@
+.title{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.imghover{
+  transition: all .3s;
+}
+
+.imghover:focus, .imghover:hover{
+  transform: scale(1.1);
+}
+
+.imghover img{
+  width: 130px;
+}

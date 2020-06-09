@@ -95,9 +95,9 @@ function Nav() {
               {/* <Link href="/favorites">
                 <a className={styles.menuitem}><span><i className="far fa-heart"></i></span><p>Favorites</p></a>
               </Link> */}
-              {/* <Link href="/about">
+              <Link href="/about">
                 <a className={styles.menuitem}><span><i className="fas fa-info-circle"></i></span><p>About</p></a>
-              </Link> */}
+              </Link>
               {installBtn ?
                 <a onClick={() => install()} className={styles.menuitem}><span><i class="far fa-arrow-alt-circle-down"></i></span><p>Install App</p></a>
                 : ''}
