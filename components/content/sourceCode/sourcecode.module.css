@@ -5,6 +5,7 @@
 
 .imghover{
   transition: all .3s;
+  filter: invert(1);
 }
 
 .imghover:focus, .imghover:hover{
@@ -13,4 +14,5 @@
 
 .imghover img{
   width: 130px;
+  margin-bottom: 40px;
 }

@@ -4,6 +4,7 @@ import Nav from '../../components/utils/nav'
 import ApodExplanation from '../../components/content/apodExplanation'
 import DeveloperSite from '../../components/content/developerSite'
 import NasaSite from '../../components/content/nasaSite'
+import SourceCode from '../../components/content/sourceCode'
 
 function About() {
 
@@ -23,6 +24,7 @@ function About() {
               <ApodExplanation />
               <DeveloperSite />
               <NasaSite />
+              <SourceCode />
               <div className="col-12">
                 <div className="btn-custom">
                   <a rel="noopener noreferrer" href="https://apod.nasa.gov/apod/astropix.html" target="_blank" aria-label="More About Apod" >
