@@ -92,11 +92,11 @@
 > * <b>Pagination</b> 6 and 6 days, and select specific page
 > * <b>Visualize day</b> Visualize image and Videos
 > * <b>Calendar</b> Select especific day on calendar
+> * <b>About</b> Page about project
 > ---
 
 ### In Develop
 > ---
-> * <b>About</b> Page about project
 > * <b>Favorite Days</b> Select Favorite
 > ---
 
