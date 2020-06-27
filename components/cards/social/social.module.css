@@ -15,6 +15,7 @@
   margin-right: 7px;
 }
 
-.card a i{
-  font-size: 27px;
+.card a svg{
+  width: 27px;
+  height: 27px;
 }

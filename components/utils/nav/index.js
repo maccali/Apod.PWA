@@ -1,4 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import {
+  AiOutlineBars,
+  AiOutlineMore,
+  AiOutlineArrowLeft,
+  AiOutlineCalendar,
+  AiOutlineInfoCircle,
+  AiOutlineDownload,
+  AiOutlineClose
+} from "react-icons/ai";
 import Link from 'next/link'
 import Router from 'next/router'
 import styles from './nav.module.css'
@@ -46,7 +55,9 @@ function Nav() {
           <ul className={styles.menu}>
             {menuBack ?
               <li>
-                <a onClick={() => Router.back()} className={styles.seta} aria-label="Back Page"><i className="fas fa-arrow-left"></i></a>
+                <a onClick={() => Router.back()} className={styles.seta} aria-label="Back Page">
+                  <AiOutlineArrowLeft />
+                </a>
               </li>
               : ''}
             <li>
@@ -63,13 +74,15 @@ function Nav() {
             <li>
               <Link href="/images">
                 <a className={styles.seta} aria-label="List of Days">
-                  <i className="fas fa-list-ul"></i>
+                  <AiOutlineBars />
                 </a>
               </Link>
             </li>
             <ul className={styles.menu}>
               <li>
-                <a onClick={() => setMenuActive(!menuActive)} className={styles.seta} aria-label="Open Menu"><i className="fas fa-ellipsis-v"></i></a>
+                <a onClick={() => setMenuActive(!menuActive)} className={styles.seta} aria-label="Open Menu">
+                  <AiOutlineMore />
+                </a>
               </li>
             </ul>
           </ul>
@@ -79,7 +92,7 @@ function Nav() {
             <div className={styles.headercont}>
               <p>Menu</p>
               <a onClick={() => setMenuActive(!menuActive)} aria-label="Close Menu">
-                <i className="fas fa-times"></i>
+                <AiOutlineClose />
               </a>
             </div>
             <div className={styles.cardmenu}>
@@ -90,16 +103,22 @@ function Nav() {
             </div>
             <div className={styles.menulist}>
               <Link href="/calendar">
-                <a className={styles.menuitem} aria-label="Calendar Button"><span><i className="far fa-calendar-alt"></i></span><p>Calendar</p></a>
+                <a className={styles.menuitem} aria-label="Calendar Button"><span>
+                  <AiOutlineCalendar />
+                </span><p>Calendar</p></a>
               </Link>
               {/* <Link href="/favorites">
                 <a className={styles.menuitem}><span><i className="far fa-heart"></i></span><p>Favorites</p></a>
               </Link> */}
               <Link href="/about">
-                <a className={styles.menuitem}><span><i className="fas fa-info-circle"></i></span><p>About</p></a>
+                <a className={styles.menuitem}><span>
+                  <AiOutlineInfoCircle />
+                </span><p>About</p></a>
               </Link>
               {installBtn ?
-                <a onClick={() => install()} className={styles.menuitem}><span><i class="far fa-arrow-alt-circle-down"></i></span><p>Install App</p></a>
+                <a onClick={() => install()} className={styles.menuitem}><span>
+                  <AiOutlineDownload />
+                </span><p>Install App</p></a>
                 : ''}
 
             </div>

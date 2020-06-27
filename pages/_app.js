@@ -1,6 +1,5 @@
 // External Libs
 import '../public/libs/bootstrap/bootstrap.min.css'
-import '../public/libs/fontawesome/css/all.min.css'
 
 // Custom styles
 import '../public/custom/css/template.css'

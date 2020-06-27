@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Router from 'next/router'
 import DatePicker from 'react-datepicker'
 import UtilHelper from '../../../helpers/util'
@@ -61,7 +62,7 @@ function CalendarContent() {
                 }) => (
                     <div className="date-picker__custom-head">
                       <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                        <i className="fas fa-chevron-left"></i>
+                        <AiOutlineLeft />
                       </button>
                       <select
                         value={date.getFullYear()}
@@ -92,7 +93,7 @@ function CalendarContent() {
                       </select>
 
                       <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-                        <i className="fas fa-chevron-right"></i>
+                        <AiOutlineRight />
                       </button>
                     </div>
                   )}

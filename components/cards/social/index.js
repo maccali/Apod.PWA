@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from './social.module.css'
 
+import { AiOutlineShareAlt } from "react-icons/ai";
+import { FaFacebook, FaTwitter } from "react-icons/fa";
+
 import ShareLinks from '../../../models/shareLinks'
 
 function Social({ title, text, url }) {
@@ -17,15 +20,15 @@ function Social({ title, text, url }) {
       {(navigator.share === undefined) ?
         <div className={styles.card}>
           <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.facebook}${url}`}>
-            <i className="fab fa-facebook"></i>
+            <FaFacebook />
           </a>
           <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.twitter}${url}`}>
-            <i className="fab fa-twitter"></i>
+            <FaTwitter />
           </a>
         </div>
         : <div className={styles.card}>
           <a onClick={() => share()}>
-            <i className="fas fa-share-alt"></i>
+            <AiOutlineShareAlt />
           </a>
         </div>
       }
