@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { AiOutlinePlus } from "react-icons/ai";
 
 import CardPod from '../../cards/pod'
 import NumberFormat from 'react-number-format';
@@ -102,7 +103,11 @@ function ImagesContent() {
               </div>
               <div className={styles.line}>
                 <div className={styles.line}>
-                  <a aria-label="Other pag" onClick={() => getData(page)}><div className={styles.btn}><i class="fas fa-plus"></i></div></a>
+                  <a aria-label="Other pag" onClick={() => getData(page)}>
+                    <div className={styles.btn}>
+                      <AiOutlinePlus />
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

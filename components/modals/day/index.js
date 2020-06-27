@@ -1,4 +1,5 @@
 import React from 'react'
+import { AiOutlineClose } from "react-icons/ai";
 import DayContent from '../../content/day'
 import styles from './modalday.module.css'
 
@@ -18,7 +19,7 @@ function ModalDay({ day, open, closeModal }) {
                       <img src="/icons/icon126t.png" alt="Site Logo" />
                     </div>
                     <a onClick={() => closeModal(!open)} aria-label="Close Menu">
-                      <i className="fas fa-times"></i>
+                      <AiOutlineClose />
                     </a>
                   </div>
                 </div>

@@ -60,7 +60,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: white;
+  /* background-color: white; */
   transition: all .3s;
   cursor: pointer;
 }
@@ -69,8 +69,9 @@
   transform: scale(1.1);
 }
 
-.headercont a i{
-  font-size: 23px;
+.headercont a svg{
+  width: 28px;
+  height: 28px;
   color: var(--primary-color);
 }
 
