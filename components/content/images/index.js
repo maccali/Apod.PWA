@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { AiOutlinePlus } from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 import CardPod from '../../cards/pod'
 import NumberFormat from 'react-number-format';
@@ -85,7 +86,6 @@ function ImagesContent() {
             </div>
           </div>
         </div>
-
         {load ? <SpinnerCard />
           : <div className={styles.cont}>
             <div className={styles.card}>

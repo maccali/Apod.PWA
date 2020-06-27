@@ -133,7 +133,7 @@
 .headercont a svg{
   width: 25px;
   height: 25px;
-  color: var(--primary-color) !important;
+  color: #fff;
 }
 
 .menulist{

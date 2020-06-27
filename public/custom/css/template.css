@@ -7,7 +7,6 @@
 
 * {
   font-family: 'Montserrat';
-  color: white;
 }
 
 *, *:before, *:after {
@@ -65,6 +64,7 @@ a, a:hover, a:focus{
 h1{
   text-align: center;
   margin-top: 45px;
+  color: white;
 }
 
 .text-container{
@@ -77,6 +77,7 @@ h1{
   text-align: justify;
   margin-top: 5px;
   max-width: 300px;
+  color: white;
 }
 
 .text-container p::first-letter{

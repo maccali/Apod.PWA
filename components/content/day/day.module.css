@@ -1,11 +1,13 @@
 .date{
   margin-top: 30px;
   text-align: center;
+  color: white;
 }
 
 .title{
   margin-top: 10px;
   margin-bottom: 30px;
+  color: white;
 }
 
 .imgcont{
@@ -21,6 +23,7 @@
   margin-top: 20px;
   margin-bottom: 5px;
   font-size: 16px;
+  color: white;
 }
 
 .copyright b{
@@ -29,6 +32,7 @@
 
 .explanationtitle{
   margin-top: 25px;
+  color: white;
 }
 
 .explanation{
@@ -36,6 +40,7 @@
   text-align: justify;
   margin-top: 5px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .explanation::first-letter{
