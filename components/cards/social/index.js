@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import styles from './social.module.css'
 
-import { AiOutlineShareAlt } from "react-icons/ai";
-import { FaFacebook, FaTwitter } from "react-icons/fa";
-import { FiLink, FiCheckCircle } from "react-icons/fi";
+import { 
+  RiFacebookCircleLine,
+  RiTwitterLine,
+  RiShareLine,
+  RiCheckboxCircleLine,
+  RiLinksLine
+ } from "react-icons/ri";
+
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import ShareLinks from '../../../models/shareLinks'
@@ -38,22 +43,22 @@ function Social({ title, text, url }) {
         >
           <a className={styles.iconchange}>
             {copied ?
-              <FiCheckCircle /> :
-              <FiLink />}
+              <RiCheckboxCircleLine /> :
+              <RiLinksLine />}
           </a>
         </CopyToClipboard>
         {(navigator.share === undefined) ?
           <>
             <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.facebook}${url}`}>
-              <FaFacebook />
+              <RiFacebookCircleLine />
             </a>
             <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.twitter}${url}`}>
-              <FaTwitter />
+              <RiTwitterLine />
             </a>
           </>
           : <>
             <a onClick={() => share()}>
-              <AiOutlineShareAlt />
+              <RiShareLine />
             </a>
           </>
         }
