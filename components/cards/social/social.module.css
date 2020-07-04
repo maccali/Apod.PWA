@@ -19,4 +19,9 @@
   width: 27px;
   height: 27px;
   color: white;
+  transition: all .15s;
+}
+
+.iconchange svg{
+  color: #3AD926 !important;
 }

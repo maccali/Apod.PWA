@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import { motion } from "framer-motion"
 import styles from './day.module.css'
 
 import Social from '../../cards/social'
