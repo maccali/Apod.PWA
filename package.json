@@ -1,6 +1,6 @@
 {
   "name": "apod-space",
-  "version": "0.12.64",
+  "version": "1.12.64",
   "private": true,
   "scripts": {
     "dev": "next dev",

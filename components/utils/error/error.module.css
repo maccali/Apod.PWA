@@ -14,4 +14,11 @@
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
+  color: white;
+}
+
+.btnicon{
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
 }

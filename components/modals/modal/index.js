@@ -1,10 +1,9 @@
 import React from 'react'
 import { AiOutlineClose } from "react-icons/ai";
-import DayContent from '../../content/day'
-import styles from './modalday.module.css'
+import styles from './modal.module.css'
 
 
-function ModalDay({ day, open, closeModal }) {
+function Modal({ open, closeModal, children }) {
 
   return (
     <>
@@ -28,7 +27,9 @@ function ModalDay({ day, open, closeModal }) {
           </div>
           <div className="col-12">
             <div className={styles.spacer}></div>
-            <DayContent day={day} />
+            <div className={styles.bgprimary}>
+            {children}
+            </div>
             <div className={styles.spacer}></div>
           </div>
         </div>
@@ -37,4 +38,4 @@ function ModalDay({ day, open, closeModal }) {
   )
 }
 
-export default ModalDay
+export default Modal

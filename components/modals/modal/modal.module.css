@@ -10,15 +10,19 @@
   right: 0;
   top: 0;
   height: 100vh;
-  background-color: var(--primary-color);
+  background-color: var(--bg-primary);
   color: #fff;
   width: 0;
-  transition: all .5s;
+  transition: all .25s;
   border-left: none;
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior-y: contain;
   z-index: 250;
+}
+
+.bgprimary{
+  background-color: var(--bg-primary);
 }
 
 .contaside::-webkit-scrollbar {
@@ -60,7 +64,6 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  /* background-color: white; */
   transition: all .3s;
   cursor: pointer;
 }

@@ -1,8 +1,9 @@
 import React from 'react'
+import { AiOutlineReload } from "react-icons/ai";
 import styles from './error.module.css'
 
 
-function Error({ message, reload }) {
+function Error({ message, reload, noimg }) {
   return (
     <>
       <div className="container-fluid">
@@ -11,12 +12,13 @@ function Error({ message, reload }) {
             <div className="col-12">
               <div className={styles.card}>
                 <h2 className={styles.title}>{message}</h2>
-                <img src="/imgs/earth.svg" alt="Error Image" />
+                {noimg ?
+                  <img src="/imgs/earth.svg" alt="Error Image" /> : ''}
                 {reload ?
                   <div className="btn-custom">
                     <a onClick={reload}>
-                      <i class="fas fa-sync-alt"></i>
-                      Reload
+                      <AiOutlineReload className={styles.btnicon} />
+                      <span>Reload</span>
                     </a>
                   </div> : ''}
               </div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { AiOutlinePlus } from "react-icons/ai";
-import { IconContext } from "react-icons";
+import { AiOutlinePlus } from "react-icons/ai"
 
 import CardPod from '../../cards/pod'
 import NumberFormat from 'react-number-format';
 import SpinnerCard from '../../cards/spinnerImages';
-import ModalDay from '../../modals/day'
+import Modal from '../../modals/modal'
+import DayContent from '../../content/day'
+import Erro from '../../utils/error'
 
 import styles from './imagescontent.module.css';
 
@@ -19,6 +20,8 @@ function ImagesContent() {
   const [load, setLoad] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentApod, setCurrentApod] = useState(null);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('There was an error when catching days, Verify Internet');
 
 
   async function getData(page) {
@@ -32,16 +35,20 @@ function ImagesContent() {
     currentDay.setDate(currentDay.getDate() - current);
     currentDay = DateHelper.dateToNasaFormat(currentDay)
 
-    var arrUrls = await DateHelper.daysCombine(currentDay, pageCount)
+    try {
+      var arrUrls = await DateHelper.daysCombine(currentDay, pageCount)
+      var arrOfDays = arrUrls.filter(theDate => {
+        if (theDate.data != undefined) {
+          return theDate.data
+        }
+      })
 
-    var arrOfDays = arrUrls.filter(theDate => {
-      if (theDate.data != undefined) {
-        return theDate.data
-      }
-    })
-
-    setListOfDays(listOfDays.concat(arrOfDays))
-    setPage(Number(page) + 1)
+      setListOfDays(listOfDays.concat(arrOfDays))
+      setPage(Number(page) + 1)
+      setError(false)
+    } catch (error) {
+      setError(true)
+    }
     setLoad(false)
   }
 
@@ -86,6 +93,8 @@ function ImagesContent() {
             </div>
           </div>
         </div>
+
+        {error ? <Erro message={errorMsg} noimg /> : ''}
         {load ? <SpinnerCard />
           : <div className={styles.cont}>
             <div className={styles.card}>
@@ -112,10 +121,11 @@ function ImagesContent() {
               </div>
             </div>
           </div>}
-
       </main>
-      <ModalDay day={currentApod} open={modal} closeModal={() => closeModal()} />
 
+      <Modal open={modal} closeModal={() => closeModal()}>
+        <DayContent day={currentApod} />
+      </Modal>
     </>
   )
 }
