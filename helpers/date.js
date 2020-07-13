@@ -85,11 +85,7 @@ const DateHelper = {
 
     }
 
-    var newDaysArray = arrDayUrls.filter((item) => {
-      return (item.data.title !== 'Default Image')
-    })
-
-    return newDaysArray
+    return arrDayUrls
   },
 
 

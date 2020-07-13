@@ -49,7 +49,7 @@ function Meta() {
       <meta name="twitter:creator" content="Guilherme Maccali" />
       <meta name="twitter:image" content={imagemUrl} />
 
-      <script data-ad-client="ca-pub-8175357641608662" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      {/* <script data-ad-client="ca-pub-8175357641608662" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
 
     </Head>
   );

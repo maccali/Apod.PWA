@@ -22,7 +22,6 @@ function Home() {
     setError(false)
 
     let today = DateHelper.todayNasaFormat()
-
     var arrUrls = await DateHelper.daysCombine(today, 4)
 
     let eureca = false
