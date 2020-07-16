@@ -1,5 +1,5 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "one.pictu.apod",
-               "sha256_cert_fingerprints": ["67:48:BC:AF:01:32:2B:FE:1C:62:15:95:6A:CE:FD:9A:54:5E:28:C9:EB:E7:3D:0D:39:58:54:B4:6C:6A:14:BB"] }
+  "target" : { "namespace": "android_app", "package_name": "one.pictu.apod.twa",
+               "sha256_cert_fingerprints": ["82:47:9A:AC:ED:1D:79:F0:99:EE:71:6B:8F:02:2F:B2:35:26:7E:3F:CF:EA:67:92:B4:B5:BD:73:E5:85:D6:1A"] }
 }]
