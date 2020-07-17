@@ -32,7 +32,7 @@ function CalendarContent() {
 
     let nasaDate = DateHelper.dateToNasaFormat(startDate)
     try {
-      var arrUrls = await DateHelper.daysCombine(nasaDate, 1)
+      var arrUrls = await DateHelper.daysCombine(DateHelper.nasaFormatMinusOne(nasaDate), 1)
     } catch (err) {
       setModalErro(true)
       setErrorMsg('There was an error when catching day, Verify if You`re Online')
