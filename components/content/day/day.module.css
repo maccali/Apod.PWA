@@ -34,13 +34,13 @@
   display: flex;
   justify-content: center;
   max-width: 100%;
-  height: 72vh;
+  max-height: 72vh;
 }
 
 .imgcont img{
+  width: 100%;
   border-radius: 5px;
-  max-width: inherit;
-  height: 100%;
+  object-fit: contain;
 } 
 
 
