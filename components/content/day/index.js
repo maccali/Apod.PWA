@@ -30,12 +30,12 @@ function DayContent({ day }) {
             </div>
             <div className="col-12">
               {(day.media_type === 'image') ?
-                <div className={styles.imgcont}>
+                <a href={day.url} target="_blank" className={styles.imgcont}>
                   <img
                     src={day.url}
                     alt={day.title}
                   />
-                </div>
+                </a>
                 :
                 <div className={styles.framecont}>
                   <iframe src={day.url}
