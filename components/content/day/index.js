@@ -29,12 +29,24 @@ function DayContent({ day }) {
               <h1 className={styles.title}>{day.title}</h1>
             </div>
             <div className="col-12">
-              <div className={styles.imgcont}>
-                {(day.media_type === 'image') ?
-                  <img src={day.url} alt={day.title} />
-                  : <iframe src={day.url} height="100%" alt={day.title} frameBorder="0" allowFullScreen></iframe>
-                }
-              </div>
+              {(day.media_type === 'image') ?
+                <div className={styles.imgcont}>
+                  <img
+                    src={day.url}
+                    alt={day.title}
+                  />
+                </div>
+                :
+                <div className={styles.framecont}>
+                  <iframe src={day.url}
+                    alt={day.title}
+                    frameBorder="0"
+                    allowFullScreen
+                    sandbox
+                  >
+                  </iframe>
+                </div>
+              }
             </div>
             <div className="col-12">
               <div className={styles.socialcont}>
