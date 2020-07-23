@@ -1,0 +1,8 @@
+.cont{
+  margin-top: 10px;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+}

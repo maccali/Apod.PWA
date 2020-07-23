@@ -8,7 +8,7 @@ module.exports = withPWA({
       '/worker.js'
     ]
   },
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  webpack: (config) => {
     // Add the new plugin to the existing webpack plugins
     config.plugins.push(new Dotenv({ silent: true }));
 

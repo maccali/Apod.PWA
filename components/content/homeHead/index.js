@@ -8,6 +8,7 @@ const HomeHead = () => (
       <div className="row">
         <div className="col-12">
           <h2 className={styles.title} >Astronomy Picture of the Day</h2>
+          <h3 className={styles.subtitle} >Last Days</h3>
         </div>
       </div>
     </div>
