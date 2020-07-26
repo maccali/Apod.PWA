@@ -25,10 +25,10 @@ function ImgSide({
           <div className={styles.framecont}>
             <iframe
               src={url}
-              // alt={title}
+              alt={title}
               frameBorder="0"
-              allowFullScreen={true}
-              sandbox="true"
+              allowFullScreen
+              sandBox
             >
             </iframe>
           </div>

@@ -38,7 +38,8 @@ function DayContent({ day }) {
                 </a>
                 :
                 <div className={styles.framecont}>
-                  <iframe src={day.url}
+                  <iframe
+                    src={day.url}
                     alt={day.title}
                     frameBorder="0"
                     allowFullScreen
