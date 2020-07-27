@@ -43,7 +43,6 @@ function DayContent({ day }) {
                     alt={day.title}
                     frameBorder="0"
                     allowFullScreen
-                    sandbox
                   >
                   </iframe>
                 </div>
