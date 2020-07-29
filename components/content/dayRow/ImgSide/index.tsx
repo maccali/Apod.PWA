@@ -15,7 +15,7 @@ function ImgSide({
     <>
       <div className={`col-12 col-md-4 p-0 ${styles.cont}`}>
         {(media_type === 'image') ?
-          <a href={url} target="_blank" className={styles.imgcont}>
+          <a title={title} href={url} target="_blank" className={styles.imgcont}>
             <img
               src={url}
               alt={title}
@@ -24,9 +24,11 @@ function ImgSide({
           :
           <div className={styles.framecont}>
             <iframe
+              title={title}
               src={url}
               frameBorder="0"
-              allowFullScreen         >
+              allowFullScreen
+            >
             </iframe>
           </div>
         }

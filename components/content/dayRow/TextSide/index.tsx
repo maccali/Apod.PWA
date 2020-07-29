@@ -60,7 +60,7 @@ function TextSide({
         </div>
         <div className={`col-12`}>
           <div className="btn-custom">
-            <a onClick={() =>  openModal() }>
+            <a title={`Read more About ${title}`} onClick={() =>  openModal() }>
               🚀 See More
             </a>
           </div>

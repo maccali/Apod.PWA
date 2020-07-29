@@ -41,7 +41,7 @@ function Social({ title, text, url }) {
           text={url}
           onCopy={() => chackmate()}
         >
-          <a className={styles.iconchange}>
+          <a title="Copy Link" className={styles.iconchange}>
             {copied ?
               <RiCheckboxCircleLine /> :
               <RiLinksLine />}
@@ -49,15 +49,15 @@ function Social({ title, text, url }) {
         </CopyToClipboard>
         {(navigator.share === undefined) ?
           <>
-            <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.facebook}${url}`}>
+            <a title="Share with Facebook" target="_blank" rel="noopener noreferrer" href={`${ShareLinks.facebook}${url}`}>
               <RiFacebookCircleLine />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href={`${ShareLinks.twitter}${url}`}>
+            <a title="Share with Twitter" target="_blank" rel="noopener noreferrer" href={`${ShareLinks.twitter}${url}`}>
               <RiTwitterLine />
             </a>
           </>
           : <>
-            <a onClick={() => share()}>
+            <a title="Share with Everything" onClick={() => share()}>
               <RiShareLine />
             </a>
           </>
