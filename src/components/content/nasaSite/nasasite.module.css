@@ -1,0 +1,18 @@
+.title {
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+}
+
+.imghover {
+  transition: all 0.3s;
+}
+
+.imghover:focus,
+.imghover:hover {
+  transform: scale(1.1);
+}
+
+.imghover img {
+  width: 130px;
+}

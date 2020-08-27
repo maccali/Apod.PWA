@@ -1,26 +1,26 @@
-.btn-custom{
+.btn-custom {
   display: flex;
   justify-content: center;
 }
 
-.btn-custom a{
+.btn-custom a {
   display: flex;
   padding: 12px 25px;
-  background-color: #FFD061;
+  background-color: #ffd061;
   border-radius: 45px;
   color: black;
   font-weight: bold;
   cursor: pointer;
-  transition: all .24s;
+  transition: all 0.24s;
 }
 
-.btn-custom a i{
+.btn-custom a i {
   font-size: 18px;
   color: black;
   margin-right: 12px;
 }
 
-.btn-custom a:hover{
+.btn-custom a:hover {
   transform: scale(1.1);
   color: black;
 }

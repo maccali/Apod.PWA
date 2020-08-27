@@ -1,0 +1,41 @@
+.cont {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  background-color: rgb(190, 2, 2);
+  padding: 10px;
+  padding-right: 15px;
+  border-radius: 45px 0 0 45px;
+  z-index: 10 !important;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cont i {
+  font-size: 25px;
+}
+
+.text {
+  display: inline;
+  width: 120px;
+  transition: all 0.3s;
+  color: white;
+}
+
+.text p {
+  margin: 0;
+  margin-left: 15px;
+  width: 120px;
+}
+
+.close {
+  width: 0;
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+  color: white;
+}

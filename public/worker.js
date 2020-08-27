@@ -1,1 +1,1 @@
-console.log("Work A holic")
+console.log('Work A holic')

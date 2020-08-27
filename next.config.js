@@ -1,20 +1,18 @@
 const withPWA = require('next-pwa')
-const Dotenv = require("dotenv-webpack");
+const Dotenv = require('dotenv-webpack')
 
 module.exports = withPWA({
   pwa: {
     dest: 'public',
-    importScripts: [
-      '/worker.js'
-    ]
+    importScripts: ['/worker.js']
   },
-  webpack: (config) => {
+  webpack: config => {
     // Add the new plugin to the existing webpack plugins
-    config.plugins.push(new Dotenv({ silent: true }));
+    config.plugins.push(new Dotenv({ silent: true }))
 
-    return config;
+    return config
   },
   env: {
-    NASA_API_KEY: process.env.NASA_API_KEY,
-  },
+    NASA_API_KEY: process.env.NASA_API_KEY
+  }
 })

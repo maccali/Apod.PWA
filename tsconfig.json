@@ -16,8 +16,9 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "strictNullChecks": false
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "pages/dashboard/index.js"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

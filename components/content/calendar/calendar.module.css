@@ -1,8 +1,0 @@
-.cont{
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  justify-content: center;
-  align-items: center;
-}

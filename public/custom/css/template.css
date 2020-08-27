@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Montserrat';
-  src:
-    url('/libs/font/Montserrat-Regular.ttf') format('truetype'),
+  src: url('/libs/font/Montserrat-Regular.ttf') format('truetype'),
     url('/libs/font/Montserrat-Bold.ttf') format('truetype');
 }
 
@@ -9,13 +8,15 @@
   font-family: 'Montserrat';
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --primary-color: #2c2c7b;
   --primary-color-var: #6191ff;
   --primary-color-trans: #86abff5e;
@@ -39,15 +40,15 @@
   border-radius: 10px;
 }
 
-.bg-primary{
+.bg-primary {
   background-color: var(--bg-primary);
 }
 
-.container-full-height{
+.container-full-height {
   min-height: calc(100vh - 60px);
 }
 
-.container.padding{
+.container.padding {
   padding-top: 40px;
 }
 
@@ -55,21 +56,22 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--bg-primary);
-  content-visibility: auto;
 }
 
-a, a:hover, a:focus{
+a,
+a:hover,
+a:focus {
   text-decoration: none;
   color: none;
 }
 
-h1{
+h1 {
   text-align: center;
   margin-top: 45px;
   color: white;
 }
 
-.text-container{
+.text-container {
   display: flex;
   justify-content: center;
 }
@@ -82,28 +84,28 @@ h1{
   color: white;
 }
 
-.text-container p::first-letter{
+.text-container p::first-letter {
   font-size: 20px;
   font-weight: bold;
 }
 
-.per{
+.per {
   text-indent: 1.5em;
   text-align: justify;
   margin-bottom: 30px;
 }
 
-.per::first-letter{
+.per::first-letter {
   font-size: 18px;
   font-weight: bold;
 }
 
-.per.center{
+.per.center {
   text-align: center;
 }
 
-@media (max-width: 767.98px) { 
-  .container{
+@media (max-width: 767.98px) {
+  .container {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -114,7 +116,7 @@ h1{
   padding-right: 15px !important;
 }
 
-.ped-lr-0{
+.ped-lr-0 {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
