@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '../services/api'
 
 const DateHelper = {
   validDate: date => {
@@ -59,11 +59,11 @@ const DateHelper = {
   daysCombine: async (startDate, numberOfDays) => {
     const key = process.env.NASA_API_KEY
     let nowDate = startDate
-    let url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${nowDate}`
+    let url = `/apod?api_key=${key}&date=${nowDate}`
     let arrDayUrls = []
 
     for (var i = 0; i < numberOfDays; i++) {
-      await axios
+      await api
         .get(`${url}`)
         .then(response => {
           if (response.status === 200) {
@@ -85,7 +85,7 @@ const DateHelper = {
         })
 
       nowDate = DateHelper.nasaFormatMinusOne(nowDate)
-      url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${nowDate}`
+      url = `/apod?api_key=${key}&date=${nowDate}`
     }
 
     return arrDayUrls
