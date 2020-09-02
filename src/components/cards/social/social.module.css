@@ -3,11 +3,17 @@
 }
 
 .card a:hover,
-.card a:focus {
-  transform: scale(1.1);
+.card a:focus,
+.card div:hover,
+.card div:focus,
+.card button:hover,
+.card button:focus {
+  transform: scale(1.2) rotate(-15deg);
 }
 
-.card a {
+.card a,
+.card div,
+.card button {
   transition: all 0.2s;
   display: flex;
   width: 40px;
@@ -16,7 +22,9 @@
   align-items: center;
 }
 
-.card a svg {
+.card a svg,
+.card div svg,
+.card button svg {
   width: 24px;
   height: 24px;
   color: white;

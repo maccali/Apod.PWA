@@ -1,8 +1,17 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { AiOutlineReload } from 'react-icons/ai'
 import styles from './error.module.css'
 
-function Error({ message, reload, noimg }) {
+import Button from '../button'
+
+type ErrorFace = {
+  message: string
+  reload?: () => void
+  noimg?: boolean
+}
+
+function Error({ message, reload, noimg }: ErrorFace) {
   return (
     <>
       <div className="container-fluid">
@@ -13,12 +22,10 @@ function Error({ message, reload, noimg }) {
                 <h2 className={styles.title}>{message}</h2>
                 {noimg ? <img src="/imgs/earth.svg" alt="Error Image" /> : ''}
                 {reload ? (
-                  <div className="btn-custom">
-                    <a onClick={reload}>
-                      <AiOutlineReload className={styles.btnicon} />
-                      <span>Reload</span>
-                    </a>
-                  </div>
+                  <Button title="Reload" action={() => reload()}>
+                    <AiOutlineReload className={styles.btnicon} />
+                    <span>Reload</span>
+                  </Button>
                 ) : (
                   ''
                 )}

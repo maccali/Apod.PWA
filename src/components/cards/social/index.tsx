@@ -9,11 +9,18 @@ import {
   RiLinksLine
 } from 'react-icons/ri'
 
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import CopyToClipboard from 'react-copy-to-clipboard'
 
 import ShareLinks from '../../../models/shareLinks'
+import Button from '../../utils/button'
 
-function Social({ title, text, url }) {
+type SocialFace = {
+  title: string
+  text: string
+  url: string
+}
+
+function Social({ title, text, url }: SocialFace) {
   const [copied, setCopied] = useState(false)
 
   function share() {
@@ -31,7 +38,7 @@ function Social({ title, text, url }) {
     setCopied(false)
   }
 
-  function sleep(ms) {
+  function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
   }
 
@@ -39,34 +46,41 @@ function Social({ title, text, url }) {
     <>
       <div className={styles.card}>
         <CopyToClipboard text={url} onCopy={() => chackmate()}>
-          <a title="Copy Link" className={styles.iconchange}>
+          <div title="Copy Link" className={styles.iconchange}>
             {copied ? <RiCheckboxCircleLine /> : <RiLinksLine />}
-          </a>
+          </div>
         </CopyToClipboard>
         {navigator.share === undefined ? (
           <>
-            <a
+            <Button
               title="Share with Facebook"
               target="_blank"
-              rel="noopener noreferrer"
               href={`${ShareLinks.facebook}${url}`}
+              iconOnly
+              noStyle
             >
               <RiFacebookCircleLine />
-            </a>
-            <a
+            </Button>
+            <Button
               title="Share with Twitter"
               target="_blank"
-              rel="noopener noreferrer"
               href={`${ShareLinks.twitter}${url}`}
+              iconOnly
+              noStyle
             >
               <RiTwitterLine />
-            </a>
+            </Button>
           </>
         ) : (
           <>
-            <a title="Share with Everything" onClick={() => share()}>
+            <Button
+              title="Share with Everything"
+              action={() => share()}
+              iconOnly
+              noStyle
+            >
               <RiShareLine />
-            </a>
+            </Button>
           </>
         )}
       </div>

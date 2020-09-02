@@ -13,22 +13,21 @@ import Modal from '../components/modals/modal'
 import DateHelper from '../helpers/date'
 
 function Home() {
-  const [listOfDays, setListOfDays] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
-  const [errorMessage, setErrorMessage] = useState(
-    'An error occurred while fetching an image'
-  )
-  const [cardOrder, setCardOrder] = useState(true)
-  const [modal, setModal] = useState(false)
-  const [currentApod, setCurrentApod] = useState(null)
+  const [listOfDays, setListOfDays] = useState<Array<DayCustomFace>>([])
+  const [loading, setLoading] = useState<boolean>(true)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // const [error, setError] = useState<boolean>(false)
+
+  const [modal, setModal] = useState<boolean>(false)
+  const [currentApod, setCurrentApod] = useState<DayFace | null>(null)
+  const errorMessage = 'An error occurred while fetching an image'
 
   async function getData() {
     setLoading(true)
-    setError(false)
+    // setError(false)
 
-    let today = DateHelper.todayNasaFormat()
-    var arrUrls = await DateHelper.daysCombine(today, 4)
+    const today = DateHelper.todayNasaFormat()
+    const arrUrls = await DateHelper.daysCombine(today, 4)
 
     setListOfDays(arrUrls)
     setLoading(false)
@@ -36,12 +35,8 @@ function Home() {
     return
   }
 
-  function setCardPositionImage() {
-    setCardOrder(window.innerWidth <= 991)
-  }
-
-  function bodyControl(flag) {
-    let { body } = document
+  function bodyControl(flag: boolean) {
+    const { body } = document
     if (flag) {
       body.classList.remove('scroll-off')
     } else {
@@ -49,9 +44,9 @@ function Home() {
     }
   }
 
-  function openModal(apodDay) {
+  function openModal(apodDay: DayCustomFace) {
     bodyControl(false)
-    setCurrentApod(apodDay)
+    setCurrentApod(apodDay.day)
     setModal(true)
     document.getElementById('scroll').scrollTop = 0
   }
@@ -67,15 +62,6 @@ function Home() {
     })()
   }, [])
 
-  useEffect(() => {
-    ;(function () {
-      window.addEventListener('resize', function () {
-        setCardPositionImage()
-      })
-      setCardPositionImage()
-    })()
-  }, [])
-
   return (
     <>
       <Nav />
@@ -87,12 +73,12 @@ function Home() {
         {loading ? (
           <SpinnerCard />
         ) : listOfDays ? (
-          Object.keys(listOfDays).map(key => (
+          Object.keys(listOfDays).map((_value: string, key: number) => (
             <DayRowContent
               key={key}
-              day={listOfDays[key].data}
-              openModal={() => openModal(listOfDays[key].data)}
-              invert={cardOrder ? true : key % 2}
+              day={listOfDays[key].day}
+              openModal={() => openModal(listOfDays[key])}
+              invert={key % 2 ? true : false}
             />
           ))
         ) : (
@@ -100,7 +86,19 @@ function Home() {
         )}
         <Credits />
         <Modal open={modal} closeModal={() => closeModal()}>
-          <DayContent day={currentApod} />
+          {currentApod ? (
+            <DayContent
+              copyright={currentApod.copyright}
+              date={currentApod.date}
+              explanation={currentApod.explanation}
+              mediaType={currentApod.mediaType}
+              title={currentApod.title}
+              url={currentApod.url}
+              hdUrl={currentApod.hdUrl}
+            />
+          ) : (
+            ''
+          )}
         </Modal>
       </main>
     </>

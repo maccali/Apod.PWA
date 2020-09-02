@@ -33,12 +33,16 @@
 .imgcont {
   display: flex;
   justify-content: center;
-  max-width: 100%;
-  max-height: 72vh;
 }
 
-.imgcont img {
+.imgcont a {
+  display: flex;
+  max-width: 100%;
+}
+
+.imgcont a img {
   width: 100%;
+  max-height: 72vh;
   border-radius: 5px;
   object-fit: contain;
 }

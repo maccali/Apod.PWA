@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from './datenotexist.module.css'
 
-function DateNotexist({ statusCode }) {
+function DateNotExist() {
   return (
     <>
       <Head>
@@ -28,4 +28,4 @@ function DateNotexist({ statusCode }) {
   )
 }
 
-export default DateNotexist
+export default DateNotExist

@@ -7,38 +7,37 @@ import SpinnerCard from '../../cards/spinnerImages'
 import Modal from '../../modals/modal'
 import DayContent from '../../content/day'
 import Erro from '../../utils/error'
+import Button from '../../utils/button'
 
 import styles from './imagescontent.module.css'
 
 import DateHelper from '../../../helpers/date'
 
 function ImagesContent() {
-  const [listOfDays, setListOfDays] = useState([])
+  const [listOfDays, setListOfDays] = useState<Array<DayCustomFace>>([])
+  const [page, setPage] = useState<any>()
+  const [load, setLoad] = useState<boolean>(false)
+  const [modal, setModal] = useState<boolean>(false)
+  const [currentApod, setCurrentApod] = useState<DayFace | null>(null)
+  const [error, setError] = useState<boolean>(false)
 
-  const [page, setPage] = useState()
-  const [load, setLoad] = useState(false)
-  const [modal, setModal] = useState(false)
-  const [currentApod, setCurrentApod] = useState(null)
-  const [error, setError] = useState(false)
-  const [errorMsg, setErrorMsg] = useState(
-    'There was an error when catching days, Verify Internet'
-  )
+  const errorMsg = 'There was an error when catching days, Verify Internet'
 
-  async function getData(page) {
+  async function getData(page: number) {
     setLoad(true)
 
-    let pageCount = 6
-    let current = pageCount * page - pageCount
+    const pageCount = 6
+    const current = pageCount * page - pageCount
 
-    let currentDay = new Date()
+    let currentDay: any = new Date()
     currentDay.setDate(currentDay.getDate() - current)
     currentDay = DateHelper.dateToNasaFormat(currentDay)
 
     try {
-      var arrUrls = await DateHelper.daysCombine(currentDay, pageCount)
-      var arrOfDays = arrUrls.filter(theDate => {
-        if (theDate.data != undefined) {
-          return theDate.data
+      const arrUrls = await DateHelper.daysCombine(currentDay, pageCount)
+      const arrOfDays = arrUrls.filter(theDate => {
+        if (theDate.day != undefined) {
+          return theDate.day
         }
       })
 
@@ -51,8 +50,8 @@ function ImagesContent() {
     setLoad(false)
   }
 
-  function bodyControl(flag) {
-    let { body } = document
+  function bodyControl(flag: boolean) {
+    const { body } = document
     if (flag) {
       body.classList.remove('scroll-off')
     } else {
@@ -60,7 +59,7 @@ function ImagesContent() {
     }
   }
 
-  function openModal(apodDay) {
+  function openModal(apodDay: DayFace) {
     bodyControl(false)
     setModal(true)
     setCurrentApod(apodDay)
@@ -84,11 +83,11 @@ function ImagesContent() {
         <div className="container-fluid bg-primary">
           <div className="container padding">
             <div className="row">
-              {Object.keys(listOfDays).map(key => (
+              {Object.keys(listOfDays).map((_value: string, key: number) => (
                 <div className="col-12 col-sm-6 col-md-4" key={key}>
                   <CardPod
-                    pod={listOfDays[key].data}
-                    openModal={() => openModal(listOfDays[key].data)}
+                    day={listOfDays[key].day}
+                    openModal={() => openModal(listOfDays[key].day)}
                   />
                 </div>
               ))}
@@ -104,8 +103,9 @@ function ImagesContent() {
             <div className={styles.card}>
               <div className={styles.line}>
                 <div className={styles.divinput}>
-                  <label aria-label="Type a page">
+                  <label htmlFor="pager" aria-label="Type a page">
                     <NumberFormat
+                      name="pager"
                       type="text"
                       value={page}
                       onChange={e => setPage(e.target.value)}
@@ -116,11 +116,10 @@ function ImagesContent() {
               </div>
               <div className={styles.line}>
                 <div className={styles.line}>
-                  <a aria-label="Other pag" onClick={() => getData(page)}>
-                    <div className={styles.btn}>
-                      <AiOutlinePlus />
-                    </div>
-                  </a>
+                  <Button title="One more page" action={() => getData(page)}>
+                    <AiOutlinePlus />
+                    <span>More</span>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -129,7 +128,19 @@ function ImagesContent() {
       </main>
 
       <Modal open={modal} closeModal={() => closeModal()}>
-        <DayContent day={currentApod} />
+        {currentApod ? (
+          <DayContent
+            copyright={currentApod.copyright}
+            date={currentApod.date}
+            explanation={currentApod.explanation}
+            hdUrl={currentApod.hdUrl}
+            mediaType={currentApod.mediaType}
+            title={currentApod.title}
+            url={currentApod.url}
+          />
+        ) : (
+          ''
+        )}
       </Modal>
     </>
   )

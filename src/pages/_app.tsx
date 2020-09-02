@@ -10,12 +10,14 @@ import '../../public/custom/css/btns.css'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
 
+import type { AppProps } from 'next/app'
+
 // import NextNprogress from '../components/utils/loader';
-import Meta from '../components/utils/Meta'
+import Meta from '../components/utils/meta'
 import Offline from '../components/utils/offline'
 
 // This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       {/* Other Custom Logic */}

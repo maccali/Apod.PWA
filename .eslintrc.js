@@ -9,8 +9,7 @@ module.exports = {
     es2020: true,
     browser: true,
     node: true,
-    jest: true,
-    cypress: true
+    jest: true
   },
   extends: [
     'eslint:recommended',

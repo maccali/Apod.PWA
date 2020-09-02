@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/no-onchange */
 import React, { useState } from 'react'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
-import Router from 'next/router'
+
 import DatePicker from 'react-datepicker'
 import UtilHelper from '../../../helpers/util'
 import DateHelper from '../../../helpers/date'
@@ -9,16 +10,17 @@ import styles from './calendar.module.css'
 import Modal from '../../modals/modal'
 import Erro from '../../utils/error'
 import DayContent from '../../content/day'
+import Button from '../../utils/button'
 
 function CalendarContent() {
-  const [startDate, setStartDate] = useState(new Date())
-  const [modal, setModal] = useState(false)
-  const [modalErro, setModalErro] = useState(false)
-  const [errorMsg, setErrorMsg] = useState('')
-  const [currentApod, setCurrentApod] = useState(null)
+  const [startDate, setStartDate] = useState<any>(new Date())
+  const [modal, setModal] = useState<boolean>(false)
+  const [modalErro, setModalErro] = useState<boolean>(false)
+  const [errorMsg, setErrorMsg] = useState<string>('')
+  const [currentApod, setCurrentApod] = useState<DayFace | null>(null)
 
-  function bodyControl(flag) {
-    let { body } = document
+  function bodyControl(flag: boolean) {
+    const { body } = document
     if (flag) {
       body.classList.remove('scroll-off')
     } else {
@@ -29,20 +31,22 @@ function CalendarContent() {
   async function openModal() {
     setCurrentApod(null)
 
-    let nasaDate = DateHelper.dateToNasaFormat(startDate)
+    let apodDay = undefined
+
+    const nasaDate = DateHelper.dateToNasaFormat(String(startDate))
     try {
-      var arrUrls = await DateHelper.daysCombine(nasaDate, 1)
+      const arrUrls = await DateHelper.daysCombine(nasaDate, 1)
+      apodDay = arrUrls[0]
     } catch (err) {
       setModalErro(true)
       setErrorMsg(
         'There was an error when catching day, Verify if You`re Online'
       )
     }
-    var apodDay = arrUrls[0]
 
     bodyControl(false)
     if (apodDay !== undefined) {
-      setCurrentApod(apodDay.data)
+      setCurrentApod(apodDay.day)
       setModal(true)
     } else {
       setErrorMsg('There was an error when catching day')
@@ -63,7 +67,7 @@ function CalendarContent() {
   }
 
   const thisYear = new Date().getFullYear()
-  const years = UtilHelper.rangeInt(1996, parseInt(thisYear) + 1)
+  const years = UtilHelper.rangeInt(1996, parseInt(String(thisYear)) + 1)
   const months = [
     'January',
     'February',
@@ -79,16 +83,6 @@ function CalendarContent() {
     'December'
   ]
 
-  function redirect() {
-    let nasaDate = DateHelper.dateToNasaFormat(startDate)
-    let link = `/day/${nasaDate}`
-    Router.push(link)
-  }
-
-  function retry() {
-    console.log('Reload')
-  }
-
   return (
     <>
       <div className="container-fluid">
@@ -98,7 +92,7 @@ function CalendarContent() {
               <div className={styles.cont}>
                 <DatePicker
                   selected={startDate}
-                  onChange={startDate => setStartDate(startDate)}
+                  onChange={(startDate: any) => setStartDate(startDate)}
                   minDate={new Date(1996, 6, 16)}
                   maxDate={new Date()}
                   showDisabledMonthNavigation={true}
@@ -111,7 +105,7 @@ function CalendarContent() {
                     increaseMonth,
                     prevMonthButtonDisabled,
                     nextMonthButtonDisabled
-                  }) => (
+                  }: any) => (
                     <div className="date-picker__custom-head">
                       <button
                         onClick={decreaseMonth}
@@ -156,9 +150,9 @@ function CalendarContent() {
                     </div>
                   )}
                 />
-                <div className="btn-custom">
-                  <a onClick={() => openModal()}>Go to date</a>
-                </div>
+                <Button title="Go to Date" action={() => openModal()} textOnly>
+                  <span>Go to date</span>
+                </Button>
               </div>
             </div>
             <div className="col-12">
@@ -169,11 +163,23 @@ function CalendarContent() {
       </div>
 
       <Modal open={modal} closeModal={() => closeModal()}>
-        <DayContent day={currentApod} />
+        {currentApod ? (
+          <DayContent
+            copyright={currentApod.copyright}
+            date={currentApod.date}
+            explanation={currentApod.explanation}
+            mediaType={currentApod.mediaType}
+            title={currentApod.title}
+            url={currentApod.url}
+            hdUrl={currentApod.hdUrl}
+          />
+        ) : (
+          ''
+        )}
       </Modal>
 
       <Modal open={modalErro} closeModal={() => closeModalErro()}>
-        <Erro message={errorMsg} reload={() => {}} />
+        <Erro message={errorMsg} />
       </Modal>
     </>
   )
