@@ -72,7 +72,7 @@ function Button({
           `}
           target={target}
           href={href}
-          rel={rel ? rel : 'noopener noreferrer'}
+          rel={rel ? rel : target ? 'noopener noreferrer' : ''}
         >
           {children}
         </a>
@@ -106,7 +106,7 @@ function Button({
         `}
           target={target}
           href={href}
-          rel={rel ? rel : 'noopener noreferrer'}
+          rel={rel ? rel : target ? 'noopener noreferrer' : ''}
         >
           {children}
         </a>

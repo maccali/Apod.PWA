@@ -12,7 +12,7 @@ import 'react-lazy-load-image-component/src/effects/opacity.css'
 
 import type { AppProps } from 'next/app'
 
-// import NextNprogress from '../components/utils/loader';
+import NextNprogress from '../components/utils/loader'
 import Meta from '../components/utils/meta'
 import Offline from '../components/utils/offline'
 
@@ -21,14 +21,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       {/* Other Custom Logic */}
-      {/* <NextNprogress
-      color="#fff"
-      colorSecondary="#2c2c7b"
-      startPosition={0.3}
-      stopDelayMs={200}
-      height={5}
-      options={{ easing: 'ease', speed: 500 }}
-    /> */}
+      <NextNprogress
+        color="#fff"
+        colorSecondary="#2c2c7b"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={5}
+        options={{ easing: 'ease', speed: 500 }}
+      />
       <Offline />
       <Meta />
       <Component {...pageProps} />

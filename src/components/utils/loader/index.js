@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 class NextNProgress extends React.Component {
   static defaultProps = {
     color: '#29D',
-    colorSecondary: '#29D',
     startPosition: 0.3,
     stopDelayMs: 200,
     height: 3
@@ -28,7 +27,7 @@ class NextNProgress extends React.Component {
   }
 
   render() {
-    const { color, colorSecondary, height } = this.props
+    const { color, height } = this.props
 
     return (
       <style jsx global>{`
@@ -60,20 +59,14 @@ class NextNProgress extends React.Component {
           display: 'block';
           position: fixed;
           z-index: 1031;
-          top: 50%;
-          padding: 10px;
-          padding-left: 20px;
-          border-radius: 0 45px 45px 0;
-          background-color: ${colorSecondary};
-          -webkit-box-shadow: 0px 0px 33px -9px rgba(255, 255, 255, 0.5);
-          -moz-box-shadow: 0px 0px 33px -9px rgba(255, 255, 255, 0.5);
-          box-shadow: 0px 0px 33px -9px rgba(255, 255, 255, 0.5);
+          top: 15px;
+          right: 15px;
         }
         #nprogress .spinner-icon {
-          width: 33px;
-          height: 33px;
+          width: 30px;
+          height: 30px;
           box-sizing: border-box;
-          border: solid 5px transparent;
+          border: solid 4px transparent;
           border-top-color: ${color};
           border-left-color: ${color};
           border-radius: 50%;

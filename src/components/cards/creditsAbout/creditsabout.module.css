@@ -1,0 +1,59 @@
+.cont {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  transition: all 0.2s;
+}
+
+.cont:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 991px) {
+  .cont {
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.cont figure {
+  display: flex;
+  height: 100px;
+  width: 100px;
+}
+
+@media only screen and (max-width: 441px) {
+  .cont figure {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .cont figure {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+.cont figure img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.texts {
+  color: #ffffff;
+  margin-left: 20px;
+  max-width: 300px;
+}
+
+.texts h3::first-letter {
+  font-size: 22px;
+  margin-right: 4px;
+  transition: all 0.3s;
+}
+
+.texts p {
+  text-align: justify;
+}
