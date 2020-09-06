@@ -34,13 +34,7 @@ function ImagesContent() {
     currentDay = DateHelper.dateToNasaFormat(currentDay)
 
     try {
-      const arrUrls = await DateHelper.daysCombine(currentDay, pageCount)
-      const arrOfDays = arrUrls.filter(theDate => {
-        if (theDate.day != undefined) {
-          return theDate.day
-        }
-      })
-
+      const arrOfDays = await DateHelper.daysCombine(currentDay, pageCount)
       setListOfDays(listOfDays.concat(arrOfDays))
       setPage(Number(page) + 1)
       setError(false)
