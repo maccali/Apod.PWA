@@ -68,7 +68,7 @@ function Button({
           title={title}
           className={`
           ${styles.taglink}
-          ${className ? styles.className : ''}
+          ${className ? className : ''}
           `}
           target={target}
           href={href}
@@ -81,7 +81,10 @@ function Button({
       return (
         <button
           title={title}
-          className={`${styles.taglink} ${className}`}
+          className={`
+          ${styles.taglink}
+          ${className ? className : ''}
+          `}
           onClick={() => (action ? action() : '')}
         >
           {children}
@@ -99,7 +102,7 @@ function Button({
         ${pos ? styles.pos : styles.pre}
         ${iconOnly ? styles.icon : ''}
         ${textOnly ? styles.text : ''}
-        ${className ? styles.className : ''}
+        ${className ? className : ''}
         `}
           target={target}
           href={href}
@@ -119,7 +122,7 @@ function Button({
             ${pos ? styles.pos : styles.pre}
             ${iconOnly ? styles.icon : ''}
             ${textOnly ? styles.text : ''}
-            ${className ? styles.className : ''}
+            ${className ? className : ''}
             `}
             onClick={() => (href ? hrefReplace(href) : action ? action() : '')}
           >
