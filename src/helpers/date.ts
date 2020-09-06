@@ -68,6 +68,16 @@ const DateHelper = {
     return dateIso
   },
 
+  validDayFilter: (arrUrls: Array<DayCustomFace>) => {
+    const arrOfDays = arrUrls.filter(theDate => {
+      if (theDate.day != undefined) {
+        return theDate.day
+      }
+    })
+
+    return arrOfDays
+  },
+
   daysCombine: async (startDate: string, numberOfDays: number) => {
     const key = process.env.NASA_API_KEY
     let nowDate = startDate
@@ -110,7 +120,9 @@ const DateHelper = {
       url = `/apod?api_key=${key}&date=${nowDate}`
     }
 
-    return arrDayUrls
+    const arrOfValidDays = DateHelper.validDayFilter(arrDayUrls)
+
+    return arrOfValidDays
   }
 }
 
