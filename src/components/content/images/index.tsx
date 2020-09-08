@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Fade from 'react-reveal/Fade'
 import { AiOutlinePlus } from 'react-icons/ai'
 
 import CardPod from '../../cards/pod'
@@ -79,10 +80,12 @@ function ImagesContent() {
             <div className="row">
               {Object.keys(listOfDays).map((_value: string, key: number) => (
                 <div className="col-12 col-sm-6 col-md-4" key={key}>
-                  <CardPod
-                    day={listOfDays[key].day}
-                    openModal={() => openModal(listOfDays[key].day)}
-                  />
+                  <Fade bottom>
+                    <CardPod
+                      day={listOfDays[key].day}
+                      openModal={() => openModal(listOfDays[key].day)}
+                    />
+                  </Fade>
                 </div>
               ))}
             </div>
@@ -94,29 +97,31 @@ function ImagesContent() {
           <SpinnerCard />
         ) : (
           <div className={styles.cont}>
-            <div className={styles.card}>
-              <div className={styles.line}>
-                <div className={styles.divinput}>
-                  <label htmlFor="pager" aria-label="Type a page">
-                    <NumberFormat
-                      name="pager"
-                      type="text"
-                      value={page}
-                      onChange={e => setPage(e.target.value)}
-                      decimalSeparator={false}
-                    />
-                  </label>
-                </div>
-              </div>
-              <div className={styles.line}>
+            <Fade bottom>
+              <div className={styles.card}>
                 <div className={styles.line}>
-                  <Button title="One more page" action={() => getData(page)}>
-                    <AiOutlinePlus />
-                    <span>More</span>
-                  </Button>
+                  <div className={styles.divinput}>
+                    <label htmlFor="pager" aria-label="Type a page">
+                      <NumberFormat
+                        name="pager"
+                        type="text"
+                        value={page}
+                        onChange={e => setPage(e.target.value)}
+                        decimalSeparator={false}
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div className={styles.line}>
+                  <div className={styles.line}>
+                    <Button title="One more page" action={() => getData(page)}>
+                      <AiOutlinePlus />
+                      <span>More</span>
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Fade>
           </div>
         )}
       </main>

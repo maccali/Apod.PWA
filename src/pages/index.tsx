@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Fade from 'react-reveal/Fade'
 import Head from 'next/head'
 
 import Nav from '../components/utils/nav'
@@ -71,18 +72,33 @@ function Home() {
       <main>
         <HomeHead />
         {loading ? (
-          <SpinnerCard />
+          <Fade left>
+            <SpinnerCard />
+          </Fade>
         ) : listOfDays ? (
-          Object.keys(listOfDays).map((_value: string, key: number) => (
-            <DayRowContent
-              key={key}
-              day={listOfDays[key].day}
-              openModal={() => openModal(listOfDays[key])}
-              invert={key % 2 ? true : false}
-            />
-          ))
+          Object.keys(listOfDays).map((_value: string, key: number) =>
+            key % 2 ? (
+              <Fade left key={key}>
+                <DayRowContent
+                  day={listOfDays[key].day}
+                  openModal={() => openModal(listOfDays[key])}
+                  invert={false}
+                />
+              </Fade>
+            ) : (
+              <Fade right key={key}>
+                <DayRowContent
+                  day={listOfDays[key].day}
+                  openModal={() => openModal(listOfDays[key])}
+                  invert={true}
+                />
+              </Fade>
+            )
+          )
         ) : (
-          <Error message={errorMessage} reload={() => getData()} />
+          <Fade left>
+            <Error message={errorMessage} reload={() => getData()} />
+          </Fade>
         )}
         <Credits />
         <Modal open={modal} closeModal={() => closeModal()}>

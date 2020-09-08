@@ -1,4 +1,5 @@
 import React from 'react'
+import Fade from 'react-reveal/Fade'
 import Head from 'next/head'
 import Nav from '../../components/utils/nav'
 import CreditsAboutCard from '../../components/cards/creditsAbout'
@@ -44,34 +45,22 @@ function About() {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <h1>About</h1>
+                <Fade left>
+                  <h1>About</h1>
+                </Fade>
               </div>
               {credits.map(item => (
                 <div key={item.title} className="col-12 col-md-6">
-                  <CreditsAboutCard
-                    title={item.title}
-                    explanation={item.explanation}
-                    externalLink={item.externalUrl}
-                    imgUrL={item.imgUrl}
-                  />
+                  <Fade bottom>
+                    <CreditsAboutCard
+                      title={item.title}
+                      explanation={item.explanation}
+                      externalLink={item.externalUrl}
+                      imgUrL={item.imgUrl}
+                    />
+                  </Fade>
                 </div>
               ))}
-              {/* <ApodExplanation />
-              <DeveloperSite />
-              <NasaSite />
-              <SourceCode />
-              <div className="col-12">
-                <div className="btn-custom">
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://apod.nasa.gov/apod/astropix.html"
-                    target="_blank"
-                    aria-label="More About Apod"
-                  >
-                    More About Apod
-                  </a>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

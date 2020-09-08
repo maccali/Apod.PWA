@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-onchange */
 import React, { useState } from 'react'
+import Fade from 'react-reveal/Fade'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
 import DatePicker from 'react-datepicker'
@@ -89,71 +90,79 @@ function CalendarContent() {
         <div className="container ped-lr">
           <div className="row">
             <div className="col-12">
-              <div className={styles.cont}>
-                <DatePicker
-                  selected={startDate}
-                  onChange={(startDate: any) => setStartDate(startDate)}
-                  minDate={new Date(1996, 6, 16)}
-                  maxDate={new Date()}
-                  showDisabledMonthNavigation={true}
-                  inline={true}
-                  renderCustomHeader={({
-                    date,
-                    changeYear,
-                    changeMonth,
-                    decreaseMonth,
-                    increaseMonth,
-                    prevMonthButtonDisabled,
-                    nextMonthButtonDisabled
-                  }: any) => (
-                    <div className="date-picker__custom-head">
-                      <button
-                        onClick={decreaseMonth}
-                        disabled={prevMonthButtonDisabled}
-                      >
-                        <AiOutlineLeft />
-                      </button>
-                      <select
-                        value={date.getFullYear()}
-                        className="decorated"
-                        onChange={({ target: { value } }) => changeYear(value)}
-                        data-size="2"
-                      >
-                        {years.map(option => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
+              <Fade bottom>
+                <div className={styles.cont}>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(startDate: any) => setStartDate(startDate)}
+                    minDate={new Date(1996, 6, 16)}
+                    maxDate={new Date()}
+                    showDisabledMonthNavigation={true}
+                    inline={true}
+                    renderCustomHeader={({
+                      date,
+                      changeYear,
+                      changeMonth,
+                      decreaseMonth,
+                      increaseMonth,
+                      prevMonthButtonDisabled,
+                      nextMonthButtonDisabled
+                    }: any) => (
+                      <div className="date-picker__custom-head">
+                        <button
+                          onClick={decreaseMonth}
+                          disabled={prevMonthButtonDisabled}
+                        >
+                          <AiOutlineLeft />
+                        </button>
+                        <select
+                          value={date.getFullYear()}
+                          className="decorated"
+                          onChange={({ target: { value } }) =>
+                            changeYear(value)
+                          }
+                          data-size="2"
+                        >
+                          {years.map(option => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </select>
 
-                      <select
-                        value={months[date.getMonth()]}
-                        className="decorated"
-                        onChange={({ target: { value } }) =>
-                          changeMonth(months.indexOf(value))
-                        }
-                        data-size="2"
-                      >
-                        {months.map(option => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
+                        <select
+                          value={months[date.getMonth()]}
+                          className="decorated"
+                          onChange={({ target: { value } }) =>
+                            changeMonth(months.indexOf(value))
+                          }
+                          data-size="2"
+                        >
+                          {months.map(option => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </select>
 
-                      <button
-                        onClick={increaseMonth}
-                        disabled={nextMonthButtonDisabled}
-                      >
-                        <AiOutlineRight />
-                      </button>
-                    </div>
-                  )}
-                />
-                <Button title="Go to Date" action={() => openModal()} textOnly>
-                  <span>Go to date</span>
-                </Button>
-              </div>
+                        <button
+                          onClick={increaseMonth}
+                          disabled={nextMonthButtonDisabled}
+                        >
+                          <AiOutlineRight />
+                        </button>
+                      </div>
+                    )}
+                  />
+                  <Button
+                    title="Go to Date"
+                    action={() => openModal()}
+                    textOnly
+                  >
+                    <span>Go to date</span>
+                  </Button>
+                </div>
+              </Fade>
             </div>
             <div className="col-12">
               <Credits />

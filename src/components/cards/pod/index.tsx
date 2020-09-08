@@ -1,4 +1,5 @@
 import React from 'react'
+import Fade from 'react-reveal/Fade'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import styles from './pod.module.css'
 
@@ -11,7 +12,9 @@ function Pod({ day, openModal }: PodFace) {
   return (
     <>
       <button onClick={() => openModal()} className={styles.card}>
-        <div className={styles.date}>{day.date}</div>
+        <Fade right>
+          <div className={styles.date}>{day.date}</div>
+        </Fade>
         <div className={styles.divimg}>
           {day.mediaType === 'image' ? (
             <div>
@@ -26,9 +29,11 @@ function Pod({ day, openModal }: PodFace) {
             <iframe title={day.title} src={day.url} height="100%"></iframe>
           )}
         </div>
-        <div className={styles.name}>
-          <p>{day.title}</p>
-        </div>
+        <Fade left>
+          <div className={styles.name}>
+            <p>{day.title}</p>
+          </div>
+        </Fade>
       </button>
     </>
   )
