@@ -11,7 +11,7 @@ type DayImgFace = {
 function ImgSide({ mediaType, url, title }: DayImgFace) {
   return (
     <>
-      <div className={`col-12 col-md-4 p-0 ${styles.cont}`}>
+      <div className={`col-xs-12 col-md-4 ${styles.cont}`}>
         {mediaType === 'image' ? (
           <a
             title={title}

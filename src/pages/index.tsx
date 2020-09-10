@@ -20,6 +20,7 @@ function Home() {
   // const [error, setError] = useState<boolean>(false)
 
   const [modal, setModal] = useState<boolean>(false)
+  const [fixCardDirection, setFixCardDirection] = useState<boolean>(true)
   const [currentApod, setCurrentApod] = useState<DayFace | null>(null)
   const errorMessage = 'An error occurred while fetching an image'
 
@@ -58,6 +59,17 @@ function Home() {
   }
 
   useEffect(() => {
+    window.addEventListener('resize', function () {
+      setCardDirection()
+    })
+    setCardDirection()
+  }, [])
+
+  function setCardDirection() {
+    setFixCardDirection(window.innerWidth < 992)
+  }
+
+  useEffect(() => {
     ;(async function () {
       await getData()
     })()
@@ -82,7 +94,7 @@ function Home() {
                 <DayRowContent
                   day={listOfDays[key].day}
                   openModal={() => openModal(listOfDays[key])}
-                  invert={false}
+                  invert={true}
                 />
               </Fade>
             ) : (
@@ -90,7 +102,7 @@ function Home() {
                 <DayRowContent
                   day={listOfDays[key].day}
                   openModal={() => openModal(listOfDays[key])}
-                  invert={true}
+                  invert={fixCardDirection ? true : false}
                 />
               </Fade>
             )
