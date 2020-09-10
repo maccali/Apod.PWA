@@ -17,7 +17,7 @@ function ImgSide({ mediaType, url, title }: DayImgFace) {
             title={title}
             href={url}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className={styles.imgcont}
           >
             <img src={url} alt={title} />
