@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { ReactNode, useRef, useEffect, useState } from 'react'
+import Link from 'next/link'
 import { ClipLoader } from 'react-spinners'
 
 import styles from './button.module.css'
@@ -64,18 +66,19 @@ function Button({
   if (noStyle) {
     if (href) {
       return (
-        <a
-          title={title}
-          className={`
+        <Link href={href}>
+          <a
+            title={title}
+            className={`
           ${styles.taglink}
           ${className ? className : ''}
           `}
-          target={target}
-          href={href}
-          rel={rel ? rel : target ? 'noopener noreferrer' : ''}
-        >
-          {children}
-        </a>
+            target={target}
+            rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+          >
+            {children}
+          </a>
+        </Link>
       )
     } else {
       return (
@@ -94,22 +97,23 @@ function Button({
   } else {
     if (target) {
       return (
-        <a
-          title={title}
-          ref={ref}
-          className={`
-        ${styles.btn}
+        <Link href={href}>
+          <a
+            title={title}
+            ref={ref}
+            className={`
+          ${styles.btn}
         ${pos ? styles.pos : styles.pre}
         ${iconOnly ? styles.icon : ''}
         ${textOnly ? styles.text : ''}
         ${className ? className : ''}
         `}
-          target={target}
-          href={href}
-          rel={rel ? rel : target ? 'noopener noreferrer' : ''}
-        >
-          {children}
-        </a>
+            target={target}
+            rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+          >
+            {children}
+          </a>
+        </Link>
       )
     } else {
       return (
