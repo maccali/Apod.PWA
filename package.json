@@ -10,10 +10,10 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --watch",
     "cypress:open": "cypress open",
-    "format": "prettier --write \"{,!(.next)/**/,!(node_modules)/**/}*.{js,jsx,css,scss}\""
+    "format": "prettier --write \"{,!(.next)/**/,!(node_modules)/**/}*.{js,jsx,ts,tsx,css,scss}\""
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": "npm run lint:fix"
+    "src/**/*.{js,jsx,ts,tsx,css,scss}": "npm run lint:fix"
   },
   "husky": {
     "hooks": {
