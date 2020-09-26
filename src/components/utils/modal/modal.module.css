@@ -58,7 +58,7 @@
   margin: 0;
 }
 
-.headercont a {
+.headercont button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,13 +69,13 @@
   cursor: pointer;
 }
 
-.headercont a:hover {
-  transform: scale(1.1);
+.headercont button:hover {
+  transform: scale(1.2);
 }
 
-.headercont a svg {
-  width: 28px;
-  height: 28px;
+.headercont button svg {
+  width: 33px;
+  height: 33px;
   color: #fff;
 }
 
