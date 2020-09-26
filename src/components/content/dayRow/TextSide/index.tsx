@@ -23,6 +23,8 @@ function TextSide({
 }: DayTextFace) {
   const [url, setUrl] = useState('')
 
+  const dateCustom = date.split('-')
+
   useEffect(() => {
     const { hostname, protocol } = window.location
     setUrl(`${protocol}//${hostname}/day/${date}`)
@@ -33,7 +35,10 @@ function TextSide({
       <div className="col-xs-12 col-md-8">
         <div className="col-xs-12">
           <div className={styles.header}>
-            <h3 className={styles.date}>{date}</h3>
+            <h3 className={styles.date}>
+              <span>{dateCustom[0]}</span>-<span>{dateCustom[1]}</span>-
+              <span>{dateCustom[2]}</span>
+            </h3>
             <div className={styles.socialcont}>
               {url !== '' ? (
                 <Social title={'ApodSpace'} text={`${title}`} url={`${url}`} />
@@ -44,7 +49,7 @@ function TextSide({
           </div>
         </div>
         <div className="col-xs-12">
-          <h1 className={styles.title}>{title}</h1>
+          <h2 className={styles.title}>{title}</h2>
         </div>
         <div className="col-xs-12">
           {copyright ? (
@@ -54,9 +59,6 @@ function TextSide({
           ) : (
             ''
           )}
-        </div>
-        <div className="col-xs-12">
-          <p className={styles.explanationtitle}>Explanation:</p>
         </div>
         <div className="col-xs-12">
           <p className={styles.explanation}>{explanation}</p>

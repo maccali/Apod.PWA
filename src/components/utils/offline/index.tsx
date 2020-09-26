@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
+
+import Button from '../button'
+
 import styles from './offline.module.css'
 
 function Offline() {
@@ -17,14 +20,19 @@ function Offline() {
       {online ? (
         ''
       ) : (
-        <div className={styles.cont} onClick={() => setOpen(!open)}>
+        <Button
+          title="You Are Offline"
+          className={styles.cont}
+          action={() => setOpen(!open)}
+          noStyle
+        >
           <AiOutlineInfoCircle className={styles.icon} />
           <div
             className={`${styles.text} ${open ? styles.open : styles.close}`}
           >
             <p>You are Offline</p>
           </div>
-        </div>
+        </Button>
       )}
     </>
   )

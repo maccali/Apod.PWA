@@ -9,7 +9,7 @@ import DayRowContent from '../components/content/dayRow'
 import SpinnerCard from '../components/cards/spinner'
 import Error from '../components/utils/error'
 import Credits from '../components/cards/credits'
-import Modal from '../components/modals/modal'
+import Modal from '../components/utils/modal'
 
 import DateHelper from '../helpers/date'
 

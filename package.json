@@ -6,14 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "yarn run lint -- --fix",
     "test": "jest --watch",
     "cypress:open": "cypress open",
     "format": "prettier --write \"{,!(.next)/**/,!(node_modules)/**/}*.{js,jsx,ts,tsx,css,scss}\""
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,css,scss}": "npm run lint:fix"
+    "src/**/*.{js,jsx,ts,tsx}": "npm run lint:fix"
   },
   "husky": {
     "hooks": {

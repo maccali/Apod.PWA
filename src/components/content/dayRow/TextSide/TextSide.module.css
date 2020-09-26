@@ -1,8 +1,24 @@
 .date {
   margin-top: 30px;
   align-items: center;
-
   color: white;
+}
+
+.date {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.date span:nth-child(1){
+  font-size: 16px;
+}
+
+.date span:nth-child(2){
+  font-size: 19px;
+}
+
+.date span:nth-child(3){
+  font-size: 25px;
 }
 
 .header {
@@ -16,16 +32,21 @@
 }
 
 .title {
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   color: white;
   text-align: left;
-  font-size: 23px;
+  font-size: 18px;
+}
+
+.title::first-letter {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .copyright {
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   font-size: 16px;
   color: white;
 }
@@ -34,25 +55,19 @@
   margin-right: 10px;
 }
 
-.explanationtitle {
-  margin-top: 25px;
-  color: white;
-}
-
 .explanation {
-  text-indent: 1.5em;
   text-align: justify;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   color: white;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
 .explanation::first-letter {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -68,6 +83,7 @@
 .btncenter {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {

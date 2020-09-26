@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
+import Button from '../button'
+
 import styles from './modal.module.css'
 
-function Modal({ open, closeModal, children }) {
+type ModalFace = {
+  open: boolean
+  closeModal: (flag: boolean) => void
+  children: ReactNode
+}
+
+function Modal({ open, closeModal, children }: ModalFace) {
   return (
     <>
       <div
@@ -22,12 +30,14 @@ function Modal({ open, closeModal, children }) {
                     <div className={styles.img}>
                       <img src="/icons/icon126t.png" alt="Site Logo" />
                     </div>
-                    <a
-                      onClick={() => closeModal(!open)}
+                    <Button
+                      title="Close Menu"
+                      action={() => closeModal(!open)}
                       aria-label="Close Menu"
+                      noStyle
                     >
                       <AiOutlineClose />
-                    </a>
+                    </Button>
                   </div>
                 </div>
               </div>
