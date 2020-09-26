@@ -6,6 +6,8 @@ import Button from '../../../utils/button'
 
 import styles from './TextSide.module.css'
 
+import { VscRocket } from 'react-icons/vsc'
+
 type DayTextFace = {
   date: string
   title: string
@@ -69,11 +71,7 @@ function TextSide({
               title={`Read more About ${title}`}
               action={() => openModal()}
             >
-              <p>
-                <span role="img" aria-label="Rocket">
-                  🚀
-                </span>
-              </p>
+              <VscRocket />
               <span>See More</span>
             </Button>
           </div>

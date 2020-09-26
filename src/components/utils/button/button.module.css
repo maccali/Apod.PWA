@@ -21,12 +21,12 @@
   transform: scale(1.07);
 }
 
-.btn p {
+.btn svg {
   transition: all 0.3s;
 }
 
-.btn:hover p {
-  transform: scale(1.4);
+.btn:hover svg {
+  transform: scale(1.5);
 }
 
 .btn span,
