@@ -5,7 +5,7 @@
 > PWP app for Astronomy Picture of Day
 
 <p align="center">
-  <i>Site E APP</i>
+  <i>Site & APP</i>
 </p>
 
 <p align="center">
