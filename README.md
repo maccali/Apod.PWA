@@ -1,7 +1,21 @@
 ![Banner for ApodSpace](https://github.com/maccali/Apod/blob/master/.github/banner.png)
 
 # ApodSpace
+
 > PWP app for Astronomy Picture of Day
+
+<p align="center">
+  <i>Site E APP</i>
+</p>
+
+<p align="center">
+ <a href="https://apod.pictu.one" target="_blank">
+  <img alt="Veja o Site" src="https://github.com/maccali/Apod/blob/master/.github/site.png" />
+  </a>
+ <a href="https://play.google.com/store/apps/details?id=one.pictu.apod.twa&hl=pt_BR&gl=US" target="_blank">
+  <img alt="Veja o App" src="https://github.com/maccali/Apod/blob/master/.github/google-play.png">
+  </a>
+</p>
 
 <p align="center">
   <i>Info</i>
@@ -84,20 +98,24 @@
 
 </p>
 
-
-
 ### Features
+
 > ---
-> * <b>Today`s Picture</b> Home page
-> * <b>Pagination</b> 6 and 6 days, and select specific page
-> * <b>Visualize day</b> Visualize image and Videos
-> * <b>Calendar</b> Select especific day on calendar
-> * <b>About</b> Page about project
+>
+> - <b>Today`s Picture</b> Home page
+> - <b>Pagination</b> 6 and 6 days, and select specific page
+> - <b>Visualize day</b> Visualize image and Videos
+> - <b>Calendar</b> Select especific day on calendar
+> - <b>About</b> Page about project
+>
 > ---
 
 ### In Develop
+
 > ---
-> * <b>Favorite Days</b> Select Favorite
+>
+> - <b>Favorite Days</b> Select Favorite
+>
 > ---
 
 ### Quick Setup
