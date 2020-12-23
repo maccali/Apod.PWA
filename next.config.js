@@ -14,5 +14,9 @@ module.exports = withPWA({
   },
   env: {
     NASA_API_KEY: process.env.NASA_API_KEY
+  },
+  images: {
+    deviceSizes: [320, 640, 768, 1024, 1600],
+    domains: ['apod.nasa.gov']
   }
 })

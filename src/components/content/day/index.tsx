@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Fade from 'react-reveal/Fade'
-
 import styles from './day.module.css'
-
 import Social from '../../cards/social'
 import Credits from '../../cards/credits'
 
@@ -59,7 +58,7 @@ function DayContent({
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src={url} alt={title} />
+                    <Image src={url} alt={title} layout="fill" />
                   </a>
                 </div>
               ) : (

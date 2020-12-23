@@ -25,6 +25,7 @@ function DayRowContent({ day, invert, openModal }: DayRowContent) {
                 title={day.title}
                 mediaType={day.mediaType}
                 url={day.url}
+                invert={invert}
               />
               <TextSide
                 title={day.title}
@@ -47,6 +48,7 @@ function DayRowContent({ day, invert, openModal }: DayRowContent) {
                 title={day.title}
                 mediaType={day.mediaType}
                 url={day.url}
+                invert={invert}
               />
             </>
           )}

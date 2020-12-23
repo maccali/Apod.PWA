@@ -1,27 +1,34 @@
 import React from 'react'
-
+import Image from 'next/image'
 import styles from './ImgSide.module.css'
 
 type DayImgFace = {
   mediaType: string
   url: string
   title: string
+  invert: boolean
 }
 
-function ImgSide({ mediaType, url, title }: DayImgFace) {
+function ImgSide({ mediaType, url, title, invert }: DayImgFace) {
   return (
     <>
       <div className={`col-xs-12 col-md-4 ${styles.cont}`}>
         {mediaType === 'image' ? (
-          <a
-            title={title}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.imgcont}
+          <div
+            className={`${styles.imgcont} ${
+              invert ? styles.right : styles.left
+            }`}
           >
-            <img src={url} alt={title} />
-          </a>
+            <a
+              title={title}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={url} alt={title} layout="fill" />
+              {/* <img src={url} alt={title} /> */}
+            </a>
+          </div>
         ) : (
           <div className={styles.framecont}>
             <iframe

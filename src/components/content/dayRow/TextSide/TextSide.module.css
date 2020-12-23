@@ -1,3 +1,8 @@
+.count {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .date {
   margin-top: 30px;
   align-items: center;
@@ -9,15 +14,15 @@
   margin-right: 3px;
 }
 
-.date span:nth-child(1){
+.date span:nth-child(1) {
   font-size: 16px;
 }
 
-.date span:nth-child(2){
+.date span:nth-child(2) {
   font-size: 19px;
 }
 
-.date span:nth-child(3){
+.date span:nth-child(3) {
   font-size: 25px;
 }
 
@@ -83,7 +88,7 @@
 .btncenter {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -92,5 +97,8 @@
   }
   .copyright {
     font-size: 14px;
+  }
+  .count {
+    padding-top: 0px;
   }
 }

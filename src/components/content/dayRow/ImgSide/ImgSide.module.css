@@ -1,6 +1,8 @@
 .cont {
+  display: flex;
   margin-top: 0;
   margin-bottom: 0;
+  height: 100%;
 }
 
 .framecont {
@@ -23,16 +25,25 @@
   height: 100%;
 }
 
-.imgcont {
+.imgcont a {
   display: flex;
   justify-content: center;
-  max-width: 100%;
+  width: 100vw;
+  height: 380px;
 }
 
-.imgcont img {
+.imgcont a img {
   width: 100%;
-  border-radius: 10px;
+  min-height: 100%;
   object-fit: cover;
+}
+
+.left a img {
+  border-radius: 10px;
+}
+
+.right a img {
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 991px) {

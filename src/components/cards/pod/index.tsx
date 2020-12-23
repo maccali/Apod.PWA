@@ -1,6 +1,6 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import Image from 'next/image'
 import styles from './pod.module.css'
 
 type PodFace = {
@@ -18,12 +18,7 @@ function Pod({ day, openModal }: PodFace) {
         <div className={styles.divimg}>
           {day.mediaType === 'image' ? (
             <div>
-              <LazyLoadImage
-                alt={day.title}
-                height={270}
-                src={day.url} // use normal <img> attributes as props
-                effect="opacity"
-              />
+              <Image src={day.url} alt={day.title} layout="fill" />
             </div>
           ) : (
             <iframe title={day.title} src={day.url} height="100%"></iframe>

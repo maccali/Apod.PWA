@@ -20,12 +20,12 @@
   transform: scale(1.05) rotate(0.8deg);
 }
 
-.divimg div span {
+.divimg div {
   width: inherit;
   background-color: center;
 }
 
-.divimg div span img {
+.divimg div img {
   height: 270px;
   border-radius: 10px 0 10px 0;
   object-fit: cover;
