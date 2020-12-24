@@ -58,7 +58,13 @@ function DayContent({
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Image src={url} alt={title} layout="fill" />
+                    <Image
+                      src={url}
+                      alt={title}
+                      width={100}
+                      height={100}
+                      layout="responsive"
+                    />
                   </a>
                 </div>
               ) : (
