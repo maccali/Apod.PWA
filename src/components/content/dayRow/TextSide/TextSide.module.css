@@ -63,11 +63,11 @@
 .explanation {
   text-align: justify;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   color: white;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 

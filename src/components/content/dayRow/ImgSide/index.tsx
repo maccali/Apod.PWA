@@ -30,13 +30,15 @@ function ImgSide({ mediaType, url, title, invert }: DayImgFace) {
             </a>
           </div>
         ) : (
-          <div className={styles.framecont}>
-            <iframe
-              title={title}
-              src={url}
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
+          <div className={styles.framewrap}>
+            <div className={styles.framecont}>
+              <iframe
+                title={title}
+                src={url}
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         )}
       </div>
