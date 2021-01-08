@@ -21,7 +21,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": ">=0.21.1",
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
     "crypto-js": "^4.0.0",
