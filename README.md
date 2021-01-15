@@ -40,10 +40,10 @@
     <img alt="Yarn" src="https://img.shields.io/badge/Yarn-1.22.4-0.svg?style=flat-square&color=2c8ebb&labelColor=000000">
   </a>
   <a href="https://nextjs.org" target="_blank">
-    <img alt="NextJS" src="https://img.shields.io/badge/NextJS-9.3.4.x-0.svg?style=flat-square&color=6191ff&labelColor=000000">
+    <img alt="NextJS" src="https://img.shields.io/badge/NextJS-10.0.x-0.svg?style=flat-square&color=6191ff&labelColor=000000">
   </a>
   <a href="https://github.com/axios/axios" target="_blank">
-    <img alt="Axios" src="https://img.shields.io/badge/Axios-0.19.2-0.svg?style=flat-square&color=1f7cb1&labelColor=000000">
+    <img alt="Axios" src="https://img.shields.io/badge/Axios-0.21.1-0.svg?style=flat-square&color=1f7cb1&labelColor=000000">
   </a>
   <a href="https://getbootstrap.com" target="_blank">
     <img alt="Bootstrap Grid" src="https://img.shields.io/badge/Bootstrap Grid-4.4.1-0.svg?style=flat-square&color=563d7c&labelColor=000000">
@@ -60,6 +60,9 @@
   <i>Best Practices</i>
 </p>
 <p align="center">
+  <a href="https://nextjs.org/docs/basic-features/image-optimization" target="_blank">
+    <img alt="Next Image Optimization" src="https://img.shields.io/badge/Next Image-Optimization-0.svg?style=flat-square&color=022ba7&labelColor=000000" />
+  </a>
   <a href="https://accounts.google.com/" target="_blank">
     <img alt="Google Analytics" src="https://img.shields.io/badge/Google-Analytics-0.svg?style=flat-square&color=f27904&labelColor=000000" />
   </a>
@@ -71,6 +74,9 @@
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/" target="_blank">
     <img alt="PWA" src="https://img.shields.io/badge/PWA--0.svg?style=flat-square&color=5a0fc8&labelColor=000000">
+  </a>
+    <a href="https://developers.google.com/web/android/trusted-web-activity" target="_blank">
+    <img alt="TWA" src="https://img.shields.io/badge/TWA--0.svg?style=flat-square&color=5a0fc8&labelColor=000000">
   </a>
   <a href="https://alligator.io/vuejs/server-side-rendering-with-nuxtjs/" target="_blank">
     <img alt="SSR" src="https://img.shields.io/badge/Server Side-Rendering-0.svg?style=flat-square&color=007ac0&labelColor=000000">
@@ -107,6 +113,7 @@
 > - <b>Visualize day</b> Visualize image and Videos
 > - <b>Calendar</b> Select especific day on calendar
 > - <b>About</b> Page about project
+> - <b>Image Optimization</b> With Next Image
 >
 > ---
 
