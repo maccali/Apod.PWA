@@ -117,6 +117,12 @@
 >
 > ---
 
+### Stargazers
+> ---
+> [![Stargazers repo roster for @maccali/Apod.PWA](https://reporoster.com/stars/maccali/Apod.PWA)](https://github.com/maccali/Apod.PWA/stargazers)
+> ---
+
+
 ### In Develop
 
 > ---
