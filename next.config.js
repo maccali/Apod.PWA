@@ -1,10 +1,21 @@
 const withPWA = require('next-pwa')
 const Dotenv = require('dotenv-webpack')
+const runtimeCaching = require('next-pwa/cache')
+const util = require('util')
+
+const cacheTime = 365 * 24 * 60 * 60 // 365 days
+
+runtimeCaching.map(item => {
+  item.options.expiration.maxAgeSeconds = cacheTime
+})
+
+console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
 
 module.exports = withPWA({
   pwa: {
     dest: 'public',
-    importScripts: ['/worker.js']
+    importScripts: ['/worker.js'],
+    runtimeCaching
   },
   webpack: config => {
     // Add the new plugin to the existing webpack plugins
