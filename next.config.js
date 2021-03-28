@@ -7,9 +7,16 @@ const cacheTime = 365 * 24 * 60 * 60 // 365 days
 
 runtimeCaching.map(item => {
   item.options.expiration.maxAgeSeconds = cacheTime
+  if (item.options.cacheName === 'others') {
+    item.options.expiration.maxEntries = 200
+  }
+  if (item.options.cacheName === 'static-image-assets') {
+    item.options.expiration.maxEntries = 100
+  }
 })
 
 console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
+// console.log('😜 RUNTIME CACHE =>', runtimeCaching)
 
 module.exports = withPWA({
   pwa: {
