@@ -37,22 +37,46 @@
     {
       "name": "Last Days",
       "url": "/",
-      "description": "Last 3 or 4 days"
+      "description": "Last 3 or 4 days",
+      "icons": {
+        "src": "/icons/icon192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
     },
     {
       "name": "Calendar",
       "url": "/calendar",
-      "description": "Select date on Calendar"
+      "description": "Select date on Calendar",
+      "icons": {
+        "src": "/icons/calendar.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
     },
     {
       "name": "Images",
       "url": "/images",
-      "description": "List of all resent images in NASA Apod"
+      "description": "List of all resent images in NASA Apod",
+      "icons": {
+        "src": "/icons/images.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
     },
     {
       "name": "About",
       "url": "/about",
-      "description": "About Project"
+      "description": "About Project",
+      "icons": {
+        "src": "/icons/about.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
     }
   ]
 }
