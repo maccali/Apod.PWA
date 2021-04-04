@@ -32,5 +32,27 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Last Days",
+      "url": "/",
+      "description": "Last 3 or 4 days"
+    },
+    {
+      "name": "Calendar",
+      "url": "/calendar",
+      "description": "Select date on Calendar"
+    },
+    {
+      "name": "Images",
+      "url": "/images",
+      "description": "List of all resent images in NASA Apod"
+    },
+    {
+      "name": "About",
+      "url": "/about",
+      "description": "About Project"
+    }
   ]
 }
