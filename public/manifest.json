@@ -1,6 +1,7 @@
 {
   "name": "Apod",
   "short_name": "Apod",
+  "categories": ["APOD", "NASA", "photos", "Astronomy Picture of Day"],
   "description": "Amazing Images from Nasa day by day",
   "display": "standalone",
   "orientation": "portrait",
@@ -37,22 +38,53 @@
     {
       "name": "Last Days",
       "url": "/",
-      "description": "Last 3 or 4 days"
+      "description": "Last 3 or 4 days",
+      "icon": "/icons/icon192.png",
+      "icons": [
+        {
+          "src": "/icons/icon192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Calendar",
       "url": "/calendar",
-      "description": "Select date on Calendar"
+      "description": "Select date on Calendar",
+      "icon": "/icons/calendar.png",
+      "icons": [
+        {
+          "src": "/icons/calendar.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Images",
       "url": "/images",
-      "description": "List of all resent images in NASA Apod"
+      "description": "List of all resent images in NASA Apod",
+      "icon": "/icons/images.png",
+      "icons": [
+        {
+          "src": "/icons/images.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "About",
       "url": "/about",
-      "description": "About Project"
+      "description": "About Project",
+      "icons": [
+        {
+          "src": "/icons/about.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
