@@ -38,8 +38,9 @@
 .imgcont a {
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 340px;
+  border-radius: 10px;
 }
 
 .imgcont a img {
