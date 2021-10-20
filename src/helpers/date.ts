@@ -88,17 +88,17 @@ const DateHelper = {
     for (let i = 0; i < numberOfDays; i++) {
       await api
         .get(`${url}`)
-        .then(response => {
+        .then((response: any) => {
           if (response.status === 200) {
             const day: DayFace = {
-              copyright: response.data.copyright,
-              date: response.data.date,
-              explanation: response.data.explanation,
-              mediaType: response.data.media_type,
-              serviceVersion: response.data.service_version,
-              title: response.data.title,
-              url: response.data.url,
-              hdUrl: response.data.hdurl
+              copyright: response.data['copyright'],
+              date: response.data['date'],
+              explanation: response.data['explanation'],
+              mediaType: response.data['media_type'],
+              serviceVersion: response.data['service_version'],
+              title: response.data['title'],
+              url: response.data['url'],
+              hdUrl: response.data['hdurl']
             }
             arrDayUrls.push({
               order: i,
@@ -108,7 +108,7 @@ const DateHelper = {
           }
           return
         })
-        .catch(_err => {
+        .catch((_err: any) => {
           arrDayUrls.push({
             order: i,
             url,

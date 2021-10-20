@@ -27,6 +27,7 @@ function ErrorPage({ statusCode, message, title, children }: ErrorPageFace) {
             <div className={styles.card}>
               <Fade left>
                 <figure className={styles.figure}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="https://picsum.photos/1400/1400/?blur=10" alt="" />
                 </figure>
               </Fade>

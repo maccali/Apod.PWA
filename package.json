@@ -6,34 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
-    "lint:fix": "yarn run lint -- --fix",
-    "test": "jest --watch",
-    "cypress:open": "cypress open",
-    "format": "prettier --write \"{,!(.next)/**/,!(node_modules)/**/}*.{js,jsx,ts,tsx,css,scss}\""
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "npm run lint:fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": ">=0.21.1",
-    "dotenv-webpack": "^2.0.0",
-    "next": "^10.0.4",
-    "next-pwa": "^3.1.3",
+    "dotenv-webpack": "^7.0.3",
+    "next": ">=11.1.1",
+    "next-pwa": "^5.2.21",
     "nextjs-progressbar": "^0.0.6",
     "node-sass": "^4.14.1",
     "perfect-scrollbar": "^1.5.0",
     "prop-types": "^15.7.2",
-    "react": "16.13.1",
+    "react": "17.0.2",
     "react-animated-css": "^1.2.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-datepicker": "^3.0.0",
-    "react-dom": "16.13.1",
+    "react-dom": "17.0.2",
     "react-ga": "^3.0.0",
     "react-icons": "^3.10.0",
     "react-lazy-load-image-component": "^1.5.0",
@@ -43,30 +31,15 @@
     "react-spinners": "^0.9.0"
   },
   "devDependencies": {
-    "@types/next": "^9.0.0",
-    "@types/node": "^14.6.0",
-    "@types/react": "^16.9.48",
+    "@types/node": "^15.12.2",
+    "@types/react": "^17.0.11",
     "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-datepicker": "^3.1.1",
     "@types/react-lazy-load-image-component": "^1.5.1",
     "@typescript-eslint/eslint-plugin": "^3.9.1",
     "@typescript-eslint/parser": "^3.9.1",
-    "babel-jest": "^26.3.0",
-    "eslint": "^7.7.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.5",
-    "jest": "^26.4.2",
-    "lint-staged": "^10.2.13",
-    "prettier": "^2.1.0",
-    "prettier-eslint": "^11.0.0",
-    "typescript": "4.0.2"
+    "eslint": "7.28.0",
+    "eslint-config-next": "11.0.0",
+    "typescript": "4.3.2"
   }
 }

@@ -15,6 +15,7 @@ function Credits() {
             target="_blank"
             aria-label="Go to Nasa Site"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/imgs/nasa-site-logo.svg" alt="Developer Site Logo" />
           </a>
           <a
@@ -25,6 +26,7 @@ function Credits() {
             target="_blank"
             aria-label="Go to Developer Site"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/imgs/developer-site-logo.svg"
               alt="Developer Site Logo"
