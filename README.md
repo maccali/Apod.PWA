@@ -34,13 +34,13 @@
     <img alt="NPM" src="https://img.shields.io/badge/npm-v6.12.1-0.svg?style=flat-square&labelColor=000000">
   </a>
   <a href="https://nodejs.org/en/" target="_blank">
-    <img alt="Node" src="https://img.shields.io/badge/node-12.13.1-0.svg?style=flat-square&labelColor=000000">
+    <img alt="Node" src="https://img.shields.io/badge/node-v14.17.6-0.svg?style=flat-square&labelColor=000000">
   </a>
   <a href="https://yarnpkg.com" target="_blank">
     <img alt="Yarn" src="https://img.shields.io/badge/Yarn-1.22.4-0.svg?style=flat-square&color=2c8ebb&labelColor=000000">
   </a>
   <a href="https://nextjs.org" target="_blank">
-    <img alt="NextJS" src="https://img.shields.io/badge/NextJS-10.0.x-0.svg?style=flat-square&color=6191ff&labelColor=000000">
+    <img alt="NextJS" src="https://img.shields.io/badge/NextJS-11.1.1-0.svg?style=flat-square&color=6191ff&labelColor=000000">
   </a>
   <a href="https://github.com/axios/axios" target="_blank">
     <img alt="Axios" src="https://img.shields.io/badge/Axios-0.21.1-0.svg?style=flat-square&color=1f7cb1&labelColor=000000">
@@ -48,11 +48,11 @@
   <a href="https://getbootstrap.com" target="_blank">
     <img alt="Bootstrap Grid" src="https://img.shields.io/badge/Bootstrap Grid-4.4.1-0.svg?style=flat-square&color=563d7c&labelColor=000000">
   </a>
-  <a href="https://fontawesome.com" target="_blank">
-    <img alt="FontAwesome" src="https://img.shields.io/badge/Font Awesome-5.13.0-0.svg?style=flat-square&color=228ae6&labelColor=000000">
+  <a href="https://react-icons.github.io/react-icons/" target="_blank">
+    <img alt="React Icons" src="https://img.shields.io/badge/React Icons-^3.10.0-0.svg?style=flat-square&color=e91e63&labelColor=000000">
   </a>
   <a href="https://reactjs.org">
-    <img alt="ReactJS" src="https://img.shields.io/badge/ReactJS-16.13.1-0.svg?style=flat-square&color=00d8ff&labelColor=000000">
+    <img alt="ReactJS" src="https://img.shields.io/badge/ReactJS-17.0.2-0.svg?style=flat-square&color=00d8ff&labelColor=000000">
   </a>
 </p>
 
