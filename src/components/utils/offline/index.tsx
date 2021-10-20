@@ -13,7 +13,7 @@ function Offline() {
     if (!navigator.onLine) {
       setOnline(false)
     }
-  })
+  }, [])
 
   return (
     <>

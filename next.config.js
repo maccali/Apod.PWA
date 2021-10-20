@@ -15,7 +15,7 @@ runtimeCaching.map(item => {
   }
 })
 
-console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
+// console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
 // console.log('😜 RUNTIME CACHE =>', runtimeCaching)
 
 module.exports = withPWA({
