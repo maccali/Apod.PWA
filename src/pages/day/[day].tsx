@@ -49,7 +49,7 @@ Day.getInitialProps = async (ctx: any) => {
     const key = process.env.NASA_API_KEY
     const url = `/apod?api_key=${key}&date=${ctx.query.day}`
 
-    const req = await api.get(`${url}`)
+    const req: any  = await api.get(`${url}`)
     if (req.status === 200) {
       const day: DayFace = {
         title: req.data.title,

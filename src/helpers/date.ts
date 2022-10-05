@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import api from '../services/api'
 
 const DateHelper = {
@@ -88,7 +87,7 @@ const DateHelper = {
     for (let i = 0; i < numberOfDays; i++) {
       await api
         .get(`${url}`)
-        .then(response => {
+        .then((response: any) => {
           if (response.status === 200) {
             const day: DayFace = {
               copyright: response.data.copyright,
