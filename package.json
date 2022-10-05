@@ -1,7 +1,10 @@
 {
   "name": "apod-space",
-  "version": "1.23.70",
+  "version": "1.33.70",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
