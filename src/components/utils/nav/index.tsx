@@ -20,7 +20,7 @@ function Nav() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>()
 
   useEffect(() => {
-    ;(function () {
+    ; (function () {
       window.addEventListener('beforeinstallprompt', e => {
         // Prevent the mini-infobar from appearing on mobile
         e.preventDefault()
@@ -72,6 +72,7 @@ function Nav() {
                     href="/"
                     noStyle
                   >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/icons/icon126t.png" alt="Site Logo" />
                   </Button>
                 </div>
@@ -128,6 +129,7 @@ function Nav() {
               )}
               <div className={styles.cardmenu}>
                 <div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/icons/icon126t.png" alt="Foto do Perfil" />
                 </div>
                 <span>Apod Pictu</span>

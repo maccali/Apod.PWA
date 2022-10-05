@@ -29,6 +29,8 @@ function CreditsAboutCard({
           noStyle
         >
           <figure>
+
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={imgUrL} alt={`Image of ${title}`} />
           </figure>
           <div className={styles.texts}>

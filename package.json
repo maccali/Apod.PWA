@@ -6,19 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
-    "lint:fix": "yarn run lint -- --fix",
-    "test": "jest --watch",
-    "cypress:open": "cypress open",
-    "format": "prettier --write \"{,!(.next)/**/,!(node_modules)/**/}*.{js,jsx,ts,tsx,css,scss}\""
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "npm run lint:fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": ">=0.21.1",

@@ -69,7 +69,7 @@ function Home() {
   }
 
   useEffect(() => {
-    ;(async function () {
+    ; (async function () {
       await getData()
     })()
   }, [])

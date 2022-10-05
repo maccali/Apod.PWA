@@ -52,14 +52,14 @@ Day.getInitialProps = async (ctx: any) => {
     const req: any  = await api.get(`${url}`)
     if (req.status === 200) {
       const day: DayFace = {
-        title: req.data.title,
-        copyright: req.data.copyright,
-        date: req.data.date,
-        explanation: req.data.explanation,
-        url: req.data.url,
-        hdUrl: req.data.hdurl,
-        mediaType: req.data.media_type,
-        serviceVersion: req.data.service_version,
+        title: req.data['title'],
+        copyright: req.data['copyright'],
+        date: req.data['date'],
+        explanation: req.data['explanation'],
+        url: req.data['url'],
+        hdUrl: req.data['hdurl'],
+        mediaType: req.data['media_type'],
+        serviceVersion: req.data['service_version'],
         can: `https://${ctx.req.headers.host}${ctx.req.url}`
       }
 

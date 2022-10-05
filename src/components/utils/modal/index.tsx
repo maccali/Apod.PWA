@@ -28,6 +28,7 @@ function Modal({ open, closeModal, children }: ModalFace) {
                 <div className="col-12">
                   <div className={styles.headercont}>
                     <div className={styles.img}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src="/icons/icon126t.png" alt="Site Logo" />
                     </div>
                     <Button
