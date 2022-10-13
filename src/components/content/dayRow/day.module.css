@@ -1,6 +1,22 @@
 .cont {
   margin-top: 10px;
   margin-bottom: 30px;
-  background-color: #38387a;
-  border-radius: 10px;
+  /* border-radius: 0px 0px 120px 120px; */
+
+  /* background-color: #38387a; */
+  /* background: #fff; */
+  background: linear-gradient(135deg, transparent 0px, #38387a 0) top left,
+    linear-gradient(225deg, transparent 0px, #38387a 0) top right,
+    linear-gradient(315deg, transparent 57px, #38387a 0) bottom right,
+    linear-gradient(45deg, transparent 57px, #38387a 0) bottom left;
+  background-size: 55% 55%;
+  background-repeat: no-repeat;
+  border-radius:33px 33px 33px 33px;
+}
+
+@media (max-width: 992px) {
+  .mainCont {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

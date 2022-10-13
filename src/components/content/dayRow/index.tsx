@@ -16,7 +16,7 @@ function DayRowContent({ day, invert, openModal }: DayRowContent) {
   }, [])
 
   return (
-    <div className={`container-fluid bg-primary`}>
+    <div className={`container-fluid bg-primary ${styles.mainCont}`}>
       <div className={`container ped-lr ${styles.cont}`}>
         <div className="row">
           {invert ? (

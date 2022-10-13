@@ -39,56 +39,49 @@ function DayContent({
       <div className="container ped-lr">
         <div className="row">
           <div className="col-12">
-            <Fade left>
-              <h3 className={styles.date}>{date}</h3>
-            </Fade>
+            <h3 className={styles.date}>{date}</h3>
           </div>
           <div className="col-12">
-            <Fade right>
-              <h1 className={styles.title}>{title}</h1>
-            </Fade>
+            <h1 className={styles.title}>{title}</h1>
           </div>
           <div className="col-12">
-            <Fade left>
-              {mediaType === 'image' ? (
-                <div className={styles.imgcont}>
-                  <a
-                    title={`Open Image ${title} in Nasa site`}
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Image
-                      src={url}
-                      alt={title}
-                      width={100}
-                      height={100}
-                      layout="responsive"
-                    />
-                  </a>
-                </div>
-              ) : (
-                <div className={styles.framecont}>
-                  <iframe
+
+            {mediaType === 'image' ? (
+              <div className={styles.imgcont}>
+                <a
+                  title={`Open Image ${title} in Nasa site`}
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
                     src={url}
-                    title={title}
-                    frameBorder="0"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              )}
-            </Fade>
+                    alt={title}
+                    layout={'fill'}
+                    objectFit={'contain'}
+                  />
+                </a>
+              </div>
+            ) : (
+              <div className={styles.framecont}>
+                <iframe
+                  src={url}
+                  title={title}
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+
           </div>
           <div className="col-12">
             <div className={styles.socialcont}>
               {link !== '' ? (
-                <Fade right>
-                  <Social
-                    title={`ApodSpace`}
-                    text={`$title}`}
-                    url={`${link}`}
-                  />
-                </Fade>
+                <Social
+                  title={`ApodSpace`}
+                  text={`$title}`}
+                  url={`${link}`}
+                />
               ) : (
                 ''
               )}
@@ -96,38 +89,30 @@ function DayContent({
           </div>
           <div className="col-12">
             {copyright ? (
-              <Fade left>
-                <p className={styles.copyright}>
-                  <b>Image Credit & Copyright:</b> {copyright}
-                </p>
-              </Fade>
+              <p className={styles.copyright}>
+                <b>Image Credit & Copyright:</b> {copyright}
+              </p>
             ) : (
               ''
             )}
           </div>
           <div className="col-12">
-            <Fade left>
-              <p className={styles.explanationtitle}>Explanation:</p>
-            </Fade>
+            <p className={styles.explanationtitle}>Explanation:</p>
           </div>
           <div className="col-12">
-            <Fade left>
-              <p className={styles.explanation}>{explanation}</p>
-            </Fade>
+            <p className={styles.explanation}>{explanation}</p>
           </div>
           <div className="col-12">
             {hdUrl ? (
-              <Fade bottom>
-                <div className={`btn-custom ${styles.btn}`}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`${hdUrl}`}
-                  >
-                    See image in high quality
-                  </a>
-                </div>
-              </Fade>
+              <div className={`btn-custom ${styles.btn}`}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`${hdUrl}`}
+                >
+                  See image in high quality
+                </a>
+              </div>
             ) : (
               ''
             )}

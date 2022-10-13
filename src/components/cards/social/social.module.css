@@ -34,3 +34,12 @@
 .iconchange svg {
   color: #3ad926 !important;
 }
+
+@media (max-width: 992px) {
+  .card a svg,
+  .card div svg,
+  .card button svg {
+    width: 20px;
+    height: 20px;
+  }
+}

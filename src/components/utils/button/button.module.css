@@ -2,22 +2,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffd061;
-  border-radius: 45px;
+  /* background-color: #ffd061; */
+  /* border-radius: 45px; */
   padding: 11px 0;
   border: none;
   color: black;
   font-size: 14px;
   transition: all 0.2s;
   outline: none;
-  box-shadow: 0 0 3px 0 #000;
+  /* box-shadow: 0 0 3px 0 #000; */
   user-select: none;
+
+  background: linear-gradient(135deg, transparent 0px, #ffd061 0) top left,
+    linear-gradient(225deg, transparent 9px, #ffd061 0) top right,
+    linear-gradient(315deg, transparent 0px, #ffd060 0) bottom right,
+    linear-gradient(45deg, transparent 9px, #ffd061 0) bottom left;
+  background-size: 55% 55%;
+  border-radius: 27px 0px 27px 0px;
+  background-repeat: no-repeat;
 }
 
 .btn:hover {
   text-decoration: none;
   background-color: #c0c0fd;
-  box-shadow: 0 0 7px 0 #000;
+  background: linear-gradient(135deg, transparent 0px, #c0c0fd 0) top left,
+    linear-gradient(225deg, transparent 9px, #c0c0fd 0) top right,
+    linear-gradient(315deg, transparent 0px, #c0c0fd 0) bottom right,
+    linear-gradient(45deg, transparent 9px, #c0c0fd 0) bottom left;
+  background-size: 55% 55%;
+  background-repeat: no-repeat;
+  border-radius: 27px 0px 27px 0px;
   transform: scale(1.07);
 }
 

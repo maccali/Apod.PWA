@@ -67,7 +67,7 @@
   color: white;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 
@@ -93,12 +93,29 @@
 
 @media only screen and (max-width: 600px) {
   .title {
-    font-size: 20px;
+    font-size: 18px;
   }
   .copyright {
-    font-size: 14px;
+    font-size: 12px;
   }
   .count {
     padding-top: 0px;
+  }
+
+  .date span:nth-child(1) {
+    font-size: 14px;
+  }
+
+  .date span:nth-child(2) {
+    font-size: 16px;
+  }
+
+  .date span:nth-child(3) {
+    font-size: 22px;
+  }
+
+  .explanation{
+    margin-top: 5px;
+    font-size: 12px;
   }
 }

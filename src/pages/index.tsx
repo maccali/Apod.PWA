@@ -25,7 +25,6 @@ function Home() {
 
   async function getData() {
     setLoading(true)
-    // setError(false)
 
     const today = DateHelper.todayNasaFormat()
     const arrUrls = await DateHelper.daysCombine(today, 4)
