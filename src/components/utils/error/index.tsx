@@ -20,6 +20,7 @@ function Error({ message, reload, noimg }: ErrorFace) {
             <div className="col-12">
               <div className={styles.card}>
                 <h2 className={styles.title}>{message}</h2>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 {noimg ? <img src="/imgs/earth.svg" alt="Error Image" /> : ''}
                 {reload ? (
                   <Button title="Reload" action={() => reload()}>

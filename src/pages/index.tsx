@@ -16,6 +16,7 @@ import DateHelper from '../helpers/date'
 function Home() {
   const [listOfDays, setListOfDays] = useState<Array<DayCustomFace>>([])
   const [loading, setLoading] = useState<boolean>(true)
+  // const [error, setError] = useState<boolean>(false)
 
   const [modal, setModal] = useState<boolean>(false)
   const [fixCardDirection, setFixCardDirection] = useState<boolean>(true)
@@ -67,7 +68,7 @@ function Home() {
   }
 
   useEffect(() => {
-    ;(async function () {
+    ; (async function () {
       await getData()
     })()
   }, [])

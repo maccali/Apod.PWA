@@ -33,14 +33,15 @@
 .imgcont {
   display: flex;
   justify-content: center;
+  max-height: 1000px;
+  min-height: 400px;
 }
 
 .imgcont a {
   position: relative;
-  max-height: 60vh;
-  min-height: 5%;
+  height: 65vh;
+  max-width: 100%;
   width: 100%;
-  min-width: 5%;
 }
 
 .imgcont a div {
@@ -48,8 +49,8 @@
   border-radius: 10px;
 }
 
-.imgcont a img {
-  object-fit: contain;
+.imgcont a span img {
+  width: 100%;
 }
 
 .copyright {

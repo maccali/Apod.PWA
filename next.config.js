@@ -1,3 +1,5 @@
+/** @type {import('next').NextConfig} */
+
 const withPWA = require('next-pwa')
 const Dotenv = require('dotenv-webpack')
 const runtimeCaching = require('next-pwa/cache')
@@ -15,7 +17,7 @@ runtimeCaching.map(item => {
   }
 })
 
-console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
+// console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
 // console.log('😜 RUNTIME CACHE =>', runtimeCaching)
 
 module.exports = withPWA({
@@ -36,5 +38,12 @@ module.exports = withPWA({
   images: {
     deviceSizes: [320, 640, 768, 1024, 1600],
     domains: ['apod.nasa.gov']
-  }
+  },
+  typescript: {
+    ignoreBuildErrors: true
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
+  runtime: 'experimental-edge'
 })

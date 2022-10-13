@@ -18,6 +18,7 @@ yarn.lock
 
 # misc
 .DS_Store
+*.pem
 
 # debug
 npm-debug.log*
@@ -36,6 +37,8 @@ yarn-error.log*
 /public/workbox-*.js
 /public/workbox-*.js.map
 
+# vercel
+.vercel
+
 # ENV
 .env
-.vercel
