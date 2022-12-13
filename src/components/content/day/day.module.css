@@ -49,6 +49,7 @@
 }
 
 .imgcont a img {
+  position: relative !important;
   width: auto !important;
   height: auto !important;
   max-height: 70vh;
@@ -93,14 +94,14 @@
   margin-bottom: 20px;
 }
 
-.btnsCount{
+.btnsCount {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 0px) {
   .imgcont iframe {
     height: 500px;
   }
@@ -112,8 +113,25 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .imgcont a {
-    max-height: 42vh;
+@media only screen and (max-width: 991px) {
+  .imgcont a img {
+    min-width: 100%;
+  }
+  .hLock {
+    margin-top: 20px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .btnsCount {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
