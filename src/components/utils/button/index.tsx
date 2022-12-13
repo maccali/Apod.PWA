@@ -66,18 +66,18 @@ function Button({
   if (noStyle) {
     if (href) {
       return (
-        <Link href={href}>
-          <a
-            title={title}
-            className={`
+
+        <Link href={href}
+          title={title}
+          className={`
           ${styles.taglink}
           ${className ? className : ''}
           `}
-            target={target}
-            rel={rel ? rel : target ? 'noopener noreferrer' : ''}
-          >
-            {children}
-          </a>
+          target={target}
+          rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+        >
+          {children}
+
         </Link>
       )
     } else {
@@ -97,23 +97,23 @@ function Button({
   } else {
     if (target) {
       return (
-        <Link href={href}>
-          <a
-            title={title}
-            ref={ref}
-            className={`
+
+        <Link href={href}
+          title={title}
+          ref={ref}
+          className={`
           ${styles.btn}
         ${pos ? styles.pos : styles.pre}
         ${iconOnly ? styles.icon : ''}
         ${textOnly ? styles.text : ''}
         ${className ? className : ''}
         `}
-            target={target}
-            rel={rel ? rel : target ? 'noopener noreferrer' : ''}
-          >
-            {children}
-          </a>
-        </Link>
+          target={target}
+          rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+        >
+          {children}
+
+        </Link >
       )
     } else {
       return (

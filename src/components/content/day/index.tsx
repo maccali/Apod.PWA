@@ -38,87 +38,84 @@ function DayContent({
     <div className="container-fluid bg-primary">
       <div className="container ped-lr">
         <div className="row">
-          <div className="col-12">
-            <h3 className={styles.date}>{date}</h3>
-          </div>
-          <div className="col-12">
-            <h1 className={styles.title}>{title}</h1>
-          </div>
-          <div className="col-12">
-
-            {mediaType === 'image' ? (
-              <div className={styles.imgcont}>
-                <a
-                  title={`Open Image ${title} in Nasa site`}
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src={url}
-                    alt={title}
-                    layout={'fill'}
-                    objectFit={'contain'}
-                  />
-                </a>
-              </div>
-            ) : (
-              <div className={styles.framecont}>
-                <iframe
-                  src={url}
-                  title={title}
-                  frameBorder="0"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
-
-          </div>
-          <div className="col-12">
-            <div className={styles.socialcont}>
-              {link !== '' ? (
-                <Social
-                  title={`ApodSpace`}
-                  text={`$title}`}
-                  url={`${link}`}
-                />
+          <div className="col-12 col-md-6">
+            <div className={styles.hLock}>
+              {copyright ? (
+                <p className={styles.copyright}>
+                  <b>Image Credit & Copyright:</b> {copyright}
+                </p>
               ) : (
                 ''
               )}
+              {mediaType === 'image' ? (
+                <div className={styles.imgcont}>
+                  <a
+                    title={`Open Image ${title} in Nasa site`}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image
+                      src={url}
+                      alt={title}
+                      layout={'fill'}
+                      objectFit={'contain'}
+                    />
+                  </a>
+                </div>
+              ) : (
+                <div className={styles.framecont}>
+                  <iframe
+                    src={url}
+                    title={title}
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+
             </div>
           </div>
-          <div className="col-12">
-            {copyright ? (
-              <p className={styles.copyright}>
-                <b>Image Credit & Copyright:</b> {copyright}
-              </p>
-            ) : (
-              ''
-            )}
-          </div>
-          <div className="col-12">
-            <p className={styles.explanationtitle}>Explanation:</p>
-          </div>
-          <div className="col-12">
-            <p className={styles.explanation}>{explanation}</p>
-          </div>
-          <div className="col-12">
-            {hdUrl ? (
-              <div className={`btn-custom ${styles.btn}`}>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={`${hdUrl}`}
-                >
-                  See image in high quality
-                </a>
+          <div className="col-12 col-md-6">
+            <div className={styles.hLock}>
+              <div>
+                <h3 className={styles.date}>{date}</h3>
+                <h1 className={styles.title}>{title}</h1>
               </div>
-            ) : (
-              ''
-            )}
-          </div>
-          <div className="col-12">
-            <Credits />
+
+              <p className={styles.explanation}>{explanation}</p>
+
+              <div className={styles.btnsCount}>
+
+                {hdUrl ? (
+                  <div className={`btn-custom ${styles.btn}`}>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={`${hdUrl}`}
+                    >
+                      See image in high quality
+                    </a>
+                  </div>
+                ) : (
+                  ''
+                )}
+
+                <div className={styles.socialcont}>
+                  {link !== '' ? (
+                    <Social
+                      title={`ApodSpace`}
+                      text={`${title}`}
+                      url={`${link}`}
+                    />
+                  ) : (
+                    ''
+                  )}
+                </div>
+              </div>
+
+              <Credits />
+            </div>
           </div>
         </div>
       </div>
