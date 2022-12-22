@@ -17,7 +17,12 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     return;
   }
 
-  return response.status(200).json("ok");
+  const nasaPlug = new NasaPlug();
+  if
+  const data = await nasaPlug.getDay("2019-10-05");
+
+  return response.status(200).json(data);
+  // return response.status(200).json("ok");
 };
 
 export default handler;
