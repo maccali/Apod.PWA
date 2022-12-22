@@ -1,4 +1,6 @@
 import axios from "axios";
+import { GenericLeftSolver } from "../../solvers/left/genericLeftSolver";
+import { GenericRightSolver } from "../../solvers/right/genericRightSolver";
 
 interface IdayData {
   status: number;
@@ -24,6 +26,8 @@ export class NasaPlug {
           date: day,
         },
       });
+
+      GenericRightSolver.
       return { status: 200, ...content.data };
     } catch (error) {
       return { status: 500 };
