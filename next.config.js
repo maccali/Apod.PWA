@@ -46,5 +46,5 @@ module.exports = withPWA({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  runtime: "experimental-edge",
+  // runtime: "experimental-edge",
 });
