@@ -24,7 +24,6 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-datepicker": "^3.0.0",
     "react-dom": "^18.2.0",
-    "react-ga": "^3.0.0",
     "react-ga4": "^2.0.0",
     "react-icons": "^3.10.0",
     "react-lazy-load-image-component": "^1.5.0",

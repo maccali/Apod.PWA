@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
-// import ReactGA from 'react-ga'
 import ReactGA from "react-ga4";
 
 const siteName = 'Apod Space'
@@ -13,7 +12,6 @@ function Meta() {
   useEffect(() => {
     if (window.location.hostname !== 'localhost') {
       ReactGA.initialize('G-M6GJ4S9EC8')
-      // ReactGA.pageview(window.location.pathname + window.location.search)
     }
   })
 
