@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga'
+import ReactGA from "react-ga4";
 
 const siteName = 'Apod Space'
 const title = 'Apod - Astronomy Picture of Day by Nasa'
@@ -11,8 +12,8 @@ const imagemUrl = '/imgs/social.png'
 function Meta() {
   useEffect(() => {
     if (window.location.hostname !== 'localhost') {
-      ReactGA.initialize('UA-158633079-2')
-      ReactGA.pageview(window.location.pathname + window.location.search)
+      ReactGA.initialize('G-M6GJ4S9EC8')
+      // ReactGA.pageview(window.location.pathname + window.location.search)
     }
   })
 
