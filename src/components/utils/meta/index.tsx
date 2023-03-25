@@ -58,6 +58,8 @@ function Meta() {
       <meta name="twitter:creator" content="Guilherme Maccali" />
       <meta name="twitter:image" content={imagemUrl} />
 
+      {/* Bing */}
+      <meta name="msvalidate.01" content="81683EFDA66EF8B29045BBAF04D02DBD" />
       {/* <script data-ad-client="ca-pub-8175357641608662" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
     </Head>
   )
