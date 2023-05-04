@@ -2,11 +2,11 @@
   "name": "Apod",
   "short_name": "Apod",
   "categories": [
-    "APOD", 
-    "NASA", 
-    "photos", 
-    "Astronomy Picture of Day",  
-    "education", 
+    "APOD",
+    "NASA",
+    "photos",
+    "Astronomy Picture of Day",
+    "education",
     "entertainment",
     "government",
     "photo",
@@ -106,7 +106,7 @@
           "src": "/icons/icon96.png",
           "type": "image/png",
           "sizes": "96x96"
-        }
+        },
         {
           "src": "/icons/icon.png",
           "type": "image/png",
