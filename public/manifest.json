@@ -1,7 +1,17 @@
 {
   "name": "Apod",
   "short_name": "Apod",
-  "categories": ["APOD", "NASA", "photos", "Astronomy Picture of Day"],
+  "categories": [
+    "APOD", 
+    "NASA", 
+    "photos", 
+    "Astronomy Picture of Day",  
+    "education", 
+    "entertainment",
+    "government",
+    "photo",
+    "utilities"
+  ],
   "description": "Amazing Images from Nasa day by day",
   "display": "standalone",
   "orientation": "portrait",
@@ -39,6 +49,11 @@
       "icon": "/icons/icon192.png",
       "icons": [
         {
+          "src": "/icons/icon96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        },
+        {
           "src": "/icons/icon192.png",
           "type": "image/png",
           "sizes": "192x192"
@@ -49,10 +64,15 @@
       "name": "Calendar",
       "url": "/calendar",
       "description": "Select date on Calendar",
-      "icon": "/icons/calendar.png",
+      "icon": "/icons/icon.png",
       "icons": [
         {
-          "src": "/icons/calendar.png",
+          "src": "/icons/icon96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        },
+        {
+          "src": "/icons/icon.png",
           "type": "image/png",
           "sizes": "192x192"
         }
@@ -62,10 +82,15 @@
       "name": "Images",
       "url": "/images",
       "description": "List of all resent images in NASA Apod",
-      "icon": "/icons/images.png",
+      "icon": "/icons/icon.png",
       "icons": [
         {
-          "src": "/icons/images.png",
+          "src": "/icons/icon96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        },
+        {
+          "src": "/icons/icon.png",
           "type": "image/png",
           "sizes": "192x192"
         }
@@ -75,9 +100,15 @@
       "name": "About",
       "url": "/about",
       "description": "About Project",
+      "icon": "/icons/icon.png",
       "icons": [
         {
-          "src": "/icons/about.png",
+          "src": "/icons/icon96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+        {
+          "src": "/icons/icon.png",
           "type": "image/png",
           "sizes": "192x192"
         }
