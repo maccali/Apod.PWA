@@ -11,9 +11,6 @@ type DayRowContent = {
 }
 
 function DayRowContent({ day, invert, openModal }: DayRowContent) {
-  useEffect(() => {
-    console.log(day)
-  }, [])
 
   return (
     <div className={`container-fluid bg-primary ${styles.mainCont}`}>

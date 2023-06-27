@@ -80,7 +80,6 @@ const DateHelper = {
 
   daysCombine: async (startDate: string, numberOfDays: number) => {
     const key = process.env.NASA_API_KEY;
-    console.log("process.env.NASA_API_KEY", process.env.NASA_API_KEY);
     let nowDate = startDate;
     let url = `/apod?api_key=${key}&date=${nowDate}`;
     const arrDayUrls: Array<DayCustomFace> = [];
