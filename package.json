@@ -14,6 +14,7 @@
   "dependencies": {
     "axios": ">=0.21.1",
     "dotenv-webpack": "^2.0.0",
+    "firebase": "^9.22.2",
     "next": "^13.0.6",
     "next-pwa": "5.5.4",
     "nextjs-progressbar": "^0.0.6",
@@ -30,7 +31,8 @@
     "react-number-format": "4.4.1",
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.7.16",
-    "react-spinners": "^0.9.0"
+    "react-spinners": "^0.9.0",
+    "web-push": "^3.6.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.4",

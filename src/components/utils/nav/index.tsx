@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import webpush from "web-push"
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 import {
   AiOutlineBars,
   AiOutlineMore,
@@ -6,7 +10,8 @@ import {
   AiOutlineInfoCircle,
   AiOutlineDownload,
   AiOutlineClose,
-  AiOutlineHome
+  AiOutlineHome,
+  AiOutlineNotification
 } from 'react-icons/ai'
 
 import Button from '../button'
@@ -17,6 +22,7 @@ function Nav() {
   const [menuActive, setMenuActive] = useState<boolean>(false)
   const [headerActive, setHeaderActive] = useState<boolean>(false)
   const [installBtn, setInstallBtn] = useState<boolean>(false)
+  const [notificationBtn, setNotificationBtn] = useState<boolean>(true)
   const [deferredPrompt, setDeferredPrompt] = useState<any>()
 
   useEffect(() => {
@@ -33,12 +39,115 @@ function Nav() {
     })()
   })
 
+
+  function geoFindMe() {
+
+
+    function success(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      let href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+      let textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+
+      console.log("href", href)
+      console.log("textContent", textContent)
+    }
+
+    function error() {
+      // status.textContent = "Unable to retrieve your location";
+    }
+
+    if (!navigator.geolocation) {
+      // status.textContent = "Geolocation is not supported by your browser";
+    } else {
+      // status.textContent = "Locating…";
+      navigator.geolocation.getCurrentPosition(success, error);
+    }
+
+  }
+  // useEffect(() => {
+
+  //   console.log("PEDINDO")
+  //   askForLocationPermission()
+
+  // })
+
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined' && window.Worker) {
+  //     const worker = new Worker('/background.js');
+
+  //     worker.postMessage(5);
+
+  //     worker.addEventListener('message', function(event) {
+  //       const result = event.data;
+  //       console.log('Resultado do Web Worker:', result);
+  //     });
+
+  //     // Encerra o Web Worker quando o componente for desmontado
+  //     return () => {
+  //       worker.terminate();
+  //     };
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   function mostrarNotificacao() {
+  //     if (!('Notification' in window)) {
+  //       console.log('Este navegador não suporta notificações.');
+  //       return;
+  //     }
+
+  //     if (Notification.permission === 'granted') {
+  //       const titulo = 'Título da Notificação 3';
+  //       const opcoes = {
+  //         body: 'Mensagem da Notificação3',
+  //         icon: 'caminho/para/icon.png',
+  //       };
+
+  //       const notificacao = new Notification(titulo, opcoes);
+  //     } else if (Notification.permission !== 'denied') {
+  //       Notification.requestPermission().then(function (permission) {
+  //         if (permission === 'granted') {
+  //           const titulo = 'Título da Notificação3';
+  //           const opcoes = {
+  //             body: 'Mensagem da Notificação3',
+  //             icon: 'caminho/para/icon.png',
+  //           };
+
+  //           const notificacao = new Notification(titulo, opcoes);
+  //         }
+  //       });
+  //     }
+  //   }
+
+  //   function exibirNotificacaoDiaria() {
+  //     const dataAtual = new Date().toISOString().slice(0, 10);
+  //     const notificacaoExibidaNoDia = localStorage.getItem('notificacaoExibidaNoDia');
+
+  //     if (notificacaoExibidaNoDia !== dataAtual) {
+  //       mostrarNotificacao();
+  //       localStorage.setItem('notificacaoExibidaNoDia', dataAtual);
+  //     }
+  //   }
+
+  //   // Verificar se as notificações são suportadas pelo navegador
+  //   if ('Notification' in window) {
+  //     exibirNotificacaoDiaria();
+  //   } else {
+  //     console.log('Este navegador não suporta notificações.');
+  //   }
+  // }, [])
+
   useEffect(() => {
     window.addEventListener('resize', function () {
       setMenuOpenWithWithSize()
     })
     setMenuOpenWithWithSize()
   }, [])
+
+
+
 
   function setMenuOpenWithWithSize() {
     setMenuActive(window.innerWidth >= 1800)
@@ -56,6 +165,23 @@ function Nav() {
         setInstallBtn(true)
       }
     })
+  }
+
+  function requestPermissionForNotifications() {
+    geoFindMe()
+    // if (!('Notification' in window)) {
+    //   alert('Notification API not supported!');
+    //   return;
+    // }
+
+    // Notification.requestPermission(function (result) {
+    //   if (result === "granted") {
+    //     setNotificationBtn(false)
+    //   } else {
+    //     setNotificationBtn(true)
+    //   }
+    // });
+
   }
 
   return (
@@ -185,6 +311,20 @@ function Nav() {
                 ) : (
                   ''
                 )}
+                {/* {notificationBtn ? ( */}
+                <Button
+                  title="Turn on Notifications"
+                  action={() => requestPermissionForNotifications()}
+                  className={styles.menuitem}
+                  noStyle
+                >
+                  <AiOutlineNotification />
+                  <p>Turn on Notifications</p>
+                </Button>
+                {/* ) : (
+                  ''
+                )} */}
+
               </div>
             </div>
           </div>

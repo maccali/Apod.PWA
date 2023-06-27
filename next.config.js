@@ -17,6 +17,8 @@ runtimeCaching.map((item) => {
   }
 });
 
+
+
 // console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
 // console.log('😜 RUNTIME CACHE =>', runtimeCaching)
 
@@ -29,6 +31,7 @@ module.exports = withPWA({
   webpack: (config) => {
     // Add the new plugin to the existing webpack plugins
     config.plugins.push(new Dotenv({ silent: true }));
+    // config.plugins.
 
     return config;
   },
