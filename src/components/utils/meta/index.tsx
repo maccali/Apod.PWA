@@ -60,6 +60,9 @@ function Meta() {
 
       {/* Bing */}
       <meta name="msvalidate.01" content="81683EFDA66EF8B29045BBAF04D02DBD" />
+
+      {/* Yandex */}
+      <meta name="yandex-verification" content="4041e47e7d3a199d" />
       {/* <script data-ad-client="ca-pub-8175357641608662" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
     </Head>
   )
