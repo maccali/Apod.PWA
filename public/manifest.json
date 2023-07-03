@@ -156,7 +156,6 @@
   ],
   "dir": "ltr",
   "display_override": ["standalone", "fullscreen", "browser", "minimal-ui"],
-  "screenshots": [
-   
-  ]
+  "screenshots": [],
+  "edge_side_panel": {}
 }
