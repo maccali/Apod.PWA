@@ -10,10 +10,26 @@ function Offline() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    if (!navigator.onLine) {
-      setOnline(false)
-    }
-  }, [])
+    const handleOnline = () => {
+      setOnline(true);
+      document.body.style.overscrollBehaviorY = "auto";
+    };
+
+    const handleOffline = () => {
+      setOnline(false);
+      document.body.style.overscrollBehaviorY = "none";
+    };
+
+    // Adiciona os listeners para os eventos online e offline
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Remove os listeners quando o componente é desmontado
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   return (
     <>
