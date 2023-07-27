@@ -13,6 +13,10 @@ function Offline() {
   useEffect(() => {
     if (!navigator.onLine) {
       setOnline(false)
+      document.body.style.overscrollBehaviorY = "none";
+    } else {
+      setOnline(true);
+      document.body.style.overscrollBehaviorY = "auto";
     }
   }, [])
 
