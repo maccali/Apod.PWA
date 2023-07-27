@@ -9,6 +9,13 @@ function Offline() {
   const [online, setOnline] = useState(true)
   const [open, setOpen] = useState(false)
 
+
+  useEffect(() => {
+    if (!navigator.onLine) {
+      setOnline(false)
+    }
+  }, [])
+
   useEffect(() => {
     const handleOnline = () => {
       setOnline(true);
