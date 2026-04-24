@@ -4,6 +4,12 @@ const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
 
 const cacheTime = 365 * 24 * 60 * 60 // 365 days
+const pwa = {
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  importScripts: ['/worker.js'],
+  runtimeCaching,
+}
 
 runtimeCaching.forEach((item) => {
   item.options.expiration.maxAgeSeconds = cacheTime
@@ -18,25 +24,37 @@ runtimeCaching.forEach((item) => {
 // console.log('😜 RUNTIME CACHE =>', JSON.stringify(runtimeCaching, null, 4))
 // console.log('😜 RUNTIME CACHE =>', runtimeCaching)
 
-module.exports = withPWA({
-  pwa: {
-    dest: 'public',
-    disable: process.env.NODE_ENV === 'development',
-    importScripts: ['/worker.js'],
-    runtimeCaching,
-  },
+const nextConfig = withPWA({
+  pwa,
   env: {
     NASA_API_KEY: process.env.NASA_API_KEY,
   },
   images: {
     unoptimized: true,
     deviceSizes: [320, 640, 768, 1024, 1600],
-    domains: ['apod.nasa.gov'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'apod.nasa.gov',
+      },
+    ],
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 })
+
+const pwaWebpack = nextConfig.webpack
+
+delete nextConfig.pwa
+
+nextConfig.webpack = (config, options) =>
+  pwaWebpack(config, {
+    ...options,
+    config: {
+      ...options.config,
+      pwa,
+    },
+  })
+
+module.exports = nextConfig

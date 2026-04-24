@@ -81,44 +81,52 @@ const DateHelper = {
   daysCombine: async (startDate: string, numberOfDays: number) => {
     const key = process.env.NASA_API_KEY;
     let nowDate = startDate;
-    let url = `/apod?api_key=${key}&date=${nowDate}`;
-    const arrDayUrls: Array<DayCustomFace> = [];
+    const urls: Array<string> = [];
 
     for (let i = 0; i < numberOfDays; i++) {
-      await api
-        .get(`${url}`)
-        .then((response: any) => {
-          if (response.status === 200) {
-            const day: DayFace = {
-              copyright: response.data["copyright"],
-              date: response.data["date"],
-              explanation: response.data["explanation"],
-              mediaType: response.data["media_type"],
-              serviceVersion: response.data["service_version"],
-              title: response.data["title"],
-              url: response.data["url"],
-              hdUrl: response.data["hdurl"],
-            };
-            arrDayUrls.push({
+      urls.push(`/apod?api_key=${key}&date=${nowDate}`);
+      nowDate = DateHelper.nasaFormatMinusOne(nowDate);
+    }
+
+    const arrDayUrls = await Promise.all(
+      urls.map((url, i) =>
+        api
+          .get(`${url}`)
+          .then((response: any) => {
+            if (response.status === 200) {
+              const day: DayFace = {
+                copyright: response.data["copyright"],
+                date: response.data["date"],
+                explanation: response.data["explanation"],
+                mediaType: response.data["media_type"],
+                serviceVersion: response.data["service_version"],
+                title: response.data["title"],
+                url: response.data["url"],
+                hdUrl: response.data["hdurl"],
+              };
+
+              return {
+                order: i,
+                url,
+                day,
+              };
+            }
+
+            return {
               order: i,
               url,
-              day,
-            });
-          }
-          return;
-        })
-        .catch((_err: any) => {
-          arrDayUrls.push({
-            order: i,
-            url,
-            error: true,
-          });
-          return;
-        });
-
-      nowDate = DateHelper.nasaFormatMinusOne(nowDate);
-      url = `/apod?api_key=${key}&date=${nowDate}`;
-    }
+              error: true,
+            };
+          })
+          .catch((_err: any) => {
+            return {
+              order: i,
+              url,
+              error: true,
+            };
+          })
+      )
+    );
 
     const arrOfValidDays = DateHelper.validDayFilter(arrDayUrls);
 
