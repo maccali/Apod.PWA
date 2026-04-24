@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
-import ReactGA from "react-ga4";
+import ReactGA from 'react-ga4'
 
 const siteName = 'Apod Space'
 const title = 'Apod - Astronomy Picture of Day by Nasa'
 const description =
   'Apod - Astronomy Picture of Day by Nasa, Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.'
-const imagemUrl = '/imgs/social.png'
+const siteUrl = 'https://apod.pictu.one'
+const imageUrl = `${siteUrl}/imgs/social.png`
 
 function Meta() {
   useEffect(() => {
     if (window.location.hostname !== 'localhost') {
       ReactGA.initialize('G-M6GJ4S9EC8')
     }
-  })
+  }, [])
 
   return (
     <Head>
@@ -47,8 +48,8 @@ function Meta() {
         content={description}
       />
       <meta name="og:site_name" property="og:site_name" content={siteName} />
-      <meta name="og:url" property="og:url" content="https://apod.pictu.one" />
-      <meta name="og:image" property="og:image" content={imagemUrl} />
+      <meta name="og:url" property="og:url" content={siteUrl} />
+      <meta name="og:image" property="og:image" content={imageUrl} />
 
       {/* Twitter Tags */}
       <meta name="twitter:card" content="summary" />
@@ -56,7 +57,7 @@ function Meta() {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:site" content={siteName} />
       <meta name="twitter:creator" content="Guilherme Maccali" />
-      <meta name="twitter:image" content={imagemUrl} />
+      <meta name="twitter:image" content={imageUrl} />
 
       {/* Bing */}
       <meta name="msvalidate.01" content="81683EFDA66EF8B29045BBAF04D02DBD" />

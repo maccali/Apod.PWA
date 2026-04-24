@@ -28,9 +28,8 @@ function TextSide({
   const dateCustom = date.split('-')
 
   useEffect(() => {
-    const { hostname, protocol } = window.location
-    setUrl(`${protocol}//${hostname}/day/${date}`)
-  })
+    setUrl(`${window.location.origin}/day/${date}`)
+  }, [date])
 
   return (
     <>

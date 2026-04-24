@@ -135,12 +135,17 @@
 
 ```bash
 # install dependencies
-$ yarn install
+$ npm install
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# serve with hot reload at localhost:3042
+$ npm run dev
 
 # build for production and launch server
-$ yarn build
-$ yarn start
+$ npm run build
+$ npm run start
 ```
+
+### Runtime
+
+- Node.js 20+ recommended
+- npm 10+ or Yarn via `corepack enable`

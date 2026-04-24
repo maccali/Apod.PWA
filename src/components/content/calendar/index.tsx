@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-onchange */
 import React, { useState } from 'react'
-import Fade from 'react-reveal/Fade'
+import Fade from '../../utils/fade'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
 import DatePicker from 'react-datepicker'
