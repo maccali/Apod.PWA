@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Fade from '../../utils/fade'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
-import { RiCalendarLine, RiImageLine } from 'react-icons/ri'
+import { RiCalendarLine } from 'react-icons/ri'
 
 import DatePicker from 'react-datepicker'
 import UtilHelper from '../../../helpers/util'

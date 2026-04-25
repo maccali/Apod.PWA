@@ -4,6 +4,14 @@
     url('/libs/font/Montserrat-Bold.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Aperture';
+  src: url('/libs/font/Aperture.woff2') format('woff2'),
+    url('/libs/font/Aperture.woff') format('woff'),
+    url('/libs/font/Aperture.ttf') format('truetype');
+  font-display: swap;
+}
+
 * {
   font-family: 'Montserrat';
 }

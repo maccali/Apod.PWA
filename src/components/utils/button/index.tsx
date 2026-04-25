@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ClipLoader } from 'react-spinners'
 
 import styles from './button.module.css'
+import { trackEvent } from '../../../helpers/analytics'
 
 type ButtonFace = {
   title: string
@@ -41,6 +42,14 @@ function Button({
     window.location.href = href
   }
 
+  function trackButtonClick() {
+    trackEvent('button_click', {
+      button_title: title,
+      button_target: href || 'action',
+      button_variant: noStyle ? 'unstyled' : iconOnly ? 'icon' : textOnly ? 'text' : 'default'
+    })
+  }
+
   function measureElement(element: HTMLAnchorElement | HTMLButtonElement | null) {
     if (element) {
       setWidth(element.offsetWidth)
@@ -76,6 +85,7 @@ function Button({
           `}
           target={target}
           rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+          onClick={trackButtonClick}
         >
           {children}
 
@@ -89,7 +99,10 @@ function Button({
           ${styles.taglink}
           ${className ? className : ''}
           `}
-          onClick={() => (action ? action() : '')}
+          onClick={() => {
+            trackButtonClick()
+            return action ? action() : ''
+          }}
         >
           {children}
         </button>
@@ -111,6 +124,7 @@ function Button({
         `}
           target={target}
           rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+          onClick={trackButtonClick}
         >
           {children}
 
@@ -129,7 +143,10 @@ function Button({
             ${textOnly ? styles.text : ''}
             ${className ? className : ''}
             `}
-            onClick={() => (href ? hrefReplace(href) : action ? action() : '')}
+            onClick={() => {
+              trackButtonClick()
+              return href ? hrefReplace(href) : action ? action() : ''
+            }}
           >
             {children}
           </button>
