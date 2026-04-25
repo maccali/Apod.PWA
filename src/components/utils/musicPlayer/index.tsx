@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import {
+  RiAmazonLine,
+  RiAppleLine,
   RiCloseLine,
   RiMusic2Line,
   RiPlayFill,
@@ -10,6 +12,12 @@ import {
 
 import styles from './musicplayer.module.css'
 import { trackEvent } from '../../../helpers/analytics'
+
+const artistChannelUrl = 'https://www.youtube.com/@GroveLakeMusic'
+const artistSpotifyUrl =
+  'https://open.spotify.com/intl-pt/artist/3w5QkuCxzp8kT4YZjJ1HEI'
+const artistAppleMusicUrl = 'https://music.apple.com/br/artist/grove-lake/1765462780'
+const artistAmazonMusicUrl = 'https://music.amazon.com.br/artists/B0DFNP9NYX/grove-lake'
 
 type MusicTrack = {
   title: string
@@ -160,12 +168,15 @@ function MusicPlayer() {
               <button
                 type="button"
                 title="Random track"
-                className={styles.trackButton}
-                onClick={changeTrack}
-              >
-                <RiMusic2Line />
-                <span>{track.title}</span>
-              </button>
+              className={styles.trackButton}
+              onClick={changeTrack}
+            >
+              <RiMusic2Line />
+              <span>
+                {track.title}
+                <small>{provider === 'youtube' ? 'YouTube Music' : 'Spotify'}</small>
+              </span>
+            </button>
 
               <div className={styles.actions}>
                 <button
@@ -243,6 +254,76 @@ function MusicPlayer() {
               className={styles.logo}
             />
             <span className={styles.genre}>Instrumental hip-hop for deep space browsing</span>
+            <div className={styles.artistLinks}>
+              <a
+                href={artistChannelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.artistLink}
+                onClick={event => {
+                  event.stopPropagation()
+                  trackEvent('music_player_click', {
+                    action: 'artist_youtube_channel',
+                    provider,
+                    track_title: track.title
+                  })
+                }}
+              >
+                <RiYoutubeLine />
+                YouTube
+              </a>
+              <a
+                href={artistSpotifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.artistLink}
+                onClick={event => {
+                  event.stopPropagation()
+                  trackEvent('music_player_click', {
+                    action: 'artist_spotify',
+                    provider,
+                    track_title: track.title
+                  })
+                }}
+              >
+                <RiSpotifyLine />
+                Spotify
+              </a>
+              <a
+                href={artistAppleMusicUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.artistLink}
+                onClick={event => {
+                  event.stopPropagation()
+                  trackEvent('music_player_click', {
+                    action: 'artist_apple_music',
+                    provider,
+                    track_title: track.title
+                  })
+                }}
+              >
+                <RiAppleLine />
+                Apple
+              </a>
+              <a
+                href={artistAmazonMusicUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.artistLink}
+                onClick={event => {
+                  event.stopPropagation()
+                  trackEvent('music_player_click', {
+                    action: 'artist_amazon_music',
+                    provider,
+                    track_title: track.title
+                  })
+                }}
+              >
+                <RiAmazonLine />
+                Amazon
+              </a>
+            </div>
             <span className={styles.listen}>
               <RiPlayFill />
               Play a random track

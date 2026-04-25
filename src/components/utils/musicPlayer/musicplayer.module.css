@@ -82,9 +82,18 @@
 }
 
 .trackButton span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.trackButton small {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+  font-weight: 400;
 }
 
 .trackButton svg,
@@ -180,11 +189,40 @@
   line-height: 1.3;
 }
 
+.artistLinks {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+}
+
+.artistLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.artistLink:hover,
+.artistLink:focus {
+  color: #ffd061;
+  outline: none;
+}
+
+.artistLink svg {
+  width: 14px;
+  height: 14px;
+}
+
 .listen {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 2px;
+  margin-top: 6px;
   color: #ffd061;
   font-size: 13px;
   font-weight: 700;
