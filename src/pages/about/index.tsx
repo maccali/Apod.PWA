@@ -1,5 +1,5 @@
 import React from 'react'
-import Fade from 'react-reveal/Fade'
+import Fade from '../../components/utils/fade'
 import Head from 'next/head'
 import Nav from '../../components/utils/nav'
 import CreditsAboutCard from '../../components/cards/creditsAbout'

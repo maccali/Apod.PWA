@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import Fade from 'react-reveal/Fade'
 import styles from './day.module.css'
 import Social from '../../cards/social'
 import Credits from '../../cards/credits'
@@ -32,7 +31,7 @@ function DayContent({
     if (date) {
       setLink(`${protocol}//${hostname}/day/${date}`)
     }
-  })
+  }, [date])
 
   return (
     <div className="container-fluid bg-primary">

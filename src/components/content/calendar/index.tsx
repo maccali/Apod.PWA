@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/no-onchange */
-import React, { useState } from 'react'
-import Fade from 'react-reveal/Fade'
+import React, { useEffect, useRef, useState } from 'react'
+import Fade from '../../utils/fade'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import { RiCalendarLine } from 'react-icons/ri'
 
 import DatePicker from 'react-datepicker'
 import UtilHelper from '../../../helpers/util'
@@ -13,12 +14,79 @@ import Erro from '../../utils/error'
 import DayContent from '../../content/day'
 import Button from '../../utils/button'
 
+type CalendarSelectProps = {
+  label: string
+  options: Array<string | number>
+  value: string | number
+  onSelect: (value: string | number) => void
+}
+
+function CalendarSelect({
+  label,
+  options,
+  value,
+  onSelect
+}: CalendarSelectProps) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    function closeOnOutsideClick(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', closeOnOutsideClick)
+    return () => document.removeEventListener('mousedown', closeOnOutsideClick)
+  }, [])
+
+  function selectOption(option: string | number) {
+    onSelect(option)
+    setOpen(false)
+  }
+
+  return (
+    <div className={styles.select} ref={ref}>
+      <button
+        type="button"
+        aria-label={label}
+        aria-expanded={open}
+        className={styles.selectButton}
+        onClick={() => setOpen(current => !current)}
+      >
+        {value}
+      </button>
+
+      {open ? (
+        <div className={styles.selectMenu}>
+          {options.map(option => (
+            <button
+              type="button"
+              key={option}
+              className={`${styles.selectOption} ${
+                option === value ? styles.selectOptionActive : ''
+              }`}
+              onClick={() => selectOption(option)}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      ) : (
+        ''
+      )}
+    </div>
+  )
+}
+
 function CalendarContent() {
   const [startDate, setStartDate] = useState<any>(new Date())
   const [modal, setModal] = useState<boolean>(false)
   const [modalErro, setModalErro] = useState<boolean>(false)
   const [errorMsg, setErrorMsg] = useState<string>('')
   const [currentApod, setCurrentApod] = useState<DayFace | null>(null)
+  const [load, setLoad] = useState<boolean>(false)
 
   function bodyControl(flag: boolean) {
     const { body } = document
@@ -30,6 +98,7 @@ function CalendarContent() {
   }
 
   async function openModal() {
+    setLoad(true)
     setCurrentApod(null)
 
     let apodDay = undefined
@@ -38,7 +107,7 @@ function CalendarContent() {
     try {
       const arrUrls = await DateHelper.daysCombine(nasaDate, 1)
       apodDay = arrUrls[0]
-    } catch (err) {
+    } catch {
       setModalErro(true)
       setErrorMsg(
         'There was an error when catching day, Verify if You`re Online'
@@ -55,6 +124,7 @@ function CalendarContent() {
     }
 
     document.getElementById('scroll').scrollTop = 0
+    setLoad(false)
   }
 
   function closeModal() {
@@ -83,6 +153,7 @@ function CalendarContent() {
     'November',
     'December'
   ]
+  const selectedDate = DateHelper.dateToNasaFormat(String(startDate))
 
   return (
     <>
@@ -92,75 +163,81 @@ function CalendarContent() {
             <div className="col-12">
               <Fade bottom>
                 <div className={styles.cont}>
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(startDate: any) => setStartDate(startDate)}
-                    minDate={new Date(1996, 6, 16)}
-                    maxDate={new Date()}
-                    showDisabledMonthNavigation={true}
-                    inline={true}
-                    renderCustomHeader={({
-                      date,
-                      changeYear,
-                      changeMonth,
-                      decreaseMonth,
-                      increaseMonth,
-                      prevMonthButtonDisabled,
-                      nextMonthButtonDisabled
-                    }: any) => (
-                      <div className="date-picker__custom-head">
-                        <button
-                          onClick={decreaseMonth}
-                          disabled={prevMonthButtonDisabled}
-                        >
-                          <AiOutlineLeft />
-                        </button>
-                        <select
-                          value={date.getFullYear()}
-                          className="decorated"
-                          onChange={({ target: { value } }) =>
-                            changeYear(value)
-                          }
-                          data-size="2"
-                        >
-                          {years.map(option => (
-                            <option key={option} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </select>
-
-                        <select
-                          value={months[date.getMonth()]}
-                          className="decorated"
-                          onChange={({ target: { value } }) =>
-                            changeMonth(months.indexOf(value))
-                          }
-                          data-size="2"
-                        >
-                          {months.map(option => (
-                            <option key={option} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </select>
-
-                        <button
-                          onClick={increaseMonth}
-                          disabled={nextMonthButtonDisabled}
-                        >
-                          <AiOutlineRight />
-                        </button>
+                  <section className={styles.panel}>
+                    <div className={styles.intro}>
+                      <div className={styles.icon}>
+                        <RiCalendarLine />
                       </div>
-                    )}
-                  />
-                  <Button
-                    title="Go to Date"
-                    action={() => openModal()}
-                    textOnly
-                  >
-                    <span>Go to date</span>
-                  </Button>
+                      <div>
+                        <h1>APOD Calendar</h1>
+                        <p>{selectedDate}</p>
+                      </div>
+                    </div>
+
+                    <DatePicker
+                      selected={startDate}
+                      onChange={(startDate: any) => setStartDate(startDate)}
+                      minDate={new Date(1996, 6, 16)}
+                      maxDate={new Date()}
+                      showDisabledMonthNavigation={true}
+                      inline={true}
+                      renderCustomHeader={({
+                        date,
+                        changeYear,
+                        changeMonth,
+                        decreaseMonth,
+                        increaseMonth,
+                        prevMonthButtonDisabled,
+                        nextMonthButtonDisabled
+                      }: any) => (
+                        <div className="date-picker__custom-head">
+                          <button
+                            type="button"
+                            aria-label="Previous month"
+                            onClick={decreaseMonth}
+                            disabled={prevMonthButtonDisabled}
+                          >
+                            <AiOutlineLeft />
+                          </button>
+                          <CalendarSelect
+                            value={date.getFullYear()}
+                            label="Year"
+                            options={years}
+                            onSelect={value => changeYear(Number(value))}
+                          />
+
+                          <CalendarSelect
+                            value={months[date.getMonth()]}
+                            label="Month"
+                            options={months}
+                            onSelect={value =>
+                              changeMonth(months.indexOf(String(value)))
+                            }
+                          />
+
+                          <button
+                            type="button"
+                            aria-label="Next month"
+                            onClick={increaseMonth}
+                            disabled={nextMonthButtonDisabled}
+                          >
+                            <AiOutlineRight />
+                          </button>
+                        </div>
+                      )}
+                    />
+
+                    <div className={styles.action}>
+                      <Button
+                        title="Go to Date"
+                        action={() => openModal()}
+                        textOnly
+                        load={load}
+                      >
+                        <span>Go to image</span>
+                      </Button>
+                    </div>
+                  </section>
                 </div>
               </Fade>
             </div>

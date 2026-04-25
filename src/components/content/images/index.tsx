@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Fade from 'react-reveal/Fade'
+import React, { useCallback, useEffect, useState } from 'react'
+import Fade from '../../utils/fade'
 import { AiOutlinePlus } from 'react-icons/ai'
 
 import CardPod from '../../cards/pod'
-import NumberFormat from 'react-number-format'
 import SpinnerCard from '../../cards/spinnerImages'
 import Modal from '../../utils/modal'
 import DayContent from '../../content/day'
@@ -24,7 +23,7 @@ function ImagesContent() {
 
   const errorMsg = 'There was an error when catching days, Verify Internet'
 
-  async function getData(page: number) {
+  const getData = useCallback(async (page: number) => {
     setLoad(true)
 
     const pageCount = 6
@@ -36,14 +35,14 @@ function ImagesContent() {
 
     try {
       const arrOfDays = await DateHelper.daysCombine(currentDay, pageCount)
-      setListOfDays(listOfDays.concat(arrOfDays))
+      setListOfDays((currentList) => currentList.concat(arrOfDays))
       setPage(Number(page) + 1)
       setError(false)
     } catch (error) {
       setError(true)
     }
     setLoad(false)
-  }
+  }, [])
 
   function bodyControl(flag: boolean) {
     const { body } = document
@@ -70,7 +69,7 @@ function ImagesContent() {
     ;(async function () {
       await getData(1)
     })()
-  }, [])
+  }, [getData])
 
   return (
     <>
@@ -102,12 +101,13 @@ function ImagesContent() {
                 <div className={styles.line}>
                   <div className={styles.divinput}>
                     <label htmlFor="pager" aria-label="Type a page">
-                      <NumberFormat
+                      <input
                         name="pager"
-                        type="text"
-                        value={page}
+                        type="number"
+                        min="1"
+                        step="1"
+                        value={page ?? ''}
                         onChange={e => setPage(e.target.value)}
-                        decimalSeparator={false}
                       />
                     </label>
                   </div>

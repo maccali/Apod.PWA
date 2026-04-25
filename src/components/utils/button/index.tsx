@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { ReactNode, useRef, useEffect, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import Link from 'next/link'
 import { ClipLoader } from 'react-spinners'
 
 import styles from './button.module.css'
+import { trackEvent } from '../../../helpers/analytics'
 
 type ButtonFace = {
   title: string
@@ -34,7 +35,6 @@ function Button({
   className,
   rel
 }: ButtonFace) {
-  const ref = useRef(null)
   const [width, setWidth] = useState<number>(0)
   const [height, setHeight] = useState<number>(0)
 
@@ -42,10 +42,20 @@ function Button({
     window.location.href = href
   }
 
-  useEffect(() => {
-    ref.current ? setWidth(ref.current.offsetWidth) : 0
-    ref.current ? setHeight(ref.current.offsetHeight) : 0
-  }, [ref.current])
+  function trackButtonClick() {
+    trackEvent('button_click', {
+      button_title: title,
+      button_target: href || 'action',
+      button_variant: noStyle ? 'unstyled' : iconOnly ? 'icon' : textOnly ? 'text' : 'default'
+    })
+  }
+
+  function measureElement(element: HTMLAnchorElement | HTMLButtonElement | null) {
+    if (element) {
+      setWidth(element.offsetWidth)
+      setHeight(element.offsetHeight)
+    }
+  }
 
   if (load) {
     return (
@@ -75,6 +85,7 @@ function Button({
           `}
           target={target}
           rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+          onClick={trackButtonClick}
         >
           {children}
 
@@ -88,7 +99,10 @@ function Button({
           ${styles.taglink}
           ${className ? className : ''}
           `}
-          onClick={() => (action ? action() : '')}
+          onClick={() => {
+            trackButtonClick()
+            return action ? action() : ''
+          }}
         >
           {children}
         </button>
@@ -100,7 +114,7 @@ function Button({
 
         <Link href={href}
           title={title}
-          ref={ref}
+          ref={measureElement}
           className={`
           ${styles.btn}
         ${pos ? styles.pos : styles.pre}
@@ -110,6 +124,7 @@ function Button({
         `}
           target={target}
           rel={rel ? rel : target ? 'noopener noreferrer' : ''}
+          onClick={trackButtonClick}
         >
           {children}
 
@@ -120,7 +135,7 @@ function Button({
         <>
           <button
             title={title}
-            ref={ref}
+            ref={measureElement}
             className={`
             ${styles.btn}
             ${pos ? styles.pos : styles.pre}
@@ -128,7 +143,10 @@ function Button({
             ${textOnly ? styles.text : ''}
             ${className ? className : ''}
             `}
-            onClick={() => (href ? hrefReplace(href) : action ? action() : '')}
+            onClick={() => {
+              trackButtonClick()
+              return href ? hrefReplace(href) : action ? action() : ''
+            }}
           >
             {children}
           </button>

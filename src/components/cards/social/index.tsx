@@ -9,8 +9,6 @@ import {
   RiLinksLine
 } from 'react-icons/ri'
 
-import CopyToClipboard from 'react-copy-to-clipboard'
-
 import ShareLinks from '../../../models/shareLinks'
 import Button from '../../utils/button'
 
@@ -22,17 +20,21 @@ type SocialFace = {
 
 function Social({ title, text, url }: SocialFace) {
   const [copied, setCopied] = useState(false)
+  const hasNativeShare =
+    typeof navigator !== 'undefined' && navigator.share !== undefined
 
   function share() {
-    console.log(title, text, url)
-    navigator.share({
+    if (!hasNativeShare) return
+
+    void navigator.share({
       title,
       text,
       url
     })
   }
 
-  async function chackmate() {
+  async function copyLink() {
+    await navigator.clipboard.writeText(url)
     setCopied(true)
     await sleep(3000)
     setCopied(false)
@@ -45,12 +47,16 @@ function Social({ title, text, url }: SocialFace) {
   return (
     <>
       <div className={styles.card}>
-        <CopyToClipboard text={url} onCopy={() => chackmate()}>
-          <div title="Copy Link" className={styles.iconchange}>
-            {copied ? <RiCheckboxCircleLine /> : <RiLinksLine />}
-          </div>
-        </CopyToClipboard>
-        {navigator.share === undefined ? (
+        <Button
+          title="Copy Link"
+          action={() => void copyLink()}
+          className={styles.iconchange}
+          iconOnly
+          noStyle
+        >
+          {copied ? <RiCheckboxCircleLine /> : <RiLinksLine />}
+        </Button>
+        {!hasNativeShare ? (
           <>
             <Button
               title="Share with Facebook"

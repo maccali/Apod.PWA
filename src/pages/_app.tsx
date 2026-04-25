@@ -14,6 +14,7 @@ import type { AppProps } from 'next/app'
 
 import Meta from '../components/utils/meta'
 import Offline from '../components/utils/offline'
+import MusicPlayer from '../components/utils/musicPlayer'
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -31,6 +32,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Offline />
       <Meta />
       <Component {...pageProps} />
+      <MusicPlayer />
     </>
   )
 }
